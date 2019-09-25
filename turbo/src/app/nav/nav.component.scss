@@ -1,0 +1,33 @@
+@import '../../styles.scss';
+
+header {
+
+    .navbar-inverse {
+        background: $color-blue;
+        border: none;
+    }
+
+    .navbar-nav {
+        li {
+            a{
+                color: $color-white;
+
+                &:hover {
+                    border-top: 5px solid $color-white;
+                    font-weight: 700;
+                }
+            }
+        }
+
+        .active {
+            a {
+                background-color: $color-blue;
+
+                &:hover {
+                    border-top: 5px solid $color-white;
+                }
+            }
+
+        }
+    }
+}
