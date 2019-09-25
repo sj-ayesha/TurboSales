@@ -5,6 +5,14 @@ header {
     .navbar-inverse {
         background: $color-blue;
         border: none;
+
+        .navbar-toggle:focus {
+            background-color: $color-light-blue;
+        }
+
+        .navbar-toggle:hover {
+            background-color: $color-light-blue;
+        }
     }
 
     .navbar-nav {
@@ -13,8 +21,14 @@ header {
                 color: $color-white;
 
                 &:hover {
-                    border-top: 5px solid $color-white;
-                    font-weight: 700;
+                    background-color: $color-light-blue;
+                }
+
+                @media only screen and (min-width: 768px) {
+                    &:hover {
+                        border-top: 5px solid $color-white;
+                        font-weight: 700;
+                    }
                 }
             }
         }
@@ -22,12 +36,27 @@ header {
         .active {
             a {
                 background-color: $color-blue;
-
-                &:hover {
-                    border-top: 5px solid $color-white;
-                }
             }
 
+        }
+    }
+    .navbar-header {
+        float: none;
+
+        .navbar-toggle {
+            margin-top: 20px;
+        }
+    }
+
+    .navbar {
+        border-radius: 0;
+    }
+
+    .logo-container {
+        border-bottom: 1px solid $color-white;
+        img {
+            width: 80px;
+            margin: 0 10px;
         }
     }
 }
