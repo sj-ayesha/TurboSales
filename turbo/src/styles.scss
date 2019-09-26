@@ -3,7 +3,7 @@
 $color-blue: #15518d;
 $color-light-blue: #166abf;
 $color-white: #fff;
-
+$color-gray: #eee;
 /*Media Queries*/
 
 @mixin extra-small {
@@ -51,6 +51,10 @@ section {
     padding: 0 !important;
 }
 
+.service-container {
+    padding: 0 !important;
+}
+
 h3 {
     line-height: 35px;
 
@@ -58,4 +62,8 @@ h3 {
         font-size: 35px;
         line-height: 40px;
     }
+}
+
+p {
+    line-height: 25px;
 }

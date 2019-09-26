@@ -1,0 +1,65 @@
+@import '../../../styles.scss';
+
+.service {
+    &-box {
+        border-right: 1px solid $color-gray;
+        padding: 20px 95px;
+
+        @media only screen and (min-device-width: 320px) and (max-device-width: 812px) {
+            border-right: 0;
+            border-bottom: 1px solid $color-gray;
+            padding: 25px 35px;
+        }
+
+        &:hover {
+            background-color: $color-blue;
+            color: $color-white;
+
+            i {
+                color: $color-white;
+            }
+
+            a {
+                h4 {
+                    color: $color-white;
+                }
+
+            }
+        }
+
+        &:last-child {
+            border: none;
+        }
+
+        a {
+            &:hover {
+                text-decoration: none;
+            }
+
+            h4 {
+                color: $color-blue;
+            }
+        }
+
+        i {
+            font-size: 40px;
+            padding: 0 10px;
+            color: $color-blue;
+        }
+
+        h4 {
+            text-transform: uppercase;
+        }
+
+        p {
+            padding: 15px 0;
+            text-align: justify;
+        }
+    }
+
+    &-heading {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
