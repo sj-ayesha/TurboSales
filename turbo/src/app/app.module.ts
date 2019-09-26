@@ -12,6 +12,7 @@ import { ServicesComponent } from './services/services.component';
 import { ContactComponent } from './contact/contact.component';
 import { CarouselComponent } from './components/carousel/carousel.component';
 import { ServiceProvidedComponent } from './components/service-provided/service-provided.component';
+import { FeaturedItemsComponent } from './components/featured-items/featured-items.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { ServiceProvidedComponent } from './components/service-provided/service-
     ServicesComponent,
     ContactComponent,
     CarouselComponent,
-    ServiceProvidedComponent
+    ServiceProvidedComponent,
+    FeaturedItemsComponent
   ],
   imports: [
     BrowserModule,
