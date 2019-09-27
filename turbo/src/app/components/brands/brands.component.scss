@@ -1,0 +1,44 @@
+@import '../../../styles.scss';
+
+.brand {
+    &-heading {
+        text-align: center;
+
+        @media only screen and (min-width: 812px) {
+            padding: 30px 0;
+        }
+
+        h3 {
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+        
+        hr {
+            border-top: 2px solid $color-blue;
+            margin-top: -10px;
+            width: 50px;
+
+            @media only screen and (min-width: 812px) {
+                margin-top: -5px;
+            }
+        }
+    }
+
+    &-row {
+        text-align: center;
+        background-color: $color-gray;
+
+        @media only screen and (min-device-width: 320px) and (max-device-width: 812px) {
+            img {
+                width: 100%;
+            }
+        }
+
+        p {
+            font-size: 18px;
+            padding: 10px 0;
+            text-transform: uppercase;
+            color: $color-blue;
+        }
+    }
+}

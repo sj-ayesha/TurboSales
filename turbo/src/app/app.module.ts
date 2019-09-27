@@ -13,6 +13,9 @@ import { ContactComponent } from './contact/contact.component';
 import { CarouselComponent } from './components/carousel/carousel.component';
 import { ServiceProvidedComponent } from './components/service-provided/service-provided.component';
 import { FeaturedItemsComponent } from './components/featured-items/featured-items.component';
+import { BodyTypeComponent } from './components/body-type/body-type.component';
+import { NewsletterComponent } from './components/newsletter/newsletter.component';
+import { BrandsComponent } from './components/brands/brands.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +28,10 @@ import { FeaturedItemsComponent } from './components/featured-items/featured-ite
     ContactComponent,
     CarouselComponent,
     ServiceProvidedComponent,
-    FeaturedItemsComponent
+    FeaturedItemsComponent,
+    BodyTypeComponent,
+    NewsletterComponent,
+    BrandsComponent
   ],
   imports: [
     BrowserModule,

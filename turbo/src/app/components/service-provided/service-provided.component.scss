@@ -3,11 +3,11 @@
 .service {
     &-box {
         border-right: 1px solid $color-gray;
-        padding: 20px 95px;
+        padding: 65px 220px;
+        border-bottom: 1px solid $color-gray;
 
         @media only screen and (min-device-width: 320px) and (max-device-width: 812px) {
             border-right: 0;
-            border-bottom: 1px solid $color-gray;
             padding: 25px 35px;
         }
 
@@ -28,7 +28,8 @@
         }
 
         &:last-child {
-            border: none;
+            border-right: none;
+            border-bottom: 1px solid $color-gray;
         }
 
         a {
@@ -54,6 +55,13 @@
         p {
             padding: 15px 0;
             text-align: justify;
+        }
+    }
+
+    &-container {
+        &--row {
+            // max-width: 1500px;
+            // margin: 0 auto;
         }
     }
 

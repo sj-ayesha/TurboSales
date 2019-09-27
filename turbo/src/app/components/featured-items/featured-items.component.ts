@@ -10,6 +10,7 @@ export class FeaturedItemsComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    
   }
 
 }

@@ -4,6 +4,7 @@ $color-blue: #15518d;
 $color-light-blue: #166abf;
 $color-white: #fff;
 $color-gray: #eee;
+$color-black: #000;
 /*Media Queries*/
 
 @mixin extra-small {
@@ -55,6 +56,16 @@ section {
     padding: 0 !important;
 }
 
+.featured-container {
+    padding: 0 !important;
+    background-color: $color-gray;
+}
+
+// .brand-container {
+//     background-color: $color-gray;
+//     height: 300px;
+// }
+
 h3 {
     line-height: 35px;
 
@@ -62,6 +73,13 @@ h3 {
         font-size: 35px;
         line-height: 40px;
     }
+}
+
+h4 {
+    @media only screen and (min-width: 768px) {
+        font-size: 25px;
+        line-height: 40px;
+    }    
 }
 
 p {

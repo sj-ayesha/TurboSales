@@ -1,0 +1,74 @@
+@import '../../../styles.scss';
+
+.body-type {
+    &-heading {
+        text-align: center;
+
+        @media only screen and (min-width: 812px) {
+            padding: 30px 0;
+        }
+
+        h3 {
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+        
+        hr {
+            border-top: 2px solid $color-blue;
+            margin-top: -10px;
+            width: 50px;
+
+            @media only screen and (min-width: 812px) {
+                margin-top: -5px;
+            }
+        }
+    }
+
+    &-box {
+        text-align: center;
+        img {
+            width: 100%;
+        }
+
+        p {
+            font-size: 18px;
+            padding: 10px 0;
+            text-transform: uppercase;
+            color: $color-blue;
+        }
+    }
+}
+
+.btn-action {
+    display: flex;
+    justify-content: center;
+    padding: 20px 0;
+
+    .btn-start-search {
+        .btn-primary {
+            background-color: $color-blue;
+
+            &:hover {
+                background-color: $color-white;
+                color: $color-blue;
+            }
+        }
+    }
+
+    .btn-contact {
+        .btn-primary {
+            background-color: $color-white;
+            color: $color-blue;
+
+            &:hover {
+                background-color: $color-blue;
+                color: $color-white;
+            }
+        }
+    }
+}
+
+.btn-start-search, .btn-contact {
+    padding: 0 10px;
+}
+
