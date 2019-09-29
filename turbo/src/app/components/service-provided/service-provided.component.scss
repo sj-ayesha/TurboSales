@@ -30,6 +30,12 @@
         &:last-child {
             border-right: none;
             border-bottom: 1px solid $color-gray;
+
+            
+            @media only screen and (min-width: 812px) {
+                border: none;
+                min-height: 420px;
+            }
         }
 
         a {

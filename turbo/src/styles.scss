@@ -61,10 +61,26 @@ section {
     background-color: $color-gray;
 }
 
-// .brand-container {
-//     background-color: $color-gray;
-//     height: 300px;
+.brand-container {
+    padding: 0 !important;
+}
+
+// .footer-section {
+//     padding: 0 !important;
+//     background-color: $color-blue;
 // }
+
+.slick-prev {
+    left: -15px !important;
+}
+
+.slick-next {
+    right: -15px !important;
+}
+
+.slick-prev::before, .slick-next::before {
+    color: $color-blue !important;
+}
 
 h3 {
     line-height: 35px;
@@ -85,3 +101,8 @@ h4 {
 p {
     line-height: 25px;
 }
+
+.slick-slider {  
+    width: 90%;  
+    margin: auto;  
+  }
