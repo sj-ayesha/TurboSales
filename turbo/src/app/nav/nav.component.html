@@ -1,6 +1,39 @@
-
 <div class="row nav-container">
     <header>
+        <div class="header-top">
+            <div class="container-fluid">
+                <div class="row">
+                    <!-- Header Top Left -->
+                    <div class="header-top-left col-md-6 col-sm-12 col-xs-12">
+                        <div class="header-top-left__number">
+                            <p class="blink-effect">Toll Free:
+                                <span>1-888-879-4994</span>
+                            </p>
+                        </div>
+                        <div class="arrow-right"></div>
+
+                        <div class="header-top-left__social">
+                            <ul class="address_details">
+                                <li> <a class="icon" href="https://www.facebook.com/" target="_blank">
+                                        <i class="fab fa-facebook-square"></i></a></li>
+                                <li> <a class="icon" href="www.twitter.com" target="_blank"><i
+                                            class="fab fa-twitter-square"></i></a> </li>
+                                <li> <a href="/shopcars" class="button_h">Buy Your Car</a> </li>
+
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- Header Top Right Social -->
+                    <div class="header-top-right col-md-6 col-sm-6">
+                        <div class="pull-right">
+                            <ul class="listnone">
+                                <li> <a href="/shopcars" class="button_h">Buy Your Car</a> </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
         <nav class="navbar navbar-inverse">
             <div class="container-fluid">
                 <div class="navbar-header">
@@ -9,15 +42,49 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <div class="logo-container">
-                        <a routerLink="/">
-                            <img src="../../assets/img/turbo3.png">
-                        </a>
+                    <div class="header-middle">
+                        <div class="logo-container">
+                            <a routerLink="/">
+                                <img src="../../assets/img/turbo3.png">
+                            </a>
+                        </div>
+
+                        <div class="header-middle__contact">
+                            <div class="location-container">
+                                <div class="location-icon">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </div>
+                                <div class="location-text header-text">
+                                    <p>1 Yonge St #1801, </p>
+                                    <p>Toronto, ON M5E 1W7</p>
+                                </div>
+                            </div>
+
+                            <div class="call-container">
+                                <div class="call-icon">
+                                    <i class="fas fa-phone-alt"></i>
+                                </div>
+                                <div class="call-text header-text">
+                                    <p>Call today:</p>
+                                    <p>+568878888</p>
+                                </div>
+                            </div>
+
+                            <div class="time-container">
+                                    <div class="time-icon">
+                                        <i class="fas fa-clock"></i>
+                                    </div>
+                                    <div class="time-text header-text">
+                                        <p>Mon - Fri : 9am - 6pm</p>
+                                        <p>Sat - Sun : 9am - 1pm</p>
+                                    </div>
+                                </div>
+                        </div>
+
                     </div>
-    
-    
+
                 </div>
-                <div class="collapse navbar-collapse" id="myNavbar">
+                <div class="navbar-items collapse navbar-collapse" id="myNavbar">
                     <ul class="nav navbar-nav">
                         <li class="active"><a routerLink="/">Home</a></li>
                         <li><a routerLink="/shopcars">Shop Cars</a></li>
@@ -25,12 +92,17 @@
                         <li><a routerLink="/contact">Contact Us</a></li>
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
-                        <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-                        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                        <li><a href="/signup"><span class="glyphicon glyphicon-user"></span> Sign Up
+                                / Login</a></li>
+                        <li><a href="#"><span class="glyphicon glyphicon-shopping-cart"></span><span
+                                    class="cart-number">1</span> Cart</a></li>
                     </ul>
                 </div>
             </div>
         </nav>
-    
+
     </header>
+
+
+
 </div>

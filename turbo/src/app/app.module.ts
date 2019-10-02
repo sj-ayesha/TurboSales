@@ -1,7 +1,8 @@
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { SlickCarouselModule } from 'ngx-slick-carousel';
-
+import { BrowserModule } from "@angular/platform-browser";
+import { FormsModule } from "@angular/forms";
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -17,6 +18,9 @@ import { FeaturedItemsComponent } from './components/featured-items/featured-ite
 import { BodyTypeComponent } from './components/body-type/body-type.component';
 import { NewsletterComponent } from './components/newsletter/newsletter.component';
 import { BrandsComponent } from './components/brands/brands.component';
+import { CarDetailComponent } from './car-detail/car-detail.component';
+import { BuyNowComponent } from './components/buy-now/buy-now.component';
+import { SignupComponent } from './components/signup/signup.component';
 
 @NgModule({
   declarations: [
@@ -32,12 +36,17 @@ import { BrandsComponent } from './components/brands/brands.component';
     FeaturedItemsComponent,
     BodyTypeComponent,
     NewsletterComponent,
-    BrandsComponent
+    BrandsComponent,
+    CarDetailComponent,
+    BuyNowComponent,
+    SignupComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    SlickCarouselModule 
+    SlickCarouselModule,
+    FormsModule, 
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

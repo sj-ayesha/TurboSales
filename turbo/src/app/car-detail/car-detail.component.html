@@ -1,0 +1,120 @@
+<div class="container-fluid car-detail-container">
+    <div class="row title-row">
+        <div class="col-xs-12 col-md-12">
+            <h2>2015 mercedes-benz cla 250</h2>
+        </div>
+    </div>
+
+    <div class="row back-action">
+        <div class="col-xs-12 col-md-12">
+            <a href="#">
+                <i class="fas fa-angle-double-left"></i>
+                <span>Back to shop cars</span>
+            </a>
+        </div>
+    </div>
+
+    <div class="row car-images">
+        <div class="col-xs-12 col-md-4">
+            <img src="../../assets/img/mercedes-benz.jpg">
+        </div>
+        <div class="col-xs-12 col-md-7 col-md-offset-1 car-overview">
+            <div class="row">
+                <div class="col-xs-12 col-md-12">
+                    <h4>Vehicle Overview</h4>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-xs-12 col-md-6 car-spec">
+                    <i class="fa fa-dashboard"></i>
+                    <p>Odometer</p>
+                    <p>18, 875 Miles</p>
+                </div>
+                <div class="col-xs-12 col-md-5 col-md-offset-1  car-spec">
+                    <i class="fa fa-paint-roller"></i>
+                    <p>Exterior Color</p>
+                    <p>Black</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12 col-md-6 car-spec">
+                    <i class="fa fa-car-side"></i>
+                    <p>Body Type</p>
+                    <p>Sedan</p>
+                </div>
+                <div class="col-xs-12 col-md-5 col-md-offset-1  car-spec">
+                    <i class="fa fa-car-battery"></i>
+                    <p>Transmission</p>
+                    <p>Automatic</p>
+                </div>
+            </div>
+
+            <div class="row btn--view-detail">
+                <a (click)="showDialog = !showDialog" class="btn btn-primary btn-lg">Add to Cart</a>
+            </div>
+
+
+            <app-buy-now [(visible)]="showDialog">
+                <div class="row car-images">
+                    <div class="col-xs-12 col-md-4">
+                        <img src="../../assets/img/mercedes-benz.jpg">
+                    </div>
+                    <div class="col-xs-12 col-md-8">
+
+                    </div>
+
+                </div>
+            </app-buy-now>
+
+            <!-- <div class="row btn--view-detail">
+                <div class="col-xs-12 col-md-12">
+                    <a class="btn btn-primary btn-lg" href="#">View Details</a>
+                </div>
+
+            </div> -->
+
+        </div>
+    </div>
+    <div class="row car-description">
+        <div class="col-xs-12 col-md-6 car-description-text">
+            <h4>Vehicle Description</h4>
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+                industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
+                scrambled it to make a type specimen book. Lorem Ipsum is simply dummy text of the printing and
+                typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when
+                an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+
+            <h4>Feature & Options</h4>
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+                industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
+                scrambled it to make a type specimen book. Lorem Ipsum is simply dummy text of the printing and
+                typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when
+                an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+        </div>
+
+        <div class="col-xs-12 col-md-5 col-md-offset-1 request-info">
+            <div class="container  request-info-form">
+                <h4>Request Information</h4>
+                <form>
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="fname" placeholder="Enter First Name" name="fname">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="lname" placeholder="Enter Last Name" name="lname">
+                    </div>
+                    <div class="form-group">
+                        <input type="email" class="form-control" id="email" placeholder="Enter Email" name="email">
+                    </div>
+                    <div class="form-group">
+                        <input type="tel" class="form-control" id="phone" placeholder="Enter Phone Number" name="phone">
+                    </div>
+                    <div class="form-group">
+                        <textarea class="form-control" id="message" placeholder="Enter Message"
+                            name="message">Hi, I'm interested. Please contact me as soon as you can.</textarea>
+                    </div>
+                    <button type="submit" class="btn btn-default">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>

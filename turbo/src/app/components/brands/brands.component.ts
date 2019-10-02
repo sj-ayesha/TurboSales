@@ -28,7 +28,7 @@ export class BrandsComponent implements OnInit {
     "infinite": true,
     "autoplay": true,
     "draggable": false,
-    "autoplaySpeed": 3000,
+    "autoplaySpeed": 3000
   };  
 
   constructor() { }

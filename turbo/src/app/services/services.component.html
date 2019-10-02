@@ -1,1 +1,454 @@
-<p>services works!</p>
+<div class="container-fluid our-service">
+    <div class="row title-row">
+        <div class="col-xs-12 col-md-12">
+            <h2> Our Services</h2>
+        </div>
+    </div>
+    <p class="intro-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
+        been the
+        industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
+        scrambled it to make a type specimen book.</p>
+    <div class="service-tabs">
+        <ul class="nav nav-tabs">
+            <li class="active"><a data-toggle="tab" href="#maintenance">Maintenance</a></li>
+            <li><a data-toggle="tab" href="#warranty">Warranty</a></li>
+            <li><a data-toggle="tab" href="#afterSales">After Sales</a></li>
+        </ul>
+
+        <div class="tab-content">
+            <div id="maintenance" class="tab-pane fade in active">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
+                    et
+                    dolore magna aliqua.</p>
+                <div class="row maintenance-description">
+                    <div class="col-xs-12 col-md-4 service-image">
+                        <img src="../../assets/img/service_3.jpg">
+                    </div>
+
+                    <div class="col-xs-12 col-md-6">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+                            labore
+                            et
+                            dolore magna aliqua.</p>
+                        <ul>
+                            <li>
+                                Lorem ipsum dolor sit amet
+                            </li>
+                            <li>
+                                Lorem ipsum dolor sit amet
+                            </li>
+                            <li>
+                                Lorem ipsum dolor sit amet
+                            </li>
+                            <li>
+                                Lorem ipsum dolor sit amet
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="row warning-section">
+                    <div class="col-xs-12 col-md-6">
+                        <h4>Warning Signs</h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+                            labore et dolore magna aliqua</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+                            labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed
+                            do eiusmod tempor incididunt ut labore
+                            et
+                            dolore magna aliqua.</p>
+
+
+                        <div class="row">
+                            <div class="col-xs-12 col-md-12">
+                                <div class="btn--contact">
+                                    <a (click)="showDialog = !showDialog" class="btn btn-primary btn-lg">Contact Us</a>
+                                </div>
+
+
+                                <app-buy-now [(visible)]="showDialog">
+                                    <div class="row">
+                                        <div class="col-md-12 contact-form">
+                                            <div>
+                                                <form class="form-horizontal" action="" method="post">
+                                                    <fieldset>
+                                                        <legend class="text-center">Contact us</legend>
+
+                                                        <!-- Name input-->
+                                                        <div class="form-group">
+                                                            <label class="col-md-3 control-label"
+                                                                for="name">Name</label>
+                                                            <div class="col-md-9">
+                                                                <input id="name" name="name" type="text"
+                                                                    placeholder="Your name" class="form-control">
+                                                            </div>
+                                                        </div>
+
+                                                        <!-- Email input-->
+                                                        <div class="form-group">
+                                                            <label class="col-md-3 control-label" for="email">Your
+                                                                E-mail</label>
+                                                            <div class="col-md-9">
+                                                                <input id="email" name="email" type="text"
+                                                                    placeholder="Your email" class="form-control">
+                                                            </div>
+                                                        </div>
+
+                                                        <!-- Message body -->
+                                                        <div class="form-group">
+                                                            <label class="col-md-3 control-label" for="message">Your
+                                                                message</label>
+                                                            <div class="col-md-9">
+                                                                <textarea class="form-control" id="message"
+                                                                    name="message"
+                                                                    placeholder="Please enter your message here..."
+                                                                    rows="5"></textarea>
+                                                            </div>
+                                                        </div>
+
+                                                        <!-- Form actions -->
+                                                        <div class="form-group">
+                                                            <div class="col-md-12 text-right">
+                                                                <button type="submit"
+                                                                    class="btn btn-primary btn-lg">Submit</button>
+                                                            </div>
+                                                        </div>
+                                                    </fieldset>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </app-buy-now>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-md-6">
+                        <img src="../../assets/img/car-warning_3.jpg">
+                    </div>
+                </div>
+            </div>
+            <div id="warranty" class="tab-pane fade">
+                <div class="row warranty-description">
+                    <div class="col-xs-12 col-md-4 service-image">
+                        <img src="../../assets/img/warranty.jpg">
+                    </div>
+
+                    <div class="col-xs-12 col-md-6">
+                        <h4 class="subtitle">Vehicle Warranty</h4>
+                        <p>5 years or 150,000 km new vehicle general warranty for all models, whichever first occurs.
+                        </p>
+                    </div>
+                </div>
+                <div class="row warranty-description">
+                    <div class="col-xs-12 col-md-12">
+
+                        <h4 class="subtitle">Duration of Warranty</h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+                            labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed
+                            do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet,
+                            consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+                            aliqua.</p>
+                    </div>
+                </div>
+
+                <div class="row warranty-description">
+                    <div class="col-xs-12 col-md-12">
+
+                        <h4 class="subtitle">Benefits for the Customer</h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+                            labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed
+                            do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet,
+                            consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+                            aliqua.</p>
+                    </div>
+                </div>
+
+                <div class="row warranty-description">
+                    <div class="col-xs-12 col-md-12">
+
+                        <h4 class="subtitle">PARTS WARRANTY</h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+                            labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed
+                            do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet,
+                            consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+                            aliqua.</p>
+                    </div>
+                </div>
+
+                <div class="row warranty-description">
+                    <div class="col-xs-12 col-md-12">
+
+                        <h4 class="subtitle">PAINT WARRANTY</h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+                            labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed
+                            do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet,
+                            consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+                            aliqua.</p>
+                    </div>
+                </div>
+            </div>
+            <div id="afterSales" class="tab-pane fade">
+                <h3>Discover our After Sale Service</h3>
+
+                <div class="row after-sale">
+                    <div class="col-xs-12 col-md-12">
+                        <img src="../../assets/img/after-sale_3.jpg">
+                    </div>
+                </div>
+
+
+                <div class="row after-sale--row">
+                    <div class="col-xs-12 col-md-5 after-sale--img">
+                        <img src="../../assets/img/after-sale_men.jpg">
+                    </div>
+                    <div class="col-xs-12 col-md-7 after-sale--text">
+                        <h4 class="subtitle">Our After Sale Service</h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+                            labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed
+                            do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet,
+                            consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+                            aliqua.</p>
+                    </div>
+
+                </div>
+
+                <div class="row after-sale--row">
+                    <div class="col-container">
+                        <div class="col-xs-12 col-md-4">
+                            <img src="../../assets/img/after-sale-contract.jpg">
+                            <h4 class="subtitle">After Sale Contract</h4>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+                                incididunt ut
+                                labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                                sed
+                                do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit
+                                amet,
+                                consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+                                aliqua.</p>
+
+                            <div class="row">
+                                <div class="col-xs-12 col-md-12">
+                                    <div class="btn--contact">
+                                        <a (click)="showDialog = !showDialog" class="btn btn-primary btn-lg">Contact
+                                            Us</a>
+                                    </div>
+
+
+                                    <app-buy-now [(visible)]="showDialog">
+                                        <div class="row">
+                                            <div class="col-md-12 contact-form">
+                                                <div>
+                                                    <form class="form-horizontal" action="" method="post">
+                                                        <fieldset>
+                                                            <legend class="text-center">Contact us</legend>
+
+                                                            <!-- Name input-->
+                                                            <div class="form-group">
+                                                                <label class="col-md-3 control-label"
+                                                                    for="name">Name</label>
+                                                                <div class="col-md-9">
+                                                                    <input id="name" name="name" type="text"
+                                                                        placeholder="Your name" class="form-control">
+                                                                </div>
+                                                            </div>
+
+                                                            <!-- Email input-->
+                                                            <div class="form-group">
+                                                                <label class="col-md-3 control-label" for="email">Your
+                                                                    E-mail</label>
+                                                                <div class="col-md-9">
+                                                                    <input id="email" name="email" type="text"
+                                                                        placeholder="Your email" class="form-control">
+                                                                </div>
+                                                            </div>
+
+                                                            <!-- Message body -->
+                                                            <div class="form-group">
+                                                                <label class="col-md-3 control-label" for="message">Your
+                                                                    message</label>
+                                                                <div class="col-md-9">
+                                                                    <textarea class="form-control" id="message"
+                                                                        name="message"
+                                                                        placeholder="Please enter your message here..."
+                                                                        rows="5"></textarea>
+                                                                </div>
+                                                            </div>
+
+                                                            <!-- Form actions -->
+                                                            <div class="form-group">
+                                                                <div class="col-md-12 text-right">
+                                                                    <button type="submit"
+                                                                        class="btn btn-primary btn-lg">Submit</button>
+                                                                </div>
+                                                            </div>
+                                                        </fieldset>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </app-buy-now>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="col-xs-12 col-md-4">
+                            <img src="../../assets/img/low-price.png">
+                            <h4 class="subtitle">Fidelity</h4>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+                                incididunt ut
+                                labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                                sed
+                                do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit
+                                amet,
+                                consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+                                aliqua.</p>
+
+                            <div class="row">
+                                <div class="col-xs-12 col-md-12">
+                                    <div class="btn--contact">
+                                        <a (click)="showDialog = !showDialog" class="btn btn-primary btn-lg">Contact
+                                            Us</a>
+                                    </div>
+
+
+                                    <app-buy-now [(visible)]="showDialog">
+                                        <div class="row">
+                                            <div class="col-md-12 contact-form">
+                                                <div>
+                                                    <form class="form-horizontal" action="" method="post">
+                                                        <fieldset>
+                                                            <legend class="text-center">Contact us</legend>
+
+                                                            <!-- Name input-->
+                                                            <div class="form-group">
+                                                                <label class="col-md-3 control-label"
+                                                                    for="name">Name</label>
+                                                                <div class="col-md-9">
+                                                                    <input id="name" name="name" type="text"
+                                                                        placeholder="Your name" class="form-control">
+                                                                </div>
+                                                            </div>
+
+                                                            <!-- Email input-->
+                                                            <div class="form-group">
+                                                                <label class="col-md-3 control-label" for="email">Your
+                                                                    E-mail</label>
+                                                                <div class="col-md-9">
+                                                                    <input id="email" name="email" type="text"
+                                                                        placeholder="Your email" class="form-control">
+                                                                </div>
+                                                            </div>
+
+                                                            <!-- Message body -->
+                                                            <div class="form-group">
+                                                                <label class="col-md-3 control-label" for="message">Your
+                                                                    message</label>
+                                                                <div class="col-md-9">
+                                                                    <textarea class="form-control" id="message"
+                                                                        name="message"
+                                                                        placeholder="Please enter your message here..."
+                                                                        rows="5"></textarea>
+                                                                </div>
+                                                            </div>
+
+                                                            <!-- Form actions -->
+                                                            <div class="form-group">
+                                                                <div class="col-md-12 text-right">
+                                                                    <button type="submit"
+                                                                        class="btn btn-primary btn-lg">Submit</button>
+                                                                </div>
+                                                            </div>
+                                                        </fieldset>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </app-buy-now>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-xs-12 col-md-4">
+                            <img src="../../assets/img/tools.jpg">
+                            <h4 class="subtitle">Car Parts & Tools</h4>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+                                incididunt ut
+                                labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                                sed
+                                do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit
+                                amet,
+                                consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+                                aliqua.</p>
+
+                            <div class="row">
+                                <div class="col-xs-12 col-md-12">
+                                    <div class="btn--contact">
+                                        <a (click)="showDialog = !showDialog" class="btn btn-primary btn-lg">Contact
+                                            Us</a>
+                                    </div>
+
+
+                                    <app-buy-now [(visible)]="showDialog">
+                                        <div class="row">
+                                            <div class="col-md-12 contact-form">
+                                                <div>
+                                                    <form class="form-horizontal" action="" method="post">
+                                                        <fieldset>
+                                                            <legend class="text-center">Contact us</legend>
+
+                                                            <!-- Name input-->
+                                                            <div class="form-group">
+                                                                <label class="col-md-3 control-label"
+                                                                    for="name">Name</label>
+                                                                <div class="col-md-9">
+                                                                    <input id="name" name="name" type="text"
+                                                                        placeholder="Your name" class="form-control">
+                                                                </div>
+                                                            </div>
+
+                                                            <!-- Email input-->
+                                                            <div class="form-group">
+                                                                <label class="col-md-3 control-label" for="email">Your
+                                                                    E-mail</label>
+                                                                <div class="col-md-9">
+                                                                    <input id="email" name="email" type="text"
+                                                                        placeholder="Your email" class="form-control">
+                                                                </div>
+                                                            </div>
+
+                                                            <!-- Message body -->
+                                                            <div class="form-group">
+                                                                <label class="col-md-3 control-label" for="message">Your
+                                                                    message</label>
+                                                                <div class="col-md-9">
+                                                                    <textarea class="form-control" id="message"
+                                                                        name="message"
+                                                                        placeholder="Please enter your message here..."
+                                                                        rows="5"></textarea>
+                                                                </div>
+                                                            </div>
+
+                                                            <!-- Form actions -->
+                                                            <div class="form-group">
+                                                                <div class="col-md-12 text-right">
+                                                                    <button type="submit"
+                                                                        class="btn btn-primary btn-lg">Submit</button>
+                                                                </div>
+                                                            </div>
+                                                        </fieldset>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </app-buy-now>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

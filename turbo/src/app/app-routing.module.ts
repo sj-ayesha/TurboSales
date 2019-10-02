@@ -4,13 +4,17 @@ import { HomeComponent } from './home/home.component';
 import { ShopcarsComponent } from './shopcars/shopcars.component';
 import { ServicesComponent } from './services/services.component';
 import { ContactComponent } from './contact/contact.component';
+import { CarDetailComponent } from './car-detail/car-detail.component';
+import { SignupComponent } from './components/signup/signup.component';
 
 
 const routes: Routes = [
   { path:'', component: HomeComponent },
   { path:'shopcars', component: ShopcarsComponent },
   { path:'services', component: ServicesComponent },
-  { path:'contact', component: ContactComponent }
+  { path:'contact', component: ContactComponent },
+  { path:'shopcars/car-detail', component: CarDetailComponent },
+  { path:'signup', component: SignupComponent },
 ];
 
 @NgModule({
