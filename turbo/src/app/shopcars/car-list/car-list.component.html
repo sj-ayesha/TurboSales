@@ -1,0 +1,147 @@
+<div class="row car-row" *ngFor="let cardetail of cardetails">
+    <!-- <div class="card" >
+        <div class="container-fliud">
+            <div class="wrapper row">
+                <div class="preview col-md-4">
+
+                    <div class="preview-pic tab-content">
+                        <div class="tab-pane active" id="pic-1">
+                            <img src="assets\Suzuki-Swift\marutisuzuki-swift.jpg" /></div>
+
+                    </div>
+
+
+                </div>
+                <div class="details col-md-8">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h3 class="product-title">{{ cardetail.title }}</h3>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="more-details"><i class="fa fa-list"></i><a routerLink="/car-details"
+                                    class="hidden-xs">
+                                    More
+                                    details</a></div>
+                        </div>
+                    </div>
+
+                    <div class="row sub">
+                        <div class="power">
+                            <h5>Power:</h5>
+                            <p> {{ cardetail.power }}</p>
+                        </div>
+                        <div class="mileage">
+                            <h5>Mileage:</h5>
+                            <p>{{ cardetail.mileage }}</p>
+                        </div>
+                        <div class="fuel">
+                            <h5>Fuel:</h5>
+                            <p>{{ cardetail.fuel }}</p>
+                        </div>
+                        <div class="year">
+                            <h5>Year:</h5>
+                            <p>{{ cardetail.year }}</p>
+                        </div>
+
+                        <h4>Rs {{cardetail.price }}</h4>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div> -->
+    <div class="col-xs-12 col-md-3 car-img">
+        <img src="{{ cardetail.img }}">
+    </div>
+
+    <div class="col-xs-12 col-md-8 col-md-offset-1 car-detail">
+        <div class="car-title">
+            <h4>{{ cardetail.year }} {{ cardetail.title }}</h4>
+            <h4>${{ cardetail.price }}</h4>
+        </div>
+
+
+        <div class="row">
+            <table class="table table-condensed table-detail">
+                <tbody>
+                    <tr>
+                        <th>Stock No.</th>
+                        <td>{{ cardetail.stockNum }}</td>
+                    </tr>
+                    <tr>
+                        <th>Transmission</th>
+                        <td>{{ cardetail.Transmission }}</td>
+                    </tr>
+                    <tr>
+                        <th>Fuel</th>
+                        <td>{{ cardetail.fuel }}</td>
+                    </tr>
+                    <tr>
+                        <th>Engine</th>
+                        <td>{{ cardetail.engine }}</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="btn--view-detail">
+                <a (click)="showDialog = !showDialog" class="btn btn-primary btn-lg">View Details</a>
+            </div>
+
+
+            <app-buy-now [(visible)]="showDialog">
+                <div class="row car-images">
+                    <div class="col-xs-12 col-md-4">
+                        <img src="../../assets/img/mercedes-benz.jpg">
+                    </div>
+                    <div class="col-xs-12 col-md-8">
+
+                    </div>
+
+                </div>
+            </app-buy-now>
+            <!-- <div class="btn--view-detail">
+                    <a class="btn btn-primary btn-lg" href="#">View Details</a>
+                </div>-->
+    </div>
+    </div> 
+</div>
+
+<!-- <div class="row car-row">
+    <div class="col-xs-12 col-md-3 car-img">
+        <img src="../../assets/img/mercedes-benz.jpg">
+    </div>
+
+    <div class="col-xs-12 col-md-8 col-md-offset-1 car-detail">
+        <div class="car-title">
+            <h4>2015 mercedes-benz cla 250</h4>
+            <h4>$21500</h4>
+        </div>
+
+
+        <div class="row">
+            <table class="table table-condensed table-detail">
+                <tbody>
+                    <tr>
+                        <th>Stock No.</th>
+                        <td>MER001</td>
+                    </tr>
+                    <tr>
+                        <th>Transmission</th>
+                        <td>Automatic</td>
+                    </tr>
+                    <tr>
+                        <th>Fuel</th>
+                        <td>Diesel</td>
+                    </tr>
+                    <tr>
+                        <th>Engine</th>
+                        <td>Turbocharged four-cylinder engine</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="btn--view-detail">
+                <a class="btn btn-primary btn-lg" href="#">View Details</a>
+            </div>
+        </div>
+    </div>
+</div> -->

@@ -21,6 +21,9 @@ import { BrandsComponent } from './components/brands/brands.component';
 import { CarDetailComponent } from './car-detail/car-detail.component';
 import { BuyNowComponent } from './components/buy-now/buy-now.component';
 import { SignupComponent } from './components/signup/signup.component';
+import { FilterCarsComponent } from './shopcars/filter-cars/filter-cars.component';
+import { CarListComponent } from './shopcars/car-list/car-list.component';
+
 
 @NgModule({
   declarations: [
@@ -39,7 +42,9 @@ import { SignupComponent } from './components/signup/signup.component';
     BrandsComponent,
     CarDetailComponent,
     BuyNowComponent,
-    SignupComponent
+    SignupComponent,
+    FilterCarsComponent,
+    CarListComponent
   ],
   imports: [
     BrowserModule,

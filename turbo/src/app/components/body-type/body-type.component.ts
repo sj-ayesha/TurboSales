@@ -7,9 +7,49 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BodyTypeComponent implements OnInit {
 
+  bodyTypes = [{
+    id: 'sedans',
+    img: '../../../assets/img/bodyType/Sedans.png',
+    text: 'Sedans'
+  },
+  {
+    id: 'coupes',
+    img: '../../../assets/img/bodyType/Coupes.png',
+    text: 'Cedans'
+  },
+  {
+    id: 'convertibles',
+    img: '../../../assets/img/bodyType/Convertibles.png',
+    text: 'convertibles'
+  },
+  {
+    id: 'suvs',
+    img: '../../../assets/img/bodyType/Suvs.png',
+    text: 'Suvs'
+  },
+  {
+    id: 'vans',
+    img: '../../../assets/img/bodyType/Vans.png',
+    text: 'Vans'
+  },
+  {
+    id: 'trucks',
+    img: '../../../assets/img/bodyType/truck.png',
+    text: 'Trucks'
+  }
+
+]
+
   constructor() { }
 
   ngOnInit() {
   }
 
+  onChecked(e,index,bodyType) {
+    if (e.target.checked) {
+      bodyType['checkValue'] = true;
+    } else {
+      bodyType['checkValue'] = false;
+    }
+  }
 }

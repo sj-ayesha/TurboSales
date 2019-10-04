@@ -7,9 +7,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ShopcarsComponent implements OnInit {
 
+  filterApplied = {}
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  // selectedPriceRange(arrFromChildFilter): void {
+  //   this.filterApplied = {
+  //     priceRange: arrFromChildFilter
+  //   }
+  // }
+
+  selectedYear(arrFromChildFilter):void {
+    this.filterApplied = {
+      year: arrFromChildFilter
+    }
   }
 
 }

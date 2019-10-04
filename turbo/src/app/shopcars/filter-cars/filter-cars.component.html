@@ -1,0 +1,71 @@
+<div class="col-md-2 filter-section">
+        <h4>5 Vehicle(s) found</h4>
+        <p>Refine your search</p>
+
+        <div class="row filter-list">
+            <div class="col-md-12">
+                <p>Year</p>
+            </div>
+            <div class="col-md-12">
+                <ul>
+                    <li *ngFor="let yearOption of yearOptions">
+                        <input type="checkbox" name="filterYear" value="{{yearOption.value}}" [(ngModel)]= "yearOption.checked" (change)="onFilter()">
+                        <span>{{yearOption.name}}</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- <div class="row filter-list">
+            <div class="col-md-12">
+                <p>Price</p>
+            </div>
+            <div class="col-md-12">
+                <ul>
+                    <li><input type="checkbox"><span>$0 - $1999</span></li>
+                    <li><input type="checkbox"><span>$2000 - $4999</span></li>
+                    <li><input type="checkbox"><span>$5000 - $7999</span></li>
+                    <li><input type="checkbox"><span>$8000 - $11999</span></li>
+                    <li><input type="checkbox"><span>$12000 - $14999</span></li>
+                    <li><input type="checkbox"><span>$15000 - $25000</span></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="row filter-list">
+            <div class="col-md-12">
+                <p>Body Type</p>
+            </div>
+            <div class="col-md-12">
+                <ul>
+                    <li><input type="checkbox"><span>Sedans</span></li>
+                    <li><input type="checkbox"><span>Coupes</span></li>
+                    <li><input type="checkbox"><span>Convertibles</span></li>
+                    <li><input type="checkbox"><span>SUVs</span></li>
+                    <li><input type="checkbox"><span>Vans</span></li>
+                    <li><input type="checkbox"><span>Trucks</span></li>
+                </ul>
+            </div>
+        </div>
+
+
+        <div class="row filter-list">
+            <div class="col-md-12">
+                <p>Make</p>
+            </div>
+            <div class="col-md-12">
+                <ul>
+                    <li><input type="checkbox"><span>Honda</span></li>
+                    <li><input type="checkbox"><span>Acura</span></li>
+                    <li><input type="checkbox"><span>Mercedes</span></li>
+                    <li><input type="checkbox"><span>Kia</span></li>
+                    <li><input type="checkbox"><span>Lamborghini</span></li>
+                    <li><input type="checkbox"><span>Audi</span></li>
+                    <li><input type="checkbox"><span>Ford</span></li>
+                    <li><input type="checkbox"><span>Jeep</span></li>
+                    <li><input type="checkbox"><span>Hyundai</span></li>
+                    <li><input type="checkbox"><span>Volkswagen</span></li>
+                </ul>
+            </div>
+        </div> -->
+    </div>

@@ -29,6 +29,10 @@
                     color: $color-white;
                 }
 
+                p {
+                    color: $color-white;
+                }
+
             }
         }
 
@@ -44,8 +48,13 @@
         }
 
         a {
+            p {
+                color: $color-dark-gray;
+                
+            }
             &:hover {
                 text-decoration: none;
+
             }
 
             h4 {

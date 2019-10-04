@@ -26,6 +26,7 @@
 
     &-box {
         text-align: center;
+        cursor: pointer;
         img {
             width: 100%;
         }
@@ -36,6 +37,20 @@
             text-transform: uppercase;
             color: $color-blue;
         }
+        
+        label {
+            p {
+                font-weight: initial;
+            }
+
+            input:checked {
+                
+            }
+        }
+    }
+
+    &-checkbox {
+        visibility: hidden;
     }
 }
 

@@ -1,0 +1,43 @@
+@import '../../../styles.scss';
+
+.car {
+    &-row {
+        background-color: $color-gray;
+        margin-bottom: 10px;
+    }
+    &-img {
+        img {
+            width: 100%;
+        }
+
+    }
+
+    &-detail {
+        .table-detail {
+            margin-top: 20px;
+
+            @media only screen and (min-device-width: 320px) and (max-device-width: 812px) {
+                max-width: 470px;
+                margin: 20px auto;
+            }
+        }
+
+        .btn--view-detail {
+            text-align: right;
+            padding: 15px 20px;
+        }
+
+    }
+
+    &-title {
+        text-transform: uppercase;
+        color: $color-blue;
+        display: flex;
+        justify-content: space-between;
+         h4 {
+             font-weight: 700;
+         }
+    }
+
+    
+}

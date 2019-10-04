@@ -23,6 +23,10 @@
     }
   }
 
+  &-control {
+    width: 10%;
+  }
+
   &-caption {
     max-width: 270px;
     right: 0;
@@ -35,10 +39,10 @@
       padding: 0 30px;
     }
 
-    @media only screen and (min-width: 768px) {
+    @media only screen and (min-width: 812px) {
       top: 30%;
       max-width: 420px;
-      left: calc(100% - 560px);
+      left: calc(100% - 635px);
     }
 
     .btn-carousel--link {

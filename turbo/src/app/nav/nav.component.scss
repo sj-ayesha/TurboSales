@@ -151,6 +151,13 @@
     }
 }
 
+
+.glyphicon-shopping-cart {
+    @media only screen and (min-device-width: 812px) {
+        padding: 14px 5px !important;
+    }
+}
+
 .header-middle {
     display: flex;
     justify-content: space-between;
