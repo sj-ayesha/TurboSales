@@ -23,6 +23,7 @@ import { BuyNowComponent } from './components/buy-now/buy-now.component';
 import { SignupComponent } from './components/signup/signup.component';
 import { FilterCarsComponent } from './shopcars/filter-cars/filter-cars.component';
 import { CarListComponent } from './shopcars/car-list/car-list.component';
+import { LoginComponent } from './components/login/login.component';
 
 
 @NgModule({
@@ -44,7 +45,8 @@ import { CarListComponent } from './shopcars/car-list/car-list.component';
     BuyNowComponent,
     SignupComponent,
     FilterCarsComponent,
-    CarListComponent
+    CarListComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

@@ -26,6 +26,10 @@
     .service-image {
         display: flex;
         justify-content: center;
+
+        img {
+            width: 100%;
+        }
     }
 
     .tab-content {
@@ -152,7 +156,7 @@
                     height: 1px;
                     background-color: #e7e6e6;
                     position: absolute;
-                    bottom: 215px;
+                    bottom: 240px;
                     left: 0;                
                 }
         
@@ -161,7 +165,7 @@
                     width: 80px;
                     height: 2px;
                     left: 0;
-                    bottom: 215px;
+                    bottom: 240px;
                     position: absolute;
                     background-color: #15518d;
                 }

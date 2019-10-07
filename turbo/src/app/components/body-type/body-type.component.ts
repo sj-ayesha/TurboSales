@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChildren, QueryList, ElementRef, } from '@angular/core';
 
 @Component({
   selector: 'app-body-type',
@@ -42,14 +42,29 @@ export class BodyTypeComponent implements OnInit {
 
   constructor() { }
 
+  @ViewChildren("checkboxes") checkboxes: QueryList<ElementRef>;
+  
+
   ngOnInit() {
   }
 
-  onChecked(e,index,bodyType) {
+  onChecked(e,bodyType) {
     if (e.target.checked) {
       bodyType['checkValue'] = true;
     } else {
       bodyType['checkValue'] = false;
     }
   }
+
+  clearSelection() {
+    this.checkboxes.forEach((element) => {
+      element.nativeElement.checked = false;
+    });
+
+    this.bodyTypes.forEach((bodyType) => {
+      bodyType['checkValue'] = false;
+    });
+  }
+
+  
 }

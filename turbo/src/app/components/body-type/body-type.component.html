@@ -6,9 +6,9 @@
         </div>
     </div>
 
-    <div class="row" id="body-type" >
+    <div class="row body-type-container" id="body-type" >
         <div class="col-xs-6 col-md-2 body-type-box" *ngFor="let bodyType of bodyTypes; let i = index;">
-            <input class="body-type-checkbox" type="checkbox" id="{{ bodyType.id }}" (change)=onChecked($event,i,bodyType)>
+            <input class="body-type-checkbox" type="checkbox" id="{{ bodyType.id }}" (change)=onChecked($event,bodyType) #checkboxes>
             
             <label for="{{ bodyType.id }}"  [ngStyle]="{'background-color':bodyType.checkValue === true ? '#15518d' : ''}">
                 <img src="{{ bodyType.img }}" alt="sedan">
@@ -16,51 +16,6 @@
             </label>
 
         </div>
-        <!-- <div class="col-xs-6 col-md-2 body-type-box">
-            <input type="checkbox" id="coupes">
-            <label for="coupes">
-                    <img src="../../../assets/img/bodyType/Coupes.png" alt="coupes">
-                    
-            <p>Coupes</p>
-            </label>
-
-
-
-        </div>
-        <div class="col-xs-6 col-md-2 body-type-box">
-            <input type="checkbox" id="convertibles">
-            <label for="convertibles">
-                <img src="../../../assets/img/bodyType/Convertibles.png" alt="Convertibles">
-                <p>Convertibles</p>
-            </label>
-
-
-        </div>
-        <div class="col-xs-6 col-md-2 body-type-box">
-            <input type="checkbox" id="suvs">
-            <label for="suvs">
-                    <img src="../../../assets/img/bodyType/Suvs.png" alt="SUVs">
-                    <p>SUVs</p>
-        
-            </label>
-        </div>
-        <div class="col-xs-6 col-md-2 body-type-box">
-            <input type="checkbox" id="vans">
-            <label for="vans">
-                    <img src="../../../assets/img/bodyType/Vans.png" alt="Vans">
-                    <p>Vans</p>
-            </label>
-
-
-        </div>
-        <div class="col-xs-6 col-md-2 body-type-box">
-            <input type="checkbox" id="trucks">
-            <label for="trucks">
-                    <img src="../../../assets/img/bodyType/truck.png" alt="Trucks">
-                    <p>Trucks</p>
-            </label>
-
-        </div> -->
     </div>
 
     <div class="row btn-action">
@@ -69,9 +24,9 @@
                 Start Search
             </a>
         </div>
-        <div class="btn-contact">
-            <a routerLink="/contact" class="btn btn-primary btn-lg">
-                Contact Us
+        <div class="btn-clear">
+            <a class="btn btn-primary btn-lg" (click)= "clearSelection()" >
+                Clear Search
             </a>
         </div>
     </div>

@@ -7,6 +7,7 @@ import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 })
 export class FilterCarsComponent implements OnInit {
 
+
   @Output() filterEmitter = new EventEmitter();
 
   public priceOptions = [
@@ -16,24 +17,46 @@ export class FilterCarsComponent implements OnInit {
     { name: 'Rs500 000 - Rs700 000', value: 'Rs500 000 - Rs700 000', range: { min: 500001, max: 700000 }, checked: false }
   ];
 
+  public brandOptions = [
+    { name: 'Honda', value: 'Honda', checked: true },
+    { name: 'Acura', value: 'Acura', checked: false },
+    { name: 'Mercedes', value: 'Mercedes', checked: false },
+    { name: 'Kia', value: 'Kia', checked: false },
+    { name: 'Lamborghini', value: 'Lamborghini', checked: false },
+    { name: 'Audi', value: 'Audi', checked: false },
+    { name: 'Ford', value: 'Ford', checked: false },
+    { name: 'Jeep', value: 'Jeep', checked: false },
+    { name: 'Hyundai', value: 'Hyundai', checked: false },
+    { name: 'Volkswagen', value: 'Volkswagen', checked: false },
+
+  ];
+
   public yearOptions = [
     { name: '2019', value: '2019', checked: true },
     { name: '2018', value: '2018', checked: false },
-    { name: '2017', value: '2017',  checked: false },
-    { name: '2016', value: '2016', checked: false },
-    { name: '2015', value: '2015', checked: false }
+    { name: '2017', value: '2017', checked: false },
+    { name: '2016', value: '2016', checked: false }
   ];
-
   ngOnInit() {
     this.onFilter();
   }
 
   onFilter() {
-    const arrYearOptions = this.yearOptions.filter((yearOption)=> yearOption.checked);
-    // const arrOptions = this.priceOptions.filter((priceOption) => priceOption.checked);
-    // this.filterEmitter.emit(arrOptions);
-    this.filterEmitter.emit(arrYearOptions);
+    const arrOptions = this.priceOptions.filter((priceOption) => priceOption.checked);
+    const arrOptionsBrand = this.brandOptions.filter((brandOption) => brandOption.checked);
+    const arrOptionsYear = this.yearOptions.filter((yearOption) => yearOption.checked);
+
+    let arrOfObj = [arrOptions, arrOptionsBrand, arrOptionsYear];
+    this.filterEmitter.emit(arrOfObj);
+    // console.log(arrOfObj);
+    // this.filterEmitter.emit(arrOptionsBrand);
   }
+  
+  // onFilterBrand() {
+  //   const arrOptions = this.brandOptions.filter((brandOption) => brandOption.checked);
+  //   this.filterEmitter.emit(arrOptions);
+  // }
+
+
 
 }
-                     

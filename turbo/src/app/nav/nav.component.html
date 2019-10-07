@@ -1,39 +1,5 @@
 <div class="row nav-container">
     <header>
-        <div class="header-top">
-            <div class="container-fluid">
-                <div class="row">
-                    <!-- Header Top Left -->
-                    <div class="header-top-left col-md-6 col-sm-12 col-xs-12">
-                        <div class="header-top-left__number">
-                            <p class="blink-effect">Toll Free:
-                                <span>1-888-879-4994</span>
-                            </p>
-                        </div>
-                        <div class="arrow-right"></div>
-
-                        <div class="header-top-left__social">
-                            <ul class="address_details">
-                                <li> <a class="icon" href="https://www.facebook.com/" target="_blank">
-                                        <i class="fab fa-facebook-square"></i></a></li>
-                                <li> <a class="icon" href="www.twitter.com" target="_blank"><i
-                                            class="fab fa-twitter-square"></i></a> </li>
-                                <li> <a href="/shopcars" class="button_h">Buy Your Car</a> </li>
-
-                            </ul>
-                        </div>
-                    </div>
-                    <!-- Header Top Right Social -->
-                    <div class="header-top-right col-md-6 col-sm-6">
-                        <div class="pull-right">
-                            <ul class="listnone">
-                                <li> <a href="/shopcars" class="button_h">Buy Your Car</a> </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
         <nav class="navbar navbar-inverse">
             <div class="container-fluid">
                 <div class="navbar-header">
@@ -92,10 +58,15 @@
                         <li><a routerLink="/contact">Contact Us</a></li>
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
-                        <li><a href="/signup"><span class="glyphicon glyphicon-user"></span> Sign Up
+                        <li><a routerLink="/signup"><span class="glyphicon glyphicon-user"></span> Sign Up
                                 / Login</a></li>
-                        <li><a (click)="showDialog = !showDialog" class="glyphicon glyphicon-shopping-cart"><span
-                                    class="cart-number">1</span> Cart</a>
+                        <li>
+                            <a (click)="showDialog = !showDialog">
+                                <span class="fa-stack fa-2x has-badge" data-count="5">
+                                    <i class="glyphicon glyphicon-shopping-cart"></i>
+                                </span>
+                            </a>
+                        </li>
                     </ul>
                 </div>
 

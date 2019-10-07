@@ -3,16 +3,16 @@
 .service {
     &-box {
         border-right: 1px solid $color-gray;
-        padding: 110px 220px;
-        border-bottom: 1px solid $color-gray;
+        padding: 110px 55px;
 
         @media only screen and (min-device-width: 320px) and (max-device-width: 812px) {
             border-right: 0;
             padding: 25px 35px;
+            border-bottom: 1px solid $color-gray;
         }
 
         @media screen and (min-device-width: 1200px) and (max-device-width: 1600px) and (-webkit-min-device-pixel-ratio: 1) {
-            padding: 65px 220px;
+            padding: 65px 55px;
         }
 
 
@@ -43,7 +43,6 @@
             
             @media only screen and (min-width: 812px) {
                 border: none;
-                min-height: 420px;
             }
         }
 

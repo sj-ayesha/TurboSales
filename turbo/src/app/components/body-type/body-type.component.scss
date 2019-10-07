@@ -1,6 +1,11 @@
 @import '../../../styles.scss';
 
 .body-type {
+
+    &-container {
+        max-width: 1820px;
+        margin: 0 auto;
+    }
     &-heading {
         text-align: center;
 
@@ -27,6 +32,14 @@
     &-box {
         text-align: center;
         cursor: pointer;
+
+        &:hover {
+            background-color: $color-blue;
+            
+            p {
+                color: $color-white;
+            }
+        }
         img {
             width: 100%;
         }
@@ -70,7 +83,7 @@
         }
     }
 
-    .btn-contact {
+    .btn-clear {
         .btn-primary {
             background-color: $color-white;
             color: $color-blue;

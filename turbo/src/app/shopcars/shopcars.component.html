@@ -6,7 +6,7 @@
     </div>
 
     <div class="row car-list">
-        <app-filter-cars (filterEmitter)="selectedYear($event)"></app-filter-cars>
+        <app-filter-cars (filterEmitter)="selectedPriceRange($event)"></app-filter-cars>
         <div class="col-xs-12 col-md-9 col-md-offset-1 car-list-section">
             <div class="row sorting-row">
                 <div class="col-xs-12 col-md-12 sorting-section">
@@ -46,4 +46,26 @@
 
         </div>
     </div>
+
+    <!-- <div class="container-fluid">
+        <div class="row">
+            <app-filter-cars (filterEmitter)="selectedPriceRange($event)"></app-filter-cars>
+            <div class="col-sm-9">
+                <div class="container">
+                    <app-car-list [currentFilter]="filterApplied"></app-car-list>
+                </div>
+            </div>
+        </div>
+    </div> -->
+
+    <!-- <div class="container-fluid">
+            <div class="row">
+              <app-filter-cars (filterEmitter)="selectedPriceRange($event)"></app-filter-cars>
+              <div class="col-sm-9">
+                <div class="container">
+                  <app-car-list [currentFilter]="filterApplied"></app-car-list>
+                </div>
+              </div>
+            </div>
+          </div> -->
 </div>

@@ -1,22 +1,65 @@
 <div class="col-md-2 filter-section">
-        <h4>5 Vehicle(s) found</h4>
-        <p>Refine your search</p>
+    <h4>5 Vehicle(s) found</h4>
+    <p>Refine your search</p>
 
-        <div class="row filter-list">
+    <div class="row filter-list">
+        <div class="col-md-12">
+            <p>Year</p>
+        </div>
+        <div class="col-md-12">
+            <ul *ngFor="let yearOption of yearOptions">
+                <li>
+                        <input type="checkbox" name="checkbox" value="{{yearOption.value}}"
+                        [(ngModel)]="yearOption.checked" (change)="onFilter()">
+                    <span>{{yearOption.name}}</span>
+                </li>
+            </ul>
+
+            <!-- <li *ngFor="let brandOption of brandOptions">
+                    <input type="checkbox" name="checkbox" value="{{brandOption.value}}"
+                    [(ngModel)]="brandOption.checked" (change)="onFilter()">
+                <span>{{brandOption.name}}</span>
+            </li> -->
+            <!-- <div class="checkbox" *ngFor="let brandOption of brandOptions">
+                <label>
+                    <input type="checkbox" name="checkbox" value="{{brandOption.value}}"
+                        [(ngModel)]="brandOption.checked" (change)="onFilter()">
+                    {{brandOption.name}}
+                </label>
+            </div> -->
+
+            <!-- <div class="checkbox" *ngFor="let yearOption of yearOptions">
+                <label>
+                    <input type="checkbox" name="checkbox" value="{{yearOption.value}}" [(ngModel)]="yearOption.checked"
+                        (change)="onFilter()">
+                    {{yearOption.name}}
+                </label>
+            </div> -->
+        </div>
+    </div>
+
+    <div class="row filter-list">
             <div class="col-md-12">
-                <p>Year</p>
+                <p>Make</p>
             </div>
             <div class="col-md-12">
-                <ul>
-                    <li *ngFor="let yearOption of yearOptions">
-                        <input type="checkbox" name="filterYear" value="{{yearOption.value}}" [(ngModel)]= "yearOption.checked" (change)="onFilter()">
-                        <span>{{yearOption.name}}</span>
-                    </li>
+                <ul *ngFor="let brandOption of brandOptions">
+                    <li ><input type="checkbox" value="{{brandOption.value}}"
+                        [(ngModel)]="brandOption.checked" (change)="onFilter()"><span>{{brandOption.name}}</span></li>
+                    <!-- <li><input type="checkbox"><span>Acura</span></li>
+                    <li><input type="checkbox"><span>Mercedes</span></li>
+                    <li><input type="checkbox"><span>Kia</span></li>
+                    <li><input type="checkbox"><span>Lamborghini</span></li>
+                    <li><input type="checkbox"><span>Audi</span></li>
+                    <li><input type="checkbox"><span>Ford</span></li>
+                    <li><input type="checkbox"><span>Jeep</span></li>
+                    <li><input type="checkbox"><span>Hyundai</span></li>
+                    <li><input type="checkbox"><span>Volkswagen</span></li> -->
                 </ul>
             </div>
         </div>
 
-        <!-- <div class="row filter-list">
+    <!-- <div class="row filter-list">
             <div class="col-md-12">
                 <p>Price</p>
             </div>
@@ -68,4 +111,4 @@
                 </ul>
             </div>
         </div> -->
-    </div>
+</div>
