@@ -9,8 +9,8 @@
         <div class="col-md-12">
             <ul *ngFor="let yearOption of yearOptions">
                 <li>
-                        <input type="checkbox" name="checkbox" value="{{yearOption.value}}"
-                        [(ngModel)]="yearOption.checked" (change)="onFilter()">
+                    <input type="checkbox" name="checkbox" value="{{yearOption.value}}" [(ngModel)]="yearOption.checked"
+                        (change)="onFilter()" #checkboxes>
                     <span>{{yearOption.name}}</span>
                 </li>
             </ul>
@@ -39,14 +39,14 @@
     </div>
 
     <div class="row filter-list">
-            <div class="col-md-12">
-                <p>Make</p>
-            </div>
-            <div class="col-md-12">
-                <ul *ngFor="let brandOption of brandOptions">
-                    <li ><input type="checkbox" value="{{brandOption.value}}"
-                        [(ngModel)]="brandOption.checked" (change)="onFilter()"><span>{{brandOption.name}}</span></li>
-                    <!-- <li><input type="checkbox"><span>Acura</span></li>
+        <div class="col-md-12">
+            <p>Make</p>
+        </div>
+        <div class="col-md-12">
+            <ul *ngFor="let brandOption of brandOptions">
+                <li><input type="checkbox" value="{{brandOption.value}}" [(ngModel)]="brandOption.checked"
+                        (change)="onFilter()" #checkboxes><span>{{brandOption.name}}</span></li>
+                <!-- <li><input type="checkbox"><span>Acura</span></li>
                     <li><input type="checkbox"><span>Mercedes</span></li>
                     <li><input type="checkbox"><span>Kia</span></li>
                     <li><input type="checkbox"><span>Lamborghini</span></li>
@@ -55,9 +55,30 @@
                     <li><input type="checkbox"><span>Jeep</span></li>
                     <li><input type="checkbox"><span>Hyundai</span></li>
                     <li><input type="checkbox"><span>Volkswagen</span></li> -->
-                </ul>
-            </div>
+            </ul>
         </div>
+    </div>
+
+    <div class="row filter-list">
+        <div class="col-md-12">
+            <p>Price</p>
+        </div>
+        <div class="col-md-12">
+            <ul *ngFor="let priceOption of priceOptions">
+                <li><input type="checkbox" value="{{priceOption.value}}" [(ngModel)]="priceOption.checked"
+                        (change)="onFilter()" #checkboxes><span>{{priceOption.name}}</span></li>
+                <!-- <li><input type="checkbox"><span>Acura</span></li>
+                    <li><input type="checkbox"><span>Mercedes</span></li>
+                    <li><input type="checkbox"><span>Kia</span></li>
+                    <li><input type="checkbox"><span>Lamborghini</span></li>
+                    <li><input type="checkbox"><span>Audi</span></li>
+                    <li><input type="checkbox"><span>Ford</span></li>
+                    <li><input type="checkbox"><span>Jeep</span></li>
+                    <li><input type="checkbox"><span>Hyundai</span></li>
+                    <li><input type="checkbox"><span>Volkswagen</span></li> -->
+            </ul>
+        </div>
+    </div>
 
     <!-- <div class="row filter-list">
             <div class="col-md-12">

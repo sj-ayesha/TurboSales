@@ -9,7 +9,7 @@ export class CarListComponent implements OnInit, OnChanges {
 
   @Input() currentFilter: any;
 
-  arr: any[] = [];
+  // arr: any[] = [];
   cardetails: any[];
   constructor() {
     this.initialiseCarDetails();
@@ -19,158 +19,63 @@ export class CarListComponent implements OnInit, OnChanges {
   }
 
   ngOnChanges(changes: SimpleChanges) {
-
+    //console.warn(changes)
     if (changes.currentFilter) {
       const priceRange = changes.currentFilter.currentValue.priceRange;
       const brand = changes.currentFilter.currentValue.brand;
       const year = changes.currentFilter.currentValue.year;
 
-      // if (priceRange.length) {
-      //   const minPrice = priceRange[0].range.min;
-      //   const maxPrice = priceRange[priceRange.length - 1].range.max;
-
-      //   this.initialiseCarDetails();
-
-      //   this.cardetails = this.cardetails.filter((carDetail) => {
-      //     if (carDetail.price >= minPrice && carDetail.price <= maxPrice) {
-      //       return carDetail;
-      //     }
-      //   }) || [];
-      // }
       this.initialiseCarDetails();
 
-      this.arr = [];
-      if (brand.length && year.length) {
-       
+      // FOR PRICE RANGE
+      if (priceRange.length) {
+        const minPrice = priceRange[0].range.min;
+        const maxPrice = priceRange[priceRange.length - 1].range.max;
 
-        this.cardetails.filter((detail) => {
+        this.cardetails = this.cardetails.filter((carDetail) => {
+          if ( priceRange.length && carDetail.price >= minPrice && carDetail.price <= maxPrice) {
+            return carDetail;
+          }
+        }) || [];
 
-
-          brand.filter(element => {
-            console.log(detail.title),
-              console.log(element.name)
-            if (detail.title == element.name) {
-              this.arr.push(detail);
-            }
-          });
-
-          year.filter(element => {
-            console.log(detail.year),
-              console.log(element.name)
-            if (detail.year == element.name) {
-              this.arr.push(detail);
-            }
-          });
-
-          console.log('both');
-
-          //return detail.title == brand[0].name;
-        })
-
-        console.log('arr', this.arr);
       }
 
+      // FOR YEAR
+      if (year.length) {
 
-      else if (year.length) {
-        this.initialiseCarDetails();
+        const arrayYears = year.map((yearObj) => {
+          // tslint:disable-next-line: radix
+          return (yearObj.value);
 
-        this.arr = [];
+        });
 
-        this.cardetails.filter((detail) => {
-
-
-          year.filter(element => {
-            console.log(detail.year),
-              console.log(element.name)
-            if (detail.year == element.name) {
-              this.arr.push(detail);
-            }
-          });
-
-          //return detail.title == brand[0].name;
-        })
-
-        console.log('arr', this.arr);
-        console.log('year only');
+        this.cardetails = this.cardetails.filter((cardetail) => {
+          if (arrayYears.includes(cardetail.year)) {
+            console.log('year:', cardetail)
+            return cardetail;
+          }
+        });
       }
 
-      else if (brand.length) {
-        this.initialiseCarDetails();
+      // FOR BRAND
+      if (brand.length) {
+        const arrBrandNames = brand.map((brandDetail) => {
+          return brandDetail.name.toLowerCase();
+        });
 
-        this.arr = [];
-
-        this.cardetails.filter((detail) => {
-
-
-          brand.filter(element => {
-            console.log(detail.title),
-              console.log(element.name)
-            if (detail.title == element.name) {
-              this.arr.push(detail);
-            }
-          });
-
-          //return detail.title == brand[0].name;
-        })
-
-        console.log('arr', this.arr);
-        console.log('brand only');
+        this.cardetails = this.cardetails.filter((cardetail) => {
+          if (arrBrandNames.includes(cardetail.title.toLowerCase())) {
+            return cardetail;
+          }
+        });
       }
+
     }
+
   }
 
-  // private initialiseCarDetails(): void {
-  //   this.cardetails = [{
-  //     title: 'Suzuki',
-  //     power: '69bhp@6000rpm',
-  //     mileage: 'km/liter',
-  //     fuel: 'Diesel',
-  //     year: '2019',
-  //     price: 100000
-  //   },
-  //   {
-  //     title: 'Nissan',
-  //     power: '69bhp@6000rpm',
-  //     mileage: 'km/liter',
-  //     fuel: 'Diesel',
-  //     year: '2015',
-  //     price: 300000
-  //   },
-  //   {
-  //     title: 'Kia',
-  //     power: '69bhp@6000rpm',
-  //     mileage: 'km/liter',
-  //     fuel: 'Diesel',
-  //     year: '2019',
-  //     price: 300000
-  //   },
-  //   {
-  //     title: 'Kia',
-  //     power: '69bhp@6000rpm',
-  //     mileage: 'km/liter',
-  //     fuel: 'Diesel',
-  //     year: '2017',
-  //     price: 300000
-  //   },
-  //   {
-  //     title: 'Kia',
-  //     power: '69bhp@6000rpm',
-  //     mileage: 'km/liter',
-  //     fuel: 'Diesel',
-  //     year: '2018',
-  //     price: 300000
-  //   },
-  //   {
-  //     title: 'Mitsubishi',
-  //     power: '69bhp@6000rpm',
-  //     mileage: 'km/liter',
-  //     fuel: 'Petrol',
-  //     year: '2011',
-  //     price: 500000
-  //   }];
-  // }
-
-  initialiseCarDetails(): void {
+  
+  initialiseCarDetails() {
     this.cardetails = [{
       img: '../../assets/img/mercedes-benz.jpg',
       title: 'MERCEDES-BENZ CLA 250',
@@ -213,12 +118,12 @@ export class CarListComponent implements OnInit, OnChanges {
     },
     {
       img: '../../assets/img/mercedes-benz.jpg',
-      title: 'Honda Civic',
+      title: 'Honda',
       stockNum: 'HON001',
       Transmission: 'Automatic',
       fuel: 'Diesel',
       engine: 'Turbochargedengine',
-      year: '2017',
+      year: '2019',
       price: 10500
     }];
   }

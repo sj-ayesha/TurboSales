@@ -1,4 +1,4 @@
-import { Component, OnInit, EventEmitter, Output } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output, ViewChildren, QueryList, ElementRef } from '@angular/core';
 
 @Component({
   selector: 'app-filter-cars',
@@ -9,6 +9,7 @@ export class FilterCarsComponent implements OnInit {
 
 
   @Output() filterEmitter = new EventEmitter();
+  @ViewChildren("checkboxes") checkboxes: QueryList<ElementRef>;
 
   public priceOptions = [
     { name: 'Rs0 - Rs100 000', value: 'Rs0 - Rs100 000', checked: true, range: { min: 0, max: 100000 } },
@@ -39,6 +40,7 @@ export class FilterCarsComponent implements OnInit {
   ];
   ngOnInit() {
     this.onFilter();
+
   }
 
   onFilter() {
@@ -48,8 +50,7 @@ export class FilterCarsComponent implements OnInit {
 
     let arrOfObj = [arrOptions, arrOptionsBrand, arrOptionsYear];
     this.filterEmitter.emit(arrOfObj);
-    // console.log(arrOfObj);
-    // this.filterEmitter.emit(arrOptionsBrand);
+    console.log(arrOfObj);
   }
   
   // onFilterBrand() {
