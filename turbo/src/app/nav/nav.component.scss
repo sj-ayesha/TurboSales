@@ -314,6 +314,12 @@ header {
                         font-weight: 700;
                         padding-top: 10px;
                     }
+
+                    &.nav-link.active {
+                        border-top: 5px solid $color-white;
+                        font-weight: 700;
+                        padding-top: 10px;
+                    }
                 }
             }
         }
