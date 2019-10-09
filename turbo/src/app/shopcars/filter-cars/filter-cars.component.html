@@ -14,27 +14,6 @@
                     <span>{{yearOption.name}}</span>
                 </li>
             </ul>
-
-            <!-- <li *ngFor="let brandOption of brandOptions">
-                    <input type="checkbox" name="checkbox" value="{{brandOption.value}}"
-                    [(ngModel)]="brandOption.checked" (change)="onFilter()">
-                <span>{{brandOption.name}}</span>
-            </li> -->
-            <!-- <div class="checkbox" *ngFor="let brandOption of brandOptions">
-                <label>
-                    <input type="checkbox" name="checkbox" value="{{brandOption.value}}"
-                        [(ngModel)]="brandOption.checked" (change)="onFilter()">
-                    {{brandOption.name}}
-                </label>
-            </div> -->
-
-            <!-- <div class="checkbox" *ngFor="let yearOption of yearOptions">
-                <label>
-                    <input type="checkbox" name="checkbox" value="{{yearOption.value}}" [(ngModel)]="yearOption.checked"
-                        (change)="onFilter()">
-                    {{yearOption.name}}
-                </label>
-            </div> -->
         </div>
     </div>
 
@@ -46,15 +25,6 @@
             <ul *ngFor="let brandOption of brandOptions">
                 <li><input type="checkbox" value="{{brandOption.value}}" [(ngModel)]="brandOption.checked"
                         (change)="onFilter()" #checkboxes><span>{{brandOption.name}}</span></li>
-                <!-- <li><input type="checkbox"><span>Acura</span></li>
-                    <li><input type="checkbox"><span>Mercedes</span></li>
-                    <li><input type="checkbox"><span>Kia</span></li>
-                    <li><input type="checkbox"><span>Lamborghini</span></li>
-                    <li><input type="checkbox"><span>Audi</span></li>
-                    <li><input type="checkbox"><span>Ford</span></li>
-                    <li><input type="checkbox"><span>Jeep</span></li>
-                    <li><input type="checkbox"><span>Hyundai</span></li>
-                    <li><input type="checkbox"><span>Volkswagen</span></li> -->
             </ul>
         </div>
     </div>
@@ -67,69 +37,18 @@
             <ul *ngFor="let priceOption of priceOptions">
                 <li><input type="checkbox" value="{{priceOption.value}}" [(ngModel)]="priceOption.checked"
                         (change)="onFilter()" #checkboxes><span>{{priceOption.name}}</span></li>
-                <!-- <li><input type="checkbox"><span>Acura</span></li>
-                    <li><input type="checkbox"><span>Mercedes</span></li>
-                    <li><input type="checkbox"><span>Kia</span></li>
-                    <li><input type="checkbox"><span>Lamborghini</span></li>
-                    <li><input type="checkbox"><span>Audi</span></li>
-                    <li><input type="checkbox"><span>Ford</span></li>
-                    <li><input type="checkbox"><span>Jeep</span></li>
-                    <li><input type="checkbox"><span>Hyundai</span></li>
-                    <li><input type="checkbox"><span>Volkswagen</span></li> -->
             </ul>
         </div>
     </div>
 
-    <!-- <div class="row filter-list">
-            <div class="col-md-12">
-                <p>Price</p>
-            </div>
-            <div class="col-md-12">
-                <ul>
-                    <li><input type="checkbox"><span>$0 - $1999</span></li>
-                    <li><input type="checkbox"><span>$2000 - $4999</span></li>
-                    <li><input type="checkbox"><span>$5000 - $7999</span></li>
-                    <li><input type="checkbox"><span>$8000 - $11999</span></li>
-                    <li><input type="checkbox"><span>$12000 - $14999</span></li>
-                    <li><input type="checkbox"><span>$15000 - $25000</span></li>
-                </ul>
-            </div>
+    <div class="row filter-list">
+        <div class="col-md-12">
+            <p>Body Type</p>
         </div>
-
-        <div class="row filter-list">
-            <div class="col-md-12">
-                <p>Body Type</p>
-            </div>
-            <div class="col-md-12">
-                <ul>
-                    <li><input type="checkbox"><span>Sedans</span></li>
-                    <li><input type="checkbox"><span>Coupes</span></li>
-                    <li><input type="checkbox"><span>Convertibles</span></li>
-                    <li><input type="checkbox"><span>SUVs</span></li>
-                    <li><input type="checkbox"><span>Vans</span></li>
-                    <li><input type="checkbox"><span>Trucks</span></li>
-                </ul>
-            </div>
+        <div class="col-md-12">
+            <ul *ngFor="let bodyTypeOption of bodyTypeOptions">
+                <li><input type="checkbox" value="{{bodyTypeOption.value}}" [(ngModel)]="bodyTypeOption.checked" (change)="onFilter()" #checkboxes><span>{{bodyTypeOption.name}}</span></li>
+            </ul>
         </div>
-
-
-        <div class="row filter-list">
-            <div class="col-md-12">
-                <p>Make</p>
-            </div>
-            <div class="col-md-12">
-                <ul>
-                    <li><input type="checkbox"><span>Honda</span></li>
-                    <li><input type="checkbox"><span>Acura</span></li>
-                    <li><input type="checkbox"><span>Mercedes</span></li>
-                    <li><input type="checkbox"><span>Kia</span></li>
-                    <li><input type="checkbox"><span>Lamborghini</span></li>
-                    <li><input type="checkbox"><span>Audi</span></li>
-                    <li><input type="checkbox"><span>Ford</span></li>
-                    <li><input type="checkbox"><span>Jeep</span></li>
-                    <li><input type="checkbox"><span>Hyundai</span></li>
-                    <li><input type="checkbox"><span>Volkswagen</span></li>
-                </ul>
-            </div>
-        </div> -->
+    </div>
 </div>

@@ -13,11 +13,12 @@ export class ShopcarsComponent implements OnInit {
   ngOnInit() {
   }
 
-  selectedPriceRange(arr): void {
+  selectedFilter(arr): void {
     this.filterApplied = {
       priceRange: arr[0],
       brand: arr[1],
-      year: arr[2]
+      year: arr[2],
+      bodyType: arr[3]
     };
   }
 

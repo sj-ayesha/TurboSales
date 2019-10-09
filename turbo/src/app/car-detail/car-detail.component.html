@@ -1,13 +1,13 @@
 <div class="container-fluid car-detail-container">
     <div class="row title-row">
         <div class="col-xs-12 col-md-12">
-            <h2>2015 mercedes-benz cla 250</h2>
+            <h2>{{carDetails[0].year}} {{carDetails[0].title}} {{carDetails[0].series}}</h2>
         </div>
     </div>
 
     <div class="row back-action">
         <div class="col-xs-12 col-md-12">
-            <a href="#">
+            <a (click)="goToCars()">
                 <i class="fas fa-angle-double-left"></i>
                 <span>Back to shop cars</span>
             </a>
@@ -16,7 +16,8 @@
 
     <div class="row car-images">
         <div class="col-xs-12 col-md-4">
-            <img src="../../assets/img/mercedes-benz.jpg">
+            <ngx-gallery [options]="galleryOptions" [images]="galleryImages"></ngx-gallery>
+            <!-- <img src="{{carDetails[0].img}}"> -->
         </div>
         <div class="col-xs-12 col-md-7 col-md-offset-1 car-overview">
             <div class="row">
@@ -118,3 +119,4 @@
             </div>
         </div>
     </div>
+</div>

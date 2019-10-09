@@ -271,6 +271,7 @@ header {
             bottom: -4px;
             width: 50%;
             height: 5px;
+            left: -5px;
             background: #ffffff;
             -webkit-transform: skewX(-45deg);
             -moz-transform: skewX(-45deg);
@@ -311,6 +312,7 @@ header {
                     &:hover {
                         border-top: 5px solid $color-white;
                         font-weight: 700;
+                        padding-top: 10px;
                     }
                 }
             }

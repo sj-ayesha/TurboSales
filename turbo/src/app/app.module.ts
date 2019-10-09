@@ -3,6 +3,8 @@ import { SlickCarouselModule } from 'ngx-slick-carousel';
 import { BrowserModule } from "@angular/platform-browser";
 import { FormsModule } from "@angular/forms";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import 'hammerjs';
+import { NgxGalleryModule } from 'ngx-gallery';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -53,7 +55,8 @@ import { LoginComponent } from './components/login/login.component';
     AppRoutingModule,
     SlickCarouselModule,
     FormsModule, 
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    NgxGalleryModule
   ],
   providers: [],
   bootstrap: [AppComponent]

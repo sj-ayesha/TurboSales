@@ -6,84 +6,25 @@
         </div>
     </div>
     <div class="row featured-container--cars">
-        <div class="col-xs-12 col-md-3 featured-box">
+        <div class="col-xs-12 col-md-3 featured-box" *ngFor="let car of carDetails">
             <a href="#">
                 <div class="featured-cars-price">
-                    <img src="../../../assets/img/Carousel/mercedes.jpg" alt="">
+                    <img src="{{car.img}}" alt="">
                     <div class="text-block">
-                        <p>Price: $21500</p>
+                        <p>Price: ${{car.price}}</p>
                     </div>
                 </div>
 
-                <h4>2015 Mercedes-Benz CLA 250</h4>
+                <h4>{{car.year}} {{car.title}} {{car.series}}</h4>
                 <div class="miles">
                     <i class="fa fa-dashboard"></i>
-                    <span>1,800 miles</span>
+                    <span>{{car.miles}} miles</span>
                 </div>
             </a>
             <div class="btn--view-detail">
-                <a class="btn btn-primary btn-lg" href="#">View Details</a>
-            </div>
-
-
-
-        </div>
-        <div class="col-xs-12 col-md-3 featured-box">
-            <a href="#">
-                <div class="featured-cars-price">
-                    <img src="../../../assets/img/Carousel/mercedes.jpg" alt="">
-                    <div class="text-block">
-                        <p>Price: $21500</p>
-                    </div>
-                </div>
-                <h4>2015 Mercedes-Benz CLA 250</h4>
-                <div class="miles">
-                    <i class="fa fa-dashboard"></i>
-                    <span>1,800 miles</span>
-                </div>
-            </a>
-            <div class="btn--view-detail">
-                <a class="btn btn-primary btn-lg" href="#">View Details</a>
+                <a class="btn btn-primary btn-lg" (click)="onSelect(car.id)">View Details</a>
             </div>
         </div>
-        <div class="col-xs-12 col-md-3 featured-box">
-            <a href="#">
-                <div class="featured-cars-price">
-                    <img src="../../../assets/img/Carousel/mercedes.jpg" alt="">
-                    <div class="text-block">
-                        <p>Price: $21500</p>
-                    </div>
-                </div>
-                <h4>2015 Mercedes-Benz CLA 250</h4>
-                <div class="miles">
-                    <i class="fa fa-dashboard"></i>
-                    <span>1,800 miles</span>
-                </div>
-            </a>
-            <div class="btn--view-detail">
-                <a class="btn btn-primary btn-lg" href="#">View Details</a>
-            </div>
-        </div>
-
-        <div class="col-xs-12 col-md-3 featured-box">
-            <a href="#">
-                <div class="featured-cars-price">
-                    <img src="../../../assets/img/Carousel/mercedes.jpg" alt="">
-                    <div class="text-block">
-                        <p>Price: $21500</p>
-                    </div>
-                </div>
-                <h4>2015 Mercedes-Benz CLA 250</h4>
-                <div class="miles">
-                    <i class="fa fa-dashboard"></i>
-                    <span>1,800 miles</span>
-                </div>
-            </a>
-            <div class="btn--view-detail">
-                <a class="btn btn-primary btn-lg" href="#">View Details</a>
-            </div>
-        </div>
-
     </div>
 
     <div class="view-more-container">

@@ -1,96 +1,39 @@
-
 <div class="row car-row" *ngFor="let cardetail of cardetails">
-        <div class="col-xs-12 col-md-3 car-img">
-            <img src="{{ cardetail.img }}">
-        </div>
-    
-        <div class="col-xs-12 col-md-8 col-md-offset-1 car-detail">
-            <div class="car-title">
-                <h4>{{ cardetail.year }} {{ cardetail.title }}</h4>
-                <h4>${{ cardetail.price }}</h4>
-            </div>
-    
-    
-            <div class="row">
-                <table class="table table-condensed table-detail">
-                    <tbody>
-                        <tr>
-                            <th>Stock No.</th>
-                            <td>{{ cardetail.stockNum }}</td>
-                        </tr>
-                        <tr>
-                            <th>Transmission</th>
-                            <td>{{ cardetail.Transmission }}</td>
-                        </tr>
-                        <tr>
-                            <th>Fuel</th>
-                            <td>{{ cardetail.fuel }}</td>
-                        </tr>
-                        <tr>
-                            <th>Engine</th>
-                            <td>{{ cardetail.engine }}</td>
-                        </tr>
-                    </tbody>
-                </table>
-                <div class="btn--view-detail">
-                    <a routerLink="/shopcars/car-detail" class="btn btn-primary btn-lg">View Details</a>
-                </div>
-    
-    
-                <app-buy-now [(visible)]="showDialog">
-                    <div class="row car-images">
-                        <div class="col-xs-12 col-md-4">
-                            <img src="../../assets/img/mercedes-benz.jpg">
-                        </div>
-                        <div class="col-xs-12 col-md-8">
-    
-                        </div>
-    
-                    </div>
-                </app-buy-now>
-                <!-- <div class="btn--view-detail">
-                        <a class="btn btn-primary btn-lg" href="#">View Details</a>
-                    </div>-->
-        </div>
-        </div> 
+    <div class="col-xs-12 col-md-3 car-img">
+        <img src="{{ cardetail.img }}">
     </div>
-    
-    <!-- <div class="row car-row">
-        <div class="col-xs-12 col-md-3 car-img">
-            <img src="../../assets/img/mercedes-benz.jpg">
+
+    <div class="col-xs-12 col-md-8 col-md-offset-1 car-detail">
+        <div class="car-title">
+            <h4>{{ cardetail.year }} {{ cardetail.title }} {{ cardetail.series }}</h4>
+            <h4>${{ cardetail.price }}</h4>
         </div>
-    
-        <div class="col-xs-12 col-md-8 col-md-offset-1 car-detail">
-            <div class="car-title">
-                <h4>2015 mercedes-benz cla 250</h4>
-                <h4>$21500</h4>
-            </div>
-    
-    
-            <div class="row">
-                <table class="table table-condensed table-detail">
-                    <tbody>
-                        <tr>
-                            <th>Stock No.</th>
-                            <td>MER001</td>
-                        </tr>
-                        <tr>
-                            <th>Transmission</th>
-                            <td>Automatic</td>
-                        </tr>
-                        <tr>
-                            <th>Fuel</th>
-                            <td>Diesel</td>
-                        </tr>
-                        <tr>
-                            <th>Engine</th>
-                            <td>Turbocharged four-cylinder engine</td>
-                        </tr>
-                    </tbody>
-                </table>
-                <div class="btn--view-detail">
-                    <a class="btn btn-primary btn-lg" href="#">View Details</a>
-                </div>
+
+
+        <div class="row">
+            <table class="table table-condensed table-detail">
+                <tbody>
+                    <tr>
+                        <th>Stock No.</th>
+                        <td>{{ cardetail.stockNum }}</td>
+                    </tr>
+                    <tr>
+                        <th>Transmission</th>
+                        <td>{{ cardetail.Transmission }}</td>
+                    </tr>
+                    <tr>
+                        <th>Fuel</th>
+                        <td>{{ cardetail.fuel }}</td>
+                    </tr>
+                    <tr>
+                        <th>Engine</th>
+                        <td>{{ cardetail.engine }}</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="btn--view-detail">
+                <a class="btn btn-primary btn-lg" (click)="onSelect(cardetail.id)">View Details</a>
             </div>
         </div>
-    </div> -->
+    </div>
+</div>
