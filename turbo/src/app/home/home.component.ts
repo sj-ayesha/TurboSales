@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -6,10 +7,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
+  success: string;
 
-  constructor() { }
+  constructor(private route: ActivatedRoute) { }
 
   ngOnInit() {
+
+    // show success message on registration
+    if (this.route.snapshot.queryParams['registered']) {
+      this.success = 'Registration successful';
+    }
  
   }
 

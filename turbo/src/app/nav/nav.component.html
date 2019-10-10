@@ -11,7 +11,7 @@
                     <div class="header-middle">
                         <div class="logo-container">
                             <a routerLink="/">
-                                <img src="../../assets/img/turbo3.png">
+                                <img src="../../assets/img/turbo-logo.png">
                             </a>
                         </div>
 
@@ -58,8 +58,10 @@
                         <li><a class="nav-link" routerLink="/contact">Contact Us</a></li>
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
-                        <li><a class="nav-link" routerLink="/signup"><span class="glyphicon glyphicon-user"></span> Sign Up
+                        <li id="signUpIn"><a class="nav-link" routerLink="/signup"><span class="glyphicon glyphicon-user"></span> Sign
+                                Up
                                 / Login</a></li>
+                        <li><a class="nav-link" *ngIf="currentUser" (click)="logout()"><span class="glyphicon glyphicon-user"></span> LogOut</a></li>
                         <li>
                             <a (click)="showDialog = !showDialog">
                                 <span class="fa-stack fa-2x has-badge" data-count="5">

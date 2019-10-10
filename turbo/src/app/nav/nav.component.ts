@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+
+import { AuthenticationService } from '../_services';
 
 @Component({
   selector: 'app-nav',
@@ -9,7 +12,12 @@ export class NavComponent implements OnInit {
 
   appTitle: string = 'Turbo';
 
-  constructor() { }
+  constructor(
+    private router: Router,
+    private authenticationService: AuthenticationService
+) {
+    this.authenticationService.currentUser.subscribe(x => this.currentUser = x);
+}
 
   ngOnInit() {
     var myNav = document.getElementById("myNavbar");
@@ -21,6 +29,14 @@ export class NavComponent implements OnInit {
         this.className += " active";
       });
     }
+  }
+
+  currentUser: any;
+
+
+  logout() {
+      this.authenticationService.logout();
+      this.router.navigate(['/signup']);
   }
 
 }

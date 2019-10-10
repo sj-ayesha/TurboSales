@@ -6,6 +6,7 @@ import { ServicesComponent } from './services/services.component';
 import { ContactComponent } from './contact/contact.component';
 import { CarDetailComponent } from './car-detail/car-detail.component';
 import { SignupComponent } from './components/signup/signup.component';
+import { AuthGuard } from './_helpers';
 
 
 const routes: Routes = [
