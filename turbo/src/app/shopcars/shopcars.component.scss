@@ -6,66 +6,6 @@
             padding: 20px 50px;
         }
 
-        // .filter-section {
-        //     background-color: $color-gray;
-
-        //     @media only screen and (min-device-width: 320px) and (max-device-width: 812px) {
-        //         display: none;
-        //     }
-
-        //     h4 {
-        //         padding: 0 20px;
-        //     }
-
-        //     p {
-        //         font-size: 20px;
-        //         background-color: $color-blue;
-        //         padding: 10px 20px;
-        //         color: $color-white;
-        //     }
-        // }
-
-        // .filter-list {
-        //     p {
-        //         background-color: transparent;
-        //         color: $color-blue;
-                
-        //         &:before {
-        //             content: '';
-        //             width: 100%;
-        //             height: 1px;
-        //             background-color: #e7e6e6;
-        //             position: absolute;
-        //             bottom: 0;
-        //             left: 0;                
-        //         }
-
-        //         &:after {
-        //             content: '';
-        //             width: 80px;
-        //             height: 2px;
-        //             left: 0;
-        //             bottom: -1px;
-        //             position: absolute;
-        //             background-color: #15518d;
-        //         }
-        //     }
-
-        //     ul {
-        //         list-style: none;
-        //         padding: 10px 20px;
-
-        //         li {
-        //             margin: 5px 0;
-        //             a {
-        //                 color: inherit;
-        //                 text-decoration: none;
-        //             }
-
-        //         }
-        //     }
-        // }
-
         .car-list {
             margin-top: 15px;
             margin-left: 15px;
@@ -112,48 +52,6 @@
                     }
                 }
             }
-
-            // .car {
-            //     &-row {
-            //         background-color: $color-gray;
-            //         margin-bottom: 10px;
-            //     }
-            //     &-img {
-            //         img {
-            //             width: 100%;
-            //         }
-
-            //     }
-
-            //     &-detail {
-            //         .table-detail {
-            //             margin-top: 20px;
-
-            //             @media only screen and (min-device-width: 320px) and (max-device-width: 812px) {
-            //                 max-width: 470px;
-            //                 margin: 20px auto;
-            //             }
-            //         }
-
-            //         .btn--view-detail {
-            //             text-align: right;
-            //             padding: 15px 20px;
-            //         }
-
-            //     }
-
-            //     &-title {
-            //         text-transform: uppercase;
-            //         color: $color-blue;
-            //         display: flex;
-            //         justify-content: space-between;
-            //          h4 {
-            //              font-weight: 700;
-            //          }
-            //     }
-
-                
-            // }
         }
     }
 }

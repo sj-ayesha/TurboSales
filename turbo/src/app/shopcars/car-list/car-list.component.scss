@@ -39,5 +39,17 @@
          }
     }
 
+    &-specs {
+        max-width: 80%;
+        margin-bottom: 20px;
+        margin: 5px 15px;
+
+        th {
+            span {
+                padding: 0 5px;
+            }
+        }
+    }
+
     
 }

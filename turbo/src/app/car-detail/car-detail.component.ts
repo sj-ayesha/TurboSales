@@ -27,8 +27,8 @@ export class CarDetailComponent implements OnInit {
 
     this.galleryOptions = [
       {
-        width: '600px',
-        height: '400px',
+        width: '100%',
+        height: '550px',
         thumbnailsColumns: 3,
         imageAnimation: NgxGalleryAnimation.Slide
       },

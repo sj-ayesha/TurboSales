@@ -11,7 +11,64 @@
 
 
         <div class="row">
-            <table class="table table-condensed table-detail">
+            <table class="table car-specs">
+                <thead>
+                    <tr>
+                        <th><i class="fas fa-road"></i>
+                            <span>Year</span></th>
+                        <th><i class="fas fa-road"></i>
+                            <span>Miles</span></th>
+                        <th><i class="fas fa-gas-pump"></i>
+                            <span>Fuel Type</span></th>
+                        <th><i class="fas fa-car"></i>
+                            <span>Body Type</span></th>
+                        <th><i class="fas fa-car-battery"></i>
+                            <span>Transmission</span></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>{{ cardetail.year }}</td>
+                        <td>{{ cardetail.miles }}</td>
+                        <td>{{ cardetail.fuel }}</td>
+                        <td>{{ cardetail.bodyType }}</td>
+                        <td>{{ cardetail.Transmission }}</td>
+                    </tr>
+                </tbody>
+            </table>
+            <!-- <div class="car-specs">
+                <div class="car-icon-text">
+                    <i class="fas fa-road"></i>
+                    <span>Year</span>
+                    <p>{{ cardetail.year }}</p>
+                </div>
+
+                <div class="car-icon-text">
+                    <i class="fas fa-road"></i>
+                    <span>Miles</span>
+                    <p>{{ cardetail.miles }}</p>
+                </div>
+
+                <div class="car-icon-text">
+                    <i class="fas fa-gas-pump"></i>
+                    <span>Fuel Type</span>
+                    <p>{{ cardetail.fuel }}</p>
+                </div>
+
+                <div class="car-icon-text">
+                    <i class="fas fa-car-battery"></i>
+                    <span>Transmission</span>
+                    <p>{{ cardetail.Transmission }}</p>
+                </div>
+
+                <div class="car-icon-text">
+                    <i class="fas fa-car"></i>
+                    <span>Body Type</span>
+                    <p>{{ cardetail.bodyType }}</p>
+                </div>
+
+            </div> -->
+            <!-- <table class="table table-condensed table-detail">
                 <tbody>
                     <tr>
                         <th>Stock No.</th>
@@ -30,7 +87,7 @@
                         <td>{{ cardetail.engine }}</td>
                     </tr>
                 </tbody>
-            </table>
+            </table> -->
             <div class="btn--view-detail">
                 <a class="btn btn-primary btn-lg" (click)="onSelect(cardetail.id)">View Details</a>
             </div>
