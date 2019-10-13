@@ -4,6 +4,9 @@ import { Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { first } from 'rxjs/operators';
 
+// import custom validator to validate that password and confirm password fields match
+import { MustMatch } from '../../_helpers/must-match.validator';
+
 import { UserService, AuthenticationService } from '../../_services';
 
 @Component({
@@ -50,7 +53,10 @@ export class SignupComponent implements OnInit {
       firstName: ['', Validators.required],
       lastName: ['', Validators.required],
       username: ['', Validators.required],
-      password: ['', [Validators.required, Validators.minLength(6)]]
+      password: ['', [Validators.required, Validators.minLength(6)]],
+      confirmPassword: ['', Validators.required]
+    }, {
+      validator: MustMatch('password', 'confirmPassword')
     });
   }
 

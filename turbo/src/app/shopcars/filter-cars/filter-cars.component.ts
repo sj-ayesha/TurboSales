@@ -1,4 +1,6 @@
-import { Component, OnInit, EventEmitter, Output, ViewChildren, QueryList, ElementRef } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output, ViewChildren, QueryList, ElementRef, OnDestroy } from '@angular/core';
+import { Router, ActivatedRoute } from '@angular/router';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-filter-cars',
@@ -7,6 +9,9 @@ import { Component, OnInit, EventEmitter, Output, ViewChildren, QueryList, Eleme
 })
 export class FilterCarsComponent implements OnInit {
 
+  private routeSubscription: Subscription;
+
+  constructor(private activatedRoute: ActivatedRoute) { }
 
   @Output() filterEmitter = new EventEmitter();
   @ViewChildren("checkboxes") checkboxes: QueryList<ElementRef>;
@@ -49,8 +54,21 @@ export class FilterCarsComponent implements OnInit {
   ]
 
   ngOnInit() {
+    this.routeSubscription = this.activatedRoute.queryParamMap.subscribe(params => {
+      if (params.get("bodyType")) {
+        this.bodyTypeOptions = this.bodyTypeOptions.map((bodyTypeOption) => {
+          if (bodyTypeOption.name === params.get("bodyType")) {
+            bodyTypeOption.checked = true;
+          }
+          return bodyTypeOption;
+        });
+      }
+    });
     this.onFilter();
+  }
 
+  ngOnDestroy() {
+    this.routeSubscription.unsubscribe();
   }
 
   onFilter() {
@@ -63,7 +81,7 @@ export class FilterCarsComponent implements OnInit {
     this.filterEmitter.emit(arrOfObj);
     console.log(arrOfObj);
   }
-  
+
   // onFilterBrand() {
   //   const arrOptions = this.brandOptions.filter((brandOption) => brandOption.checked);
   //   this.filterEmitter.emit(arrOptions);

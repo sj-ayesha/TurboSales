@@ -10,32 +10,38 @@ export class BodyTypeComponent implements OnInit {
   bodyTypes = [{
     id: 'sedans',
     img: '../../../assets/img/bodyType/Sedans.png',
-    text: 'Sedans'
+    text: 'Sedans', 
+    bodyType: 'Sedans'
   },
   {
     id: 'coupes',
     img: '../../../assets/img/bodyType/Coupes.png',
-    text: 'Cedans'
+    text: 'Coupes', 
+    bodyType: 'Coupes'
   },
   {
     id: 'convertibles',
     img: '../../../assets/img/bodyType/Convertibles.png',
-    text: 'convertibles'
+    text: 'convertibles', 
+    bodyType: 'Convertibles'
   },
   {
     id: 'suvs',
     img: '../../../assets/img/bodyType/Suvs.png',
-    text: 'Suvs'
+    text: 'Suvs', 
+    bodyType: 'SUVs'
   },
   {
     id: 'vans',
     img: '../../../assets/img/bodyType/Vans.png',
-    text: 'Vans'
+    text: 'Vans', 
+    bodyType: 'Vans'
   },
   {
     id: 'trucks',
     img: '../../../assets/img/bodyType/truck.png',
-    text: 'Trucks'
+    text: 'Trucks', 
+    bodyType: 'Trucks'
   }
 
 ]

@@ -19,7 +19,7 @@
             <ngx-gallery [options]="galleryOptions" [images]="galleryImages"></ngx-gallery>
             <!-- <img src="{{carDetails[0].img}}"> -->
             <div class="btn--actions">
-                <a (click)="showDialog = !showDialog" class="btn btn-primary btn-lg">Continue Shopping</a>
+                <a routerLink='/shopcars' class="btn btn-primary btn-lg">Continue Shopping</a>
                 <a (click)="showDialog = !showDialog" class="btn btn-primary btn-lg">Add to Cart</a>
             </div>
         </div>

@@ -137,7 +137,7 @@ export class CarListComponent implements OnInit, OnChanges {
       engine: 'Turbochargedengine',
       year: '2015',
       price: 10500,
-      bodyType: 'Coupes',
+      bodyType: 'Sedans',
       miles: 2000
     },
     {
@@ -151,7 +151,7 @@ export class CarListComponent implements OnInit, OnChanges {
       engine: 'Turbochargedengine',
       year: '2019',
       price: 10500,
-      bodyType: 'Convertibles',
+      bodyType: 'Coupes',
       miles: 1500
     },
     {
@@ -179,8 +179,50 @@ export class CarListComponent implements OnInit, OnChanges {
       engine: 'Turbochargedengine',
       year: '2019',
       price: 10500,
-      bodyType: 'Vans',
+      bodyType: 'Coupes',
       miles: 1500
+    },
+    {
+      id: 6,
+      img: '../../assets/img/Cars/Vans/VanCaddy.png',
+      title: 'Volkswagen',
+      series: 'Caddy',
+      stockNum: 'VOL001',
+      Transmission: 'Manual',
+      fuel: 'Diesel',
+      engine: 'Turbo',
+      year: '2016',
+      price: 5500,
+      bodyType: 'Vans',
+      miles: 1700
+    },
+    {
+      id: 7,
+      img: '../../assets/img/Cars/Truck/mercedesTruck.jpeg',
+      title: 'Mercedes',
+      series: 'Benz',
+      stockNum: 'MER002',
+      Transmission: 'Manual',
+      fuel: 'Diesel',
+      engine: 'Turbo',
+      year: '2019',
+      price: 555500,
+      bodyType: 'Trucks',
+      miles: 1700
+    },
+    {
+      id: 8,
+      img: '../../assets/img/Cars/Jeep/Jeep.jpg',
+      title: 'Jeep',
+      series: 'Wrangler',
+      stockNum: 'JEE001',
+      Transmission: 'Manual',
+      fuel: 'Petrol',
+      engine: 'Turbo',
+      year: '2019',
+      price: 700000,
+      bodyType: 'Convertibles',
+      miles: 1600
     }];
   }
 

@@ -25,10 +25,12 @@ export class CarDetailComponent implements OnInit {
       this.carDetails = this.carDetails.filter(data => data.id === id);
     });
 
+    console.log(this.carDetails);
+
     this.galleryOptions = [
       {
         width: '100%',
-        height: '550px',
+        height: '600px',
         thumbnailsColumns: 3,
         imageAnimation: NgxGalleryAnimation.Slide
       },
@@ -51,19 +53,19 @@ export class CarDetailComponent implements OnInit {
 
     this.galleryImages = [
       {
-        small: '../../assets/img/Cars/mercedes.jpg',
-        medium: '../../assets/img/Cars/mercedes.jpg',
-        big: '../../assets/img/Cars/mercedes.jpg'
+        small: this.carDetails[0].img,
+        medium: this.carDetails[0].img,
+        big: this.carDetails[0].img
       },
       {
-        small: '../../assets/img/Cars/mercedes3.jpg',
-        medium: '../../assets/img/Cars/mercedes3.jpg',
-        big: '../../assets/img/Cars/mercedes3.jpg'
+        small: this.carDetails[0].img1,
+        medium: this.carDetails[0].img1,
+        big: this.carDetails[0].img1
       },
       {
-        small: '../../assets/img/Cars/mercedes4.jpg',
-        medium: '../../assets/img/Cars/mercedes4.jpg',
-        big: '../../assets/img/Cars/mercedes4.jpg'
+        small: this.carDetails[0].img2,
+        medium: this.carDetails[0].img2,
+        big: this.carDetails[0].img2
       }
     ];
   }
