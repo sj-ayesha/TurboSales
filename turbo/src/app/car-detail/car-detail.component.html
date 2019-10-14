@@ -20,7 +20,8 @@
             <!-- <img src="{{carDetails[0].img}}"> -->
             <div class="btn--actions">
                 <a routerLink='/shopcars' class="btn btn-primary btn-lg">Continue Shopping</a>
-                <a (click)="showDialog = !showDialog" class="btn btn-primary btn-lg">Add to Cart</a>
+                <!-- <a (click)="showDialog = !showDialog" class="btn btn-primary btn-lg">Add to Cart</a> -->
+                <a class="btn btn-primary btn-lg" [routerLink]="['/cart', { id:carDetails[0].id }]">Buy Now</a>
             </div>
         </div>
         <div class="col-xs-12 col-md-4 car-overview side-bar">

@@ -310,15 +310,17 @@ header {
                 @media only screen and (min-width: 768px) {
                     height: 60px;
                     &:hover {
-                        border-top: 5px solid $color-white;
-                        font-weight: 700;
+                        border-top: 5px solid $color-lighter-blue;
+                        // font-weight: 700;
                         padding-top: 10px;
+                        background-color: $color-dark-blue;
                     }
 
                     &.nav-link.active {
-                        border-top: 5px solid $color-white;
-                        font-weight: 700;
+                        border-top: 5px solid $color-lighter-blue;
+                        // font-weight: 700;
                         padding-top: 10px;
+                        background-color: $color-dark-blue;
                     }
                 }
             }

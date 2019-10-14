@@ -1,0 +1,139 @@
+<div class="my-cart">
+    <div class="row title-row">
+        <div class="col-xs-12 col-md-12">
+            <h2>My Cart</h2>
+        </div>
+    </div>
+
+    <div class="row container-fluid">
+        <div class="col-xs-12 col-md-12">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Title</th>
+                        <th>Image</th>
+                        <th>Price</th>
+                        <th>Quantity</th>
+                        <th>Option</th>
+                        <th>Sub Total</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let item of items">
+                        <td>{{item.product.id}}</td>
+                        <td>{{item.product.title}}</td>
+                        <td>
+                            <img src="{{item.product.img}}" width="150">
+                        </td>
+                        <td>${{item.product.price}}</td>
+                        <td>{{item.quantity}}</td>
+                        <td><button (click)="remove(item.product.id)" class="btn btn-danger btn-sm"><i
+                                    class="fa fa-trash-o"></i></button></td>
+                        <td>${{item.product.price * item.quantity}}</td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <th colspan="6" align="right">Total</th>
+                        <td>${{total}}</td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+    </div>
+</div>
+
+<!-- <table border="1">
+    <tr>
+        <th>Option</th>
+        <th>Id</th>
+        <th>Title</th>
+        <th>Image</th>
+        <th>Price</th>
+        <th>Quantity</th>
+        <th>Sub Total</th>
+    </tr>
+    <tr *ngFor="let item of items">
+        <td align="center">
+            <a (click)="remove(item.product.id)">X</a>
+        </td>
+        <td>{{item.product.id}}</td>
+        <td>{{item.product.title}}</td>
+        <td>
+            <img src="{{item.product.img}}" width="50">
+        </td>
+        <td>{{item.product.price}}</td>
+        <td>{{item.quantity}}</td>
+        <td>{{item.product.price * item.quantity}}</td>
+    </tr>
+    <tr>
+        <td colspan="6" align="right">Total</td>
+        <td>{{total}}</td>
+    </tr>
+</table> -->
+
+<!-- 
+<div class="row car-images">
+        <div class="col-xs-12 col-md-12">
+            <table id="cart" class="table table-hover table-condensed">
+                <thead>
+                    <tr>
+                         <th style="width:50%">Car</th>
+                        <th style="width:10%">Price</th>
+                        <th style="width:8%">Quantity</th>
+                        <th style="width:22%" class="text-center">Subtotal</th>
+                        <th style="width:10%"></th> 
+                        <th style="width:4%">Id</th>
+                        <th style="width:4%">Title</th>
+                        <th style="width:20%">Price</th>
+                        <th style="width:50%">Image</th>
+                        <th style="width:6%">Quantity</th>
+                        <th style="width:6%">Option</th>
+                        <th style="width:10%" class="text-center">Sub Total</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let item of items">
+                        <td data-th="Id">
+                            {{item.product.id}}
+                        </td>
+                        <td data-th="Product">
+                            <div class="row">
+                                <div class="col-sm-2 hidden-xs">
+                                    <img src="{{item.product.img}}"
+                                        alt="..." class="img-responsive"/></div>
+                                <div class="col-sm-10">
+                                    <p class="nomargin">{{item.product.title}}</p>
+                                </div>
+                            </div>
+                        </td>
+                        <td data-th="Price">{{item.product.price}}</td>
+                        <td data-th="Quantity">
+                            <input type="number" class="form-control text-center" value="{{item.quantity}}">
+                        </td>
+                        <td data-th="Subtotal" class="text-center">{{item.product.price * item.quantity}}</td>
+                        <td class="actions" data-th="">
+                            <button (click)="remove(item.product.id)" class="btn btn-danger btn-sm"><i class="fa fa-trash-o"></i></button>
+                        </td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr class="visible-xs">
+                        <td class="text-center"><strong>Total {{total}}</strong></td>
+
+                    </tr>
+                    <tr>
+                        <td><a href="#" class="btn"><i class="fa fa-angle-left"></i>
+                                Continue Shopping</a></td>
+                        <td colspan="2" class="hidden-xs"></td>
+                        <td class="hidden-xs text-center"><strong>Total {{total}}</strong></td>
+                        <td><a href="https://www.paypal.com/webapps/shoppingcart?mfid=1546373779156_cb91e3a2b2dc7&flowlogging_id=cb91e3a2b2dc7#/checkout/shoppingCart"
+                                class="btn btn-primary btn-lg">Checkout <i
+                                    class="fa fa-angle-right"></i></a></td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+
+    </div> -->

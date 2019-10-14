@@ -32,6 +32,7 @@ import { SignupComponent } from './components/signup/signup.component';
 import { FilterCarsComponent } from './shopcars/filter-cars/filter-cars.component';
 import { CarListComponent } from './shopcars/car-list/car-list.component';
 import { LoginComponent } from './components/login/login.component';
+import { CartComponent } from './cart/cart.component';
 
 
 @NgModule({
@@ -54,7 +55,8 @@ import { LoginComponent } from './components/login/login.component';
     SignupComponent,
     FilterCarsComponent,
     CarListComponent,
-    LoginComponent
+    LoginComponent,
+    CartComponent
   ],
   imports: [
     BrowserModule,
