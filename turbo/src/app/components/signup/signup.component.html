@@ -4,20 +4,26 @@
         <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
             <h1>Create Account</h1>
             <div class="social-container">
-                <a href="www.facebook.com" class="social"><i class="fab fa-facebook-f"></i></a>
-                <a href="www.twitter.com" class="social"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="facebook-icon social"><i class="fab fa-facebook-square"></i></a>
+                <a href="#" class="twitter-icon social"><i class="fab fa-twitter-square"></i></a>
             </div>
             <span>or use your email for registration</span>
             <input placeholder="First Name" type="text" formControlName="firstName" class="form-control"
                 [ngClass]="{ 'is-invalid': submitted && f.firstName.errors }" />
             <div *ngIf="submitted && f.firstName.errors" class="invalid-feedback">
                 <div *ngIf="f.firstName.errors.required">First Name is required</div>
+                <div *ngIf="f.firstName.errors.pattern">
+                    First Name not valid.
+                </div>
             </div>
 
             <input placeholder="Last Name" type="text" formControlName="lastName" class="form-control"
                 [ngClass]="{ 'is-invalid': submitted && f.lastName.errors }" />
             <div *ngIf="submitted && f.lastName.errors" class="invalid-feedback">
                 <div *ngIf="f.lastName.errors.required">Last Name is required</div>
+                <div *ngIf="f.lastName.errors.pattern">
+                    Last Name not valid.
+                </div>
             </div>
 
             <input type="text" placeholder="Username" formControlName="username" class="form-control"
@@ -30,7 +36,6 @@
                 [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
             <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
                 <div *ngIf="f.password.errors.required">Password is required</div>
-                <div *ngIf="f.password.errors.minlength">Password must be at least 6 characters</div>
             </div>
 
             <input placeholder="Confirm Password" type="password" formControlName="confirmPassword" class="form-control"

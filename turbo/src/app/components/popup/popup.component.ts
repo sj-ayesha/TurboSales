@@ -2,9 +2,9 @@ import { Component, OnInit, Input, Output, OnChanges, EventEmitter } from '@angu
 import { trigger, state, style, animate, transition } from '@angular/animations';
 
 @Component({
-  selector: 'app-buy-now',
-  templateUrl: './buy-now.component.html',
-  styleUrls: ['./buy-now.component.scss'],
+  selector: 'app-popup',
+  templateUrl: './popup.component.html',
+  styleUrls: ['./popup.component.scss'],
   animations: [
     trigger('dialog', [
       transition('void => *', [
@@ -17,7 +17,7 @@ import { trigger, state, style, animate, transition } from '@angular/animations'
     ])
   ]
 })
-export class BuyNowComponent implements OnInit {
+export class PopupComponent implements OnInit {
 
   @Input() closable = true;
   @Input() visible: boolean;

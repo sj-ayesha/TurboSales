@@ -32,6 +32,8 @@ export class SignupComponent implements OnInit {
   submitted = false;
   error: string;
 
+  namePattern = "^[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z]*)*$";
+
 
   constructor(
     private formBuilder: FormBuilder,
@@ -49,11 +51,11 @@ export class SignupComponent implements OnInit {
   ngOnInit() {
     this.stylePage();
 
-    this.registerForm = this.formBuilder.group({
-      firstName: ['', Validators.required],
-      lastName: ['', Validators.required],
+    this.registerForm = this.formBuilder.group({      
+      firstName: ['', [Validators.required, Validators.pattern(this.namePattern)]],
+      lastName: ['', [Validators.required, Validators.pattern(this.namePattern)]],
       username: ['', Validators.required],
-      password: ['', [Validators.required, Validators.minLength(6)]],
+      password: ['', Validators.required],
       confirmPassword: ['', Validators.required]
     }, {
       validator: MustMatch('password', 'confirmPassword')
@@ -68,9 +70,9 @@ export class SignupComponent implements OnInit {
 
     // stop here if form is invalid
     if (this.registerForm.invalid) {
+      console.log('invalid');
       return;
     }
-
     this.userService.register(this.registerForm.value)
       .pipe(first())
       .subscribe(

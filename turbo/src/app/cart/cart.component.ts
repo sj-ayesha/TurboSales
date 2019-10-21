@@ -6,20 +6,21 @@ import { Item } from '../_entities/item.entity';
 import { BuyCarService } from '../_services/buy-car.service';
 
 @Component({
-  selector: 'app-cart',
-  templateUrl: './cart.component.html',
-  styleUrls: ['./cart.component.scss']
+	selector: 'app-cart',
+	templateUrl: './cart.component.html',
+	styleUrls: ['./cart.component.scss']
 })
 export class CartComponent implements OnInit {
 
-  private items: Item[] = [];
+	private items: Item[] = [];
 	private total: number = 0;
+	private totalQuantity: number = 0;
 
-  constructor(private activatedRoute: ActivatedRoute, private buyCarService: BuyCarService, private carService: CarService) { }
+	constructor(private activatedRoute: ActivatedRoute, private buyCarService: BuyCarService, private carService: CarService) { }
 
-  ngOnInit() {
-    
-    this.activatedRoute.params.subscribe(params => {
+	ngOnInit() {
+
+		this.activatedRoute.params.subscribe(params => {
 			var id = params['id'];
 			if (id) {
 				var item: Item = {
@@ -55,12 +56,14 @@ export class CartComponent implements OnInit {
 				this.loadCart();
 			}
 		});
-  }
+	}
 
-  loadCart(): void {
+	loadCart(): void {
 		this.total = 0;
 		this.items = [];
+		this.totalQuantity = 0;
 		let cart = JSON.parse(localStorage.getItem('cart'));
+		// console.log(cart.length)
 		for (var i = 0; i < cart.length; i++) {
 			let item = JSON.parse(cart[i]);
 			this.items.push({
@@ -68,7 +71,9 @@ export class CartComponent implements OnInit {
 				quantity: item.quantity
 			});
 			this.total += item.product.price * item.quantity;
+			this.totalQuantity += 0 + item.quantity;
 		}
+		localStorage.setItem('quantity', JSON.stringify(this.totalQuantity));
 	}
 
 	remove(id: number): void {

@@ -100,13 +100,14 @@
 
 .warranty-description {
     .subtitle {
+
         &:before {
             content: '';
             width: 100%;
             height: 1px;
             background-color: #e7e6e6;
             position: absolute;
-            top: 35px;
+            top: 25%;
             left: 0;
             
             
@@ -120,7 +121,7 @@
             width: 80px;
             height: 2px;
             left: 0;
-            top: 35px;
+            top: 25%;
             position: absolute;
             background-color: #15518d;
 
@@ -149,27 +150,27 @@
         }
 
         h4 {
-            &.subtitle {
-                &:before {
-                    content: '';
-                    width: 100%;
-                    height: 1px;
-                    background-color: #e7e6e6;
-                    position: absolute;
-                    bottom: 240px;
-                    left: 0;                
-                }
+            // &.subtitle {
+            //     &:before {
+            //         content: '';
+            //         width: 100%;
+            //         height: 1px;
+            //         background-color: #e7e6e6;
+            //         position: absolute;
+            //         bottom: 240px;
+            //         left: 0;                
+            //     }
         
-                &:after {
-                    content: '';
-                    width: 80px;
-                    height: 2px;
-                    left: 0;
-                    bottom: 240px;
-                    position: absolute;
-                    background-color: #15518d;
-                }
-            }
+            //     &:after {
+            //         content: '';
+            //         width: 80px;
+            //         height: 2px;
+            //         left: 0;
+            //         bottom: 240px;
+            //         position: absolute;
+            //         background-color: #15518d;
+            //     }
+            // }
         }
 
         p {
@@ -228,5 +229,11 @@
 
     .col-md-4 {
         display: table-cell;
+    }
+}
+
+.contact-form {
+    .form-horizontal .control-label {
+        text-align: left;
     }
 }

@@ -10,22 +10,30 @@ export class ContactComponent implements OnInit {
 
   contactForm: FormGroup;
   submitted = false;
+  error: string;
+
+  namePattern = "^[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z]*)*$";
 
   constructor(private formBuilder: FormBuilder) { }
 
   ngOnInit() {
-    // this.contactForm = this.formBuilder.group({
-    //   firstName: ['', Validators.required],
-    //   lastName: ['', Validators.required],
-    //   emailAdd: ['', [Validators.required]
-    // });
+    this.contactForm = this.formBuilder.group({
+      firstName: ['', [Validators.required, Validators.pattern(this.namePattern)]],
+      lastName: ['', [Validators.required, Validators.pattern(this.namePattern)]],
+      emailAdd: ['', Validators.required],
+      phone: ['', Validators.required],
+      message: ['', Validators.required]
+    });
   }
+
+  get f() { return this.contactForm.controls; }
 
   onSubmit() {
     this.submitted = true;
  
     // stop the process here if form is invalid
     if (this.contactForm.invalid) {
+      console.log('invalid')
         return;
     }
   }

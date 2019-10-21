@@ -66,59 +66,112 @@
                                 </div>
 
 
-                                <app-buy-now [(visible)]="showDialog">
+                                <app-popup [(visible)]="showDialog">
                                     <div class="row">
                                         <div class="col-md-12 contact-form">
                                             <div>
-                                                <form class="form-horizontal" action="" method="post">
+                                                <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
                                                     <fieldset>
                                                         <legend class="text-center">Contact us</legend>
 
-                                                        <!-- Name input-->
-                                                        <div class="form-group">
-                                                            <label class="col-md-3 control-label"
-                                                                for="name">Name</label>
-                                                            <div class="col-md-9">
-                                                                <input id="name" name="name" type="text"
-                                                                    placeholder="Your name" class="form-control">
+
+                                                        <div class="row">
+                                                            <div class="col-sm-6 form-group">
+                                                                <input placeholder="First Name" type="text"
+                                                                    formControlName="firstName" class="form-control"
+                                                                    [ngClass]="{ 'is-invalid': submitted && f.firstName.errors }" />
+                                                                <div *ngIf="submitted && f.firstName.errors"
+                                                                    class="invalid-feedback">
+                                                                    <div *ngIf="f.firstName.errors.required">First Name
+                                                                        is required
+                                                                    </div>
+                                                                    <div *ngIf="f.firstName.errors.pattern">
+                                                                        First Name not valid.
+                                                                    </div>
+                                                                </div>
+
+                                                            </div>
+
+                                                            <div class="col-sm-6 form-group">
+                                                                <input placeholder="Last Name" type="text"
+                                                                    formControlName="lastName" class="form-control"
+                                                                    [ngClass]="{ 'is-invalid': submitted && f.lastName.errors }" />
+                                                                <div *ngIf="submitted && f.lastName.errors"
+                                                                    class="invalid-feedback">
+                                                                    <div *ngIf="f.lastName.errors.required">Last Name is
+                                                                        required
+                                                                    </div>
+                                                                    <div *ngIf="f.lastName.errors.pattern">
+                                                                        Last Name not valid.
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="col-sm-6 form-group">
+                                                                <input type="email" placeholder="Email Address"
+                                                                    class="form-control" formControlName="emailAdd"
+                                                                    [ngClass]="{ 'is-invalid': submitted && f.emailAdd.errors }" />
+                                                                <div *ngIf="submitted && f.emailAdd.errors"
+                                                                    class="invalid-feedback">
+                                                                    <div *ngIf="f.emailAdd.errors.required">Email
+                                                                        address is
+                                                                        required</div>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="col-sm-6 form-group">
+                                                                <input type="tel" class="form-control"
+                                                                    placeholder="Phone Number" formControlName="phone"
+                                                                    [ngClass]="{ 'is-invalid': submitted && f.phone.errors }" />
+                                                                <div *ngIf="submitted && f.phone.errors"
+                                                                    class="invalid-feedback">
+                                                                    <div *ngIf="f.phone.errors.required">Phone Number is
+                                                                        required
+                                                                    </div>
+                                                                </div>
                                                             </div>
                                                         </div>
 
-                                                        <!-- Email input-->
-                                                        <div class="form-group">
-                                                            <label class="col-md-3 control-label" for="email">Your
-                                                                E-mail</label>
-                                                            <div class="col-md-9">
-                                                                <input id="email" name="email" type="text"
-                                                                    placeholder="Your email" class="form-control">
+                                                        <div class="row">
+                                                            <div class="col-sm-12 form-group">
+                                                                <textarea class="form-control"
+                                                                    placeholder="Enter Message..." type="textarea"
+                                                                    maxlength="6000" rows="7" formControlName="message"
+                                                                    [ngClass]="{ 'is-invalid': submitted && f.message.errors }"></textarea>
+                                                                <div *ngIf="submitted && f.message.errors"
+                                                                    class="invalid-feedback">
+                                                                    <div *ngIf="f.message.errors.required">Message is
+                                                                        required</div>
+                                                                </div>
                                                             </div>
                                                         </div>
 
-                                                        <!-- Message body -->
-                                                        <div class="form-group">
-                                                            <label class="col-md-3 control-label" for="message">Your
-                                                                message</label>
-                                                            <div class="col-md-9">
-                                                                <textarea class="form-control" id="message"
-                                                                    name="message"
-                                                                    placeholder="Please enter your message here..."
-                                                                    rows="5"></textarea>
-                                                            </div>
-                                                        </div>
 
-                                                        <!-- Form actions -->
-                                                        <div class="form-group">
-                                                            <div class="col-md-12 text-right">
+
+                                                        <div class="row">
+                                                            <div class="col-sm-12 form-group">
                                                                 <button type="submit"
-                                                                    class="btn btn-primary btn-lg">Submit</button>
+                                                                    class="btn btn-lg btn-default pull-right">Send
+                                                                    →</button>
                                                             </div>
+                                                        </div>
+
+                                                        <div id="success_message"
+                                                            style="width:100%; height:100%; display:none; ">
+                                                            <h3>Posted your message successfully!</h3>
+                                                        </div>
+                                                        <div id="error_message"
+                                                            style="width:100%; height:100%; display:none; ">
+                                                            <h3>Error</h3>
+                                                            Sorry there was an error sending your form.
+
                                                         </div>
                                                     </fieldset>
                                                 </form>
                                             </div>
                                         </div>
                                     </div>
-                                </app-buy-now>
+                                </app-popup>
                             </div>
                         </div>
                     </div>
@@ -129,19 +182,24 @@
             </div>
             <div id="warranty" class="tab-pane fade">
                 <div class="row warranty-description">
-                    <div class="col-xs-12 col-md-4 service-image">
-                        <img src="../../assets/img/warranty.jpg">
-                    </div>
-
-                    <div class="col-xs-12 col-md-6">
-                        <h4 class="subtitle">Vehicle Warranty</h4>
-                        <p>5 years or 150,000 km new vehicle general warranty for all models, whichever first occurs.
-                        </p>
+                    <div class="col-xs-12 col-md-12 service-image">
+                        <img src="../../assets/img/warranty-cover_2.jpg">
                     </div>
                 </div>
                 <div class="row warranty-description">
                     <div class="col-xs-12 col-md-12">
-
+                        <h4 class="subtitle">Vehicle Warranty</h4>
+                        <p>5 years or 150,000 km new vehicle general warranty for all models, whichever first occurs.
+                        </p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+                            labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed
+                            do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet,
+                            consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+                            aliqua.</p>
+                    </div>
+                </div>
+                <div class="row warranty-description">
+                    <div class="col-xs-12 col-md-12">
                         <h4 class="subtitle">Duration of Warranty</h4>
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
                             labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed
@@ -166,7 +224,7 @@
                 <div class="row warranty-description">
                     <div class="col-xs-12 col-md-12">
 
-                        <h4 class="subtitle">PARTS WARRANTY</h4>
+                        <h4 class="subtitle">Parts Warranty</h4>
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
                             labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed
                             do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet,
@@ -177,8 +235,7 @@
 
                 <div class="row warranty-description">
                     <div class="col-xs-12 col-md-12">
-
-                        <h4 class="subtitle">PAINT WARRANTY</h4>
+                        <h4 class="subtitle">Paint Warranty</h4>
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
                             labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed
                             do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet,
@@ -192,29 +249,147 @@
 
                 <div class="row after-sale">
                     <div class="col-xs-12 col-md-12">
-                        <img src="../../assets/img/after-sale_3.jpg">
+                        <img src="../../assets/img/after-sale_4.jpg">
                     </div>
                 </div>
 
-
-                <div class="row after-sale--row">
-                    <div class="col-xs-12 col-md-5 after-sale--img">
-                        <img src="../../assets/img/after-sale_men.jpg">
-                    </div>
-                    <div class="col-xs-12 col-md-7 after-sale--text">
-                        <h4 class="subtitle">Our After Sale Service</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
-                            labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed
-                            do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet,
-                            consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
-                            aliqua.</p>
-                    </div>
-
-                </div>
 
                 <div class="row after-sale--row">
                     <div class="col-container">
-                        <div class="col-xs-12 col-md-4">
+                        <div class="col-xs-12 col-md-3">
+                            <img src="../../assets/img/after-sale_men.jpg">
+                            <h4 class="subtitle">Our After Sale Service</h4>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+                                incididunt ut
+                                labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                                sed
+                                do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit
+                                amet,
+                                consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+                                aliqua.</p>
+
+                            <div class="row">
+                                <div class="col-xs-12 col-md-12">
+                                    <div class="btn--contact">
+                                        <a (click)="showDialog = !showDialog" class="btn btn-primary btn-lg">Contact
+                                            Us</a>
+                                    </div>
+
+
+                                    <app-popup [(visible)]="showDialog">
+                                        <div class="row">
+                                            <div class="col-md-12 contact-form">
+                                                <div>
+                                                    <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+                                                        <fieldset>
+                                                            <legend class="text-center">Contact us</legend>
+
+
+                                                            <div class="row">
+                                                                <div class="col-sm-6 form-group">
+                                                                    <input placeholder="First Name" type="text"
+                                                                        formControlName="firstName" class="form-control"
+                                                                        [ngClass]="{ 'is-invalid': submitted && f.firstName.errors }" />
+                                                                    <div *ngIf="submitted && f.firstName.errors"
+                                                                        class="invalid-feedback">
+                                                                        <div *ngIf="f.firstName.errors.required">
+                                                                            First Name is required
+                                                                        </div>
+                                                                        <div *ngIf="f.firstName.errors.pattern">
+                                                                            First Name not valid.
+                                                                        </div>
+                                                                    </div>
+
+                                                                </div>
+
+                                                                <div class="col-sm-6 form-group">
+                                                                    <input placeholder="Last Name" type="text"
+                                                                        formControlName="lastName" class="form-control"
+                                                                        [ngClass]="{ 'is-invalid': submitted && f.lastName.errors }" />
+                                                                    <div *ngIf="submitted && f.lastName.errors"
+                                                                        class="invalid-feedback">
+                                                                        <div *ngIf="f.lastName.errors.required">Last
+                                                                            Name is required
+                                                                        </div>
+                                                                        <div *ngIf="f.lastName.errors.pattern">
+                                                                            Last Name not valid.
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+
+                                                                <div class="col-sm-6 form-group">
+                                                                    <input type="email" placeholder="Email Address"
+                                                                        class="form-control" formControlName="emailAdd"
+                                                                        [ngClass]="{ 'is-invalid': submitted && f.emailAdd.errors }" />
+                                                                    <div *ngIf="submitted && f.emailAdd.errors"
+                                                                        class="invalid-feedback">
+                                                                        <div *ngIf="f.emailAdd.errors.required">
+                                                                            Email address is
+                                                                            required</div>
+                                                                    </div>
+                                                                </div>
+
+                                                                <div class="col-sm-6 form-group">
+                                                                    <input type="tel" class="form-control"
+                                                                        placeholder="Phone Number"
+                                                                        formControlName="phone"
+                                                                        [ngClass]="{ 'is-invalid': submitted && f.phone.errors }" />
+                                                                    <div *ngIf="submitted && f.phone.errors"
+                                                                        class="invalid-feedback">
+                                                                        <div *ngIf="f.phone.errors.required">Phone
+                                                                            Number is required
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="row">
+                                                                <div class="col-sm-12 form-group">
+                                                                    <textarea class="form-control"
+                                                                        placeholder="Enter Message..." type="textarea"
+                                                                        maxlength="6000" rows="7"
+                                                                        formControlName="message"
+                                                                        [ngClass]="{ 'is-invalid': submitted && f.message.errors }"></textarea>
+                                                                    <div *ngIf="submitted && f.message.errors"
+                                                                        class="invalid-feedback">
+                                                                        <div *ngIf="f.message.errors.required">
+                                                                            Message is required</div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+
+
+                                                            <div class="row">
+                                                                <div class="col-sm-12 form-group">
+                                                                    <button type="submit"
+                                                                        class="btn btn-lg btn-default pull-right">Send
+                                                                        →</button>
+                                                                </div>
+                                                            </div>
+
+                                                            <div id="success_message"
+                                                                style="width:100%; height:100%; display:none; ">
+                                                                <h3>Posted your message successfully!</h3>
+                                                            </div>
+                                                            <div id="error_message"
+                                                                style="width:100%; height:100%; display:none; ">
+                                                                <h3>Error</h3>
+                                                                Sorry there was an error sending your form.
+
+                                                            </div>
+                                                        </fieldset>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </app-popup>
+                                </div>
+                            </div>
+
+
+                        </div>
+                        <div class="col-xs-12 col-md-3">
                             <img src="../../assets/img/after-sale-contract.jpg">
                             <h4 class="subtitle">After Sale Contract</h4>
                             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
@@ -234,65 +409,120 @@
                                     </div>
 
 
-                                    <app-buy-now [(visible)]="showDialog">
+                                    <app-popup [(visible)]="showDialog">
                                         <div class="row">
                                             <div class="col-md-12 contact-form">
                                                 <div>
-                                                    <form class="form-horizontal" action="" method="post">
+                                                    <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
                                                         <fieldset>
                                                             <legend class="text-center">Contact us</legend>
 
-                                                            <!-- Name input-->
-                                                            <div class="form-group">
-                                                                <label class="col-md-3 control-label"
-                                                                    for="name">Name</label>
-                                                                <div class="col-md-9">
-                                                                    <input id="name" name="name" type="text"
-                                                                        placeholder="Your name" class="form-control">
+
+                                                            <div class="row">
+                                                                <div class="col-sm-6 form-group">
+                                                                    <input placeholder="First Name" type="text"
+                                                                        formControlName="firstName" class="form-control"
+                                                                        [ngClass]="{ 'is-invalid': submitted && f.firstName.errors }" />
+                                                                    <div *ngIf="submitted && f.firstName.errors"
+                                                                        class="invalid-feedback">
+                                                                        <div *ngIf="f.firstName.errors.required">
+                                                                            First Name is required
+                                                                        </div>
+                                                                        <div *ngIf="f.firstName.errors.pattern">
+                                                                            First Name not valid.
+                                                                        </div>
+                                                                    </div>
+
+                                                                </div>
+
+                                                                <div class="col-sm-6 form-group">
+                                                                    <input placeholder="Last Name" type="text"
+                                                                        formControlName="lastName" class="form-control"
+                                                                        [ngClass]="{ 'is-invalid': submitted && f.lastName.errors }" />
+                                                                    <div *ngIf="submitted && f.lastName.errors"
+                                                                        class="invalid-feedback">
+                                                                        <div *ngIf="f.lastName.errors.required">Last
+                                                                            Name is required
+                                                                        </div>
+                                                                        <div *ngIf="f.lastName.errors.pattern">
+                                                                            Last Name not valid.
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+
+                                                                <div class="col-sm-6 form-group">
+                                                                    <input type="email" placeholder="Email Address"
+                                                                        class="form-control" formControlName="emailAdd"
+                                                                        [ngClass]="{ 'is-invalid': submitted && f.emailAdd.errors }" />
+                                                                    <div *ngIf="submitted && f.emailAdd.errors"
+                                                                        class="invalid-feedback">
+                                                                        <div *ngIf="f.emailAdd.errors.required">
+                                                                            Email address is
+                                                                            required</div>
+                                                                    </div>
+                                                                </div>
+
+                                                                <div class="col-sm-6 form-group">
+                                                                    <input type="tel" class="form-control"
+                                                                        placeholder="Phone Number"
+                                                                        formControlName="phone"
+                                                                        [ngClass]="{ 'is-invalid': submitted && f.phone.errors }" />
+                                                                    <div *ngIf="submitted && f.phone.errors"
+                                                                        class="invalid-feedback">
+                                                                        <div *ngIf="f.phone.errors.required">Phone
+                                                                            Number is required
+                                                                        </div>
+                                                                    </div>
                                                                 </div>
                                                             </div>
 
-                                                            <!-- Email input-->
-                                                            <div class="form-group">
-                                                                <label class="col-md-3 control-label" for="email">Your
-                                                                    E-mail</label>
-                                                                <div class="col-md-9">
-                                                                    <input id="email" name="email" type="text"
-                                                                        placeholder="Your email" class="form-control">
+                                                            <div class="row">
+                                                                <div class="col-sm-12 form-group">
+                                                                    <textarea class="form-control"
+                                                                        placeholder="Enter Message..." type="textarea"
+                                                                        maxlength="6000" rows="7"
+                                                                        formControlName="message"
+                                                                        [ngClass]="{ 'is-invalid': submitted && f.message.errors }"></textarea>
+                                                                    <div *ngIf="submitted && f.message.errors"
+                                                                        class="invalid-feedback">
+                                                                        <div *ngIf="f.message.errors.required">
+                                                                            Message is required</div>
+                                                                    </div>
                                                                 </div>
                                                             </div>
 
-                                                            <!-- Message body -->
-                                                            <div class="form-group">
-                                                                <label class="col-md-3 control-label" for="message">Your
-                                                                    message</label>
-                                                                <div class="col-md-9">
-                                                                    <textarea class="form-control" id="message"
-                                                                        name="message"
-                                                                        placeholder="Please enter your message here..."
-                                                                        rows="5"></textarea>
-                                                                </div>
-                                                            </div>
 
-                                                            <!-- Form actions -->
-                                                            <div class="form-group">
-                                                                <div class="col-md-12 text-right">
+
+                                                            <div class="row">
+                                                                <div class="col-sm-12 form-group">
                                                                     <button type="submit"
-                                                                        class="btn btn-primary btn-lg">Submit</button>
+                                                                        class="btn btn-lg btn-default pull-right">Send
+                                                                        →</button>
                                                                 </div>
+                                                            </div>
+
+                                                            <div id="success_message"
+                                                                style="width:100%; height:100%; display:none; ">
+                                                                <h3>Posted your message successfully!</h3>
+                                                            </div>
+                                                            <div id="error_message"
+                                                                style="width:100%; height:100%; display:none; ">
+                                                                <h3>Error</h3>
+                                                                Sorry there was an error sending your form.
+
                                                             </div>
                                                         </fieldset>
                                                     </form>
                                                 </div>
                                             </div>
                                         </div>
-                                    </app-buy-now>
+                                    </app-popup>
                                 </div>
                             </div>
 
                         </div>
 
-                        <div class="col-xs-12 col-md-4">
+                        <div class="col-xs-12 col-md-3">
                             <img src="../../assets/img/low-price.png">
                             <h4 class="subtitle">Fidelity</h4>
                             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
@@ -312,64 +542,119 @@
                                     </div>
 
 
-                                    <app-buy-now [(visible)]="showDialog">
+                                    <app-popup [(visible)]="showDialog">
                                         <div class="row">
                                             <div class="col-md-12 contact-form">
                                                 <div>
-                                                    <form class="form-horizontal" action="" method="post">
+                                                    <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
                                                         <fieldset>
                                                             <legend class="text-center">Contact us</legend>
 
-                                                            <!-- Name input-->
-                                                            <div class="form-group">
-                                                                <label class="col-md-3 control-label"
-                                                                    for="name">Name</label>
-                                                                <div class="col-md-9">
-                                                                    <input id="name" name="name" type="text"
-                                                                        placeholder="Your name" class="form-control">
+
+                                                            <div class="row">
+                                                                <div class="col-sm-6 form-group">
+                                                                    <input placeholder="First Name" type="text"
+                                                                        formControlName="firstName" class="form-control"
+                                                                        [ngClass]="{ 'is-invalid': submitted && f.firstName.errors }" />
+                                                                    <div *ngIf="submitted && f.firstName.errors"
+                                                                        class="invalid-feedback">
+                                                                        <div *ngIf="f.firstName.errors.required">
+                                                                            First Name is required
+                                                                        </div>
+                                                                        <div *ngIf="f.firstName.errors.pattern">
+                                                                            First Name not valid.
+                                                                        </div>
+                                                                    </div>
+
+                                                                </div>
+
+                                                                <div class="col-sm-6 form-group">
+                                                                    <input placeholder="Last Name" type="text"
+                                                                        formControlName="lastName" class="form-control"
+                                                                        [ngClass]="{ 'is-invalid': submitted && f.lastName.errors }" />
+                                                                    <div *ngIf="submitted && f.lastName.errors"
+                                                                        class="invalid-feedback">
+                                                                        <div *ngIf="f.lastName.errors.required">Last
+                                                                            Name is required
+                                                                        </div>
+                                                                        <div *ngIf="f.lastName.errors.pattern">
+                                                                            Last Name not valid.
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+
+                                                                <div class="col-sm-6 form-group">
+                                                                    <input type="email" placeholder="Email Address"
+                                                                        class="form-control" formControlName="emailAdd"
+                                                                        [ngClass]="{ 'is-invalid': submitted && f.emailAdd.errors }" />
+                                                                    <div *ngIf="submitted && f.emailAdd.errors"
+                                                                        class="invalid-feedback">
+                                                                        <div *ngIf="f.emailAdd.errors.required">
+                                                                            Email address is
+                                                                            required</div>
+                                                                    </div>
+                                                                </div>
+
+                                                                <div class="col-sm-6 form-group">
+                                                                    <input type="tel" class="form-control"
+                                                                        placeholder="Phone Number"
+                                                                        formControlName="phone"
+                                                                        [ngClass]="{ 'is-invalid': submitted && f.phone.errors }" />
+                                                                    <div *ngIf="submitted && f.phone.errors"
+                                                                        class="invalid-feedback">
+                                                                        <div *ngIf="f.phone.errors.required">Phone
+                                                                            Number is required
+                                                                        </div>
+                                                                    </div>
                                                                 </div>
                                                             </div>
 
-                                                            <!-- Email input-->
-                                                            <div class="form-group">
-                                                                <label class="col-md-3 control-label" for="email">Your
-                                                                    E-mail</label>
-                                                                <div class="col-md-9">
-                                                                    <input id="email" name="email" type="text"
-                                                                        placeholder="Your email" class="form-control">
+                                                            <div class="row">
+                                                                <div class="col-sm-12 form-group">
+                                                                    <textarea class="form-control"
+                                                                        placeholder="Enter Message..." type="textarea"
+                                                                        maxlength="6000" rows="7"
+                                                                        formControlName="message"
+                                                                        [ngClass]="{ 'is-invalid': submitted && f.message.errors }"></textarea>
+                                                                    <div *ngIf="submitted && f.message.errors"
+                                                                        class="invalid-feedback">
+                                                                        <div *ngIf="f.message.errors.required">
+                                                                            Message is required</div>
+                                                                    </div>
                                                                 </div>
                                                             </div>
 
-                                                            <!-- Message body -->
-                                                            <div class="form-group">
-                                                                <label class="col-md-3 control-label" for="message">Your
-                                                                    message</label>
-                                                                <div class="col-md-9">
-                                                                    <textarea class="form-control" id="message"
-                                                                        name="message"
-                                                                        placeholder="Please enter your message here..."
-                                                                        rows="5"></textarea>
-                                                                </div>
-                                                            </div>
 
-                                                            <!-- Form actions -->
-                                                            <div class="form-group">
-                                                                <div class="col-md-12 text-right">
+
+                                                            <div class="row">
+                                                                <div class="col-sm-12 form-group">
                                                                     <button type="submit"
-                                                                        class="btn btn-primary btn-lg">Submit</button>
+                                                                        class="btn btn-lg btn-default pull-right">Send
+                                                                        →</button>
                                                                 </div>
+                                                            </div>
+
+                                                            <div id="success_message"
+                                                                style="width:100%; height:100%; display:none; ">
+                                                                <h3>Posted your message successfully!</h3>
+                                                            </div>
+                                                            <div id="error_message"
+                                                                style="width:100%; height:100%; display:none; ">
+                                                                <h3>Error</h3>
+                                                                Sorry there was an error sending your form.
+
                                                             </div>
                                                         </fieldset>
                                                     </form>
                                                 </div>
                                             </div>
                                         </div>
-                                    </app-buy-now>
+                                    </app-popup>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="col-xs-12 col-md-4">
+                        <div class="col-xs-12 col-md-3">
                             <img src="../../assets/img/tools.jpg">
                             <h4 class="subtitle">Car Parts & Tools</h4>
                             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
@@ -388,60 +673,114 @@
                                             Us</a>
                                     </div>
 
-
-                                    <app-buy-now [(visible)]="showDialog">
+                                    <app-popup [(visible)]="showDialog">
                                         <div class="row">
                                             <div class="col-md-12 contact-form">
                                                 <div>
-                                                    <form class="form-horizontal" action="" method="post">
+                                                    <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
                                                         <fieldset>
                                                             <legend class="text-center">Contact us</legend>
 
-                                                            <!-- Name input-->
-                                                            <div class="form-group">
-                                                                <label class="col-md-3 control-label"
-                                                                    for="name">Name</label>
-                                                                <div class="col-md-9">
-                                                                    <input id="name" name="name" type="text"
-                                                                        placeholder="Your name" class="form-control">
+
+                                                            <div class="row">
+                                                                <div class="col-sm-6 form-group">
+                                                                    <input placeholder="First Name" type="text"
+                                                                        formControlName="firstName" class="form-control"
+                                                                        [ngClass]="{ 'is-invalid': submitted && f.firstName.errors }" />
+                                                                    <div *ngIf="submitted && f.firstName.errors"
+                                                                        class="invalid-feedback">
+                                                                        <div *ngIf="f.firstName.errors.required">
+                                                                            First Name is required
+                                                                        </div>
+                                                                        <div *ngIf="f.firstName.errors.pattern">
+                                                                            First Name not valid.
+                                                                        </div>
+                                                                    </div>
+
+                                                                </div>
+
+                                                                <div class="col-sm-6 form-group">
+                                                                    <input placeholder="Last Name" type="text"
+                                                                        formControlName="lastName" class="form-control"
+                                                                        [ngClass]="{ 'is-invalid': submitted && f.lastName.errors }" />
+                                                                    <div *ngIf="submitted && f.lastName.errors"
+                                                                        class="invalid-feedback">
+                                                                        <div *ngIf="f.lastName.errors.required">Last
+                                                                            Name is required
+                                                                        </div>
+                                                                        <div *ngIf="f.lastName.errors.pattern">
+                                                                            Last Name not valid.
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+
+                                                                <div class="col-sm-6 form-group">
+                                                                    <input type="email" placeholder="Email Address"
+                                                                        class="form-control" formControlName="emailAdd"
+                                                                        [ngClass]="{ 'is-invalid': submitted && f.emailAdd.errors }" />
+                                                                    <div *ngIf="submitted && f.emailAdd.errors"
+                                                                        class="invalid-feedback">
+                                                                        <div *ngIf="f.emailAdd.errors.required">
+                                                                            Email address is
+                                                                            required</div>
+                                                                    </div>
+                                                                </div>
+
+                                                                <div class="col-sm-6 form-group">
+                                                                    <input type="tel" class="form-control"
+                                                                        placeholder="Phone Number"
+                                                                        formControlName="phone"
+                                                                        [ngClass]="{ 'is-invalid': submitted && f.phone.errors }" />
+                                                                    <div *ngIf="submitted && f.phone.errors"
+                                                                        class="invalid-feedback">
+                                                                        <div *ngIf="f.phone.errors.required">Phone
+                                                                            Number is required
+                                                                        </div>
+                                                                    </div>
                                                                 </div>
                                                             </div>
 
-                                                            <!-- Email input-->
-                                                            <div class="form-group">
-                                                                <label class="col-md-3 control-label" for="email">Your
-                                                                    E-mail</label>
-                                                                <div class="col-md-9">
-                                                                    <input id="email" name="email" type="text"
-                                                                        placeholder="Your email" class="form-control">
+                                                            <div class="row">
+                                                                <div class="col-sm-12 form-group">
+                                                                    <textarea class="form-control"
+                                                                        placeholder="Enter Message..." type="textarea"
+                                                                        maxlength="6000" rows="7"
+                                                                        formControlName="message"
+                                                                        [ngClass]="{ 'is-invalid': submitted && f.message.errors }"></textarea>
+                                                                    <div *ngIf="submitted && f.message.errors"
+                                                                        class="invalid-feedback">
+                                                                        <div *ngIf="f.message.errors.required">
+                                                                            Message is required</div>
+                                                                    </div>
                                                                 </div>
                                                             </div>
 
-                                                            <!-- Message body -->
-                                                            <div class="form-group">
-                                                                <label class="col-md-3 control-label" for="message">Your
-                                                                    message</label>
-                                                                <div class="col-md-9">
-                                                                    <textarea class="form-control" id="message"
-                                                                        name="message"
-                                                                        placeholder="Please enter your message here..."
-                                                                        rows="5"></textarea>
-                                                                </div>
-                                                            </div>
 
-                                                            <!-- Form actions -->
-                                                            <div class="form-group">
-                                                                <div class="col-md-12 text-right">
+
+                                                            <div class="row">
+                                                                <div class="col-sm-12 form-group">
                                                                     <button type="submit"
-                                                                        class="btn btn-primary btn-lg">Submit</button>
+                                                                        class="btn btn-lg btn-default pull-right">Send
+                                                                        →</button>
                                                                 </div>
+                                                            </div>
+
+                                                            <div id="success_message"
+                                                                style="width:100%; height:100%; display:none; ">
+                                                                <h3>Posted your message successfully!</h3>
+                                                            </div>
+                                                            <div id="error_message"
+                                                                style="width:100%; height:100%; display:none; ">
+                                                                <h3>Error</h3>
+                                                                Sorry there was an error sending your form.
+
                                                             </div>
                                                         </fieldset>
                                                     </form>
                                                 </div>
                                             </div>
                                         </div>
-                                    </app-buy-now>
+                                    </app-popup>
                                 </div>
                             </div>
                         </div>

@@ -20,10 +20,10 @@ export class BrandsComponent implements OnInit {
     { img: "../../assets/img/Brand/porsche.png" },  
     { img: "../../assets/img/Brand/volkswagen.png" }
   ];
-
+  
   slideConfig = {  
-    "slidesToShow": 4,  
-    "slidesToScroll": 4,  
+    "slidesToShow": 5,  
+    "slidesToScroll": 5,  
     "dots": true,  
     "infinite": true,
     "autoplay": true,

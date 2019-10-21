@@ -184,7 +184,7 @@ export class CarListComponent implements OnInit, OnChanges {
     },
     {
       id: 6,
-      img: '../../assets/img/Cars/Vans/VanCaddy.png',
+      img: '../../assets/img/Cars/Vans/Caddy.jpg',
       title: 'Volkswagen',
       series: 'Caddy',
       stockNum: 'VOL001',

@@ -1,9 +1,9 @@
 <div class="row car-row" *ngFor="let cardetail of cardetails">
-    <div class="col-xs-12 col-md-3 car-img">
+    <div class="col-xs-12 col-md-4 car-img">
         <img src="{{ cardetail.img }}">
     </div>
 
-    <div class="col-xs-12 col-md-8 col-md-offset-1 car-detail">
+    <div class="col-xs-12 col-md-8 car-detail">
         <div class="car-title">
             <h4>{{ cardetail.year }} {{ cardetail.title }} {{ cardetail.series }}</h4>
             <h4>${{ cardetail.price }}</h4>

@@ -95,6 +95,10 @@
         .fa {
             font-size: 30px;
         }
+
+        &-table {
+            margin: 0 10px;
+        }
     }
 
     &-description-text {
@@ -167,6 +171,30 @@
 
     }
 
+    &-feature {
+        
+        &-col {
+            h5 {
+                font-weight: 700;
+                padding: 10px 0;
+                border-bottom: 1px solid $color-gray;
+            }
+
+            ul {
+                list-style: none;
+                padding-left: 0;
+                li {
+                    &::before {
+                        content: '✓';
+                        color: $color-blue;
+                        font-weight: 700;
+                        padding: 0 10px;
+                    }
+                }
+            }
+        }
+    }
+
 }
 
 .request-info {
@@ -191,16 +219,25 @@
 
 
 .table-detail {
-    background-color: $color-gray;
-    tr {
+    background-color: $color-blue;
+    h4 {
+        padding: 10px 20px;
+        margin-bottom: 0;
+        color: $color-white;
+    }
+    tbody {
+        background-color: $color-gray;
+        tr {
 
-        &:first-child {
-            border-top: 5px solid $color-blue;
-        }
-        th, td {
-            padding: 20px;
+            // &:first-child {
+            //     border-top: 5px solid $color-blue;
+            // }
+            th, td {
+                padding: 20px;
+            }
         }
     }
+    
 }
 
 .btn--actions {

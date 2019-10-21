@@ -2,8 +2,8 @@
 
 .footer {
     background-color: $color-blue;
-    margin-top: 40px;
-    padding: 20px 25px;
+    // margin-top: 40px;
+    padding: 0 25px;
 
     &-heading {
         color: $color-white;
@@ -13,6 +13,14 @@
     &-text {
         color: rgba(255,255,255,.5);
         padding: 15px 0;
+
+        a {
+            color: $color-blue; 
+            p{
+                color: rgba(255,255,255,.5); 
+            }
+
+        }
 
         .social-icons {
             a {
@@ -33,7 +41,7 @@
         padding: 10px;
 
         @media only screen and (min-width: 812px) {
-            padding: 40px;
+            padding: 35px 40px;
         }
     }
 }

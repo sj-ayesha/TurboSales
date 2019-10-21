@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 import { AuthenticationService } from '../_services';
+// import { CartComponent } from '../cart/cart.component';
 
 @Component({
   selector: 'app-nav',
@@ -11,6 +12,7 @@ import { AuthenticationService } from '../_services';
 export class NavComponent implements OnInit {
 
   appTitle: string = 'Turbo';
+  public quantity;
 
   constructor(
     private router: Router,
@@ -29,6 +31,8 @@ export class NavComponent implements OnInit {
         this.className += " active";
       });
     }
+    this.quantity = JSON.parse(localStorage.getItem('quantity'));
+    console.log(this.quantity)
   }
 
   currentUser: any;

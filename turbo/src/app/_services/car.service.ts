@@ -108,7 +108,7 @@ export class CarService {
     },
     {
       id: 6,
-      img: '../../assets/img/Cars/Vans/VanCaddy.png',
+      img: '../../assets/img/Cars/Vans/Caddy.jpg',
       img1:'../../assets/img/Cars/Vans/interior2.jpg',
       img2:'../../assets/img/Cars/Vans/interior1.jpeg',
       title: 'Volkswagen',

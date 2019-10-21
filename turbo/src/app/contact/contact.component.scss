@@ -16,16 +16,16 @@
         border-right: 1px solid $color-gray;
 
         @media only screen and (min-width: 812px) {
-            margin: 45px 0;
+            margin: 20px 0;
         }
     }
 
     &-box {
-        max-width: 550px;
+        // max-width: 550px;
         margin: 10px;
 
         @media only screen and (min-width: 812px) {
-            margin: 35px auto;
+            margin: 20px 40px;
         }
     }
 
@@ -62,5 +62,9 @@
     width: 100%;
     height: 400px;
     background-color: grey;
-  }
+}
+
+.google-map-location {
+    padding: 0;
+}
  

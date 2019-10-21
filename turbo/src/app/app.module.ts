@@ -7,6 +7,8 @@ import 'hammerjs';
 import { NgxGalleryModule } from 'ngx-gallery';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { CountUpModule } from 'countup.js-angular2';
+
 
 // used to create fake backend
 import { fakeBackendProvider } from './_helpers';
@@ -27,12 +29,13 @@ import { BodyTypeComponent } from './components/body-type/body-type.component';
 import { NewsletterComponent } from './components/newsletter/newsletter.component';
 import { BrandsComponent } from './components/brands/brands.component';
 import { CarDetailComponent } from './car-detail/car-detail.component';
-import { BuyNowComponent } from './components/buy-now/buy-now.component';
+import { PopupComponent } from './components/popup/popup.component';
 import { SignupComponent } from './components/signup/signup.component';
 import { FilterCarsComponent } from './shopcars/filter-cars/filter-cars.component';
 import { CarListComponent } from './shopcars/car-list/car-list.component';
 import { LoginComponent } from './components/login/login.component';
 import { CartComponent } from './cart/cart.component';
+import { CounterUpComponent } from './components/counter-up/counter-up.component';
 
 
 @NgModule({
@@ -51,12 +54,13 @@ import { CartComponent } from './cart/cart.component';
     NewsletterComponent,
     BrandsComponent,
     CarDetailComponent,
-    BuyNowComponent,
+    PopupComponent,
     SignupComponent,
     FilterCarsComponent,
     CarListComponent,
     LoginComponent,
-    CartComponent
+    CartComponent,
+    CounterUpComponent
   ],
   imports: [
     BrowserModule,
@@ -66,7 +70,8 @@ import { CartComponent } from './cart/cart.component';
     BrowserAnimationsModule,
     NgxGalleryModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    CountUpModule
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },

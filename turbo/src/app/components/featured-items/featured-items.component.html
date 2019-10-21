@@ -7,15 +7,15 @@
     </div>
     <div class="row featured-container--cars">
         <div class="col-xs-12 col-md-3 featured-box" *ngFor="let car of carDetails">
-            <a href="#">
+            <a (click)="onSelect(car.id)">
                 <div class="featured-cars-price">
                     <img src="{{car.img}}" alt="">
                     <div class="text-block">
-                        <p>Price: ${{car.price}}</p>
+                        <p>${{car.price}}</p>
                     </div>
                 </div>
 
-                <h4>{{car.year}} {{car.title}} {{car.series}}</h4>
+                <h4 class="car-title">{{car.year}} {{car.title}} {{car.series}}</h4>
                 <div class="miles">
                     <i class="fa fa-dashboard"></i>
                     <span>{{car.miles}} miles</span>

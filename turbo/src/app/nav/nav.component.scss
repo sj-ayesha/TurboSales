@@ -230,6 +230,17 @@
 .header-text {
     padding: 0 10px;
     color: $color-white;
+
+    a {
+        p {
+            margin-bottom: 0;
+            color: $color-white;
+    
+            &:last-child {
+                opacity: 0.5;
+            }
+        }
+    }
     p {
         margin-bottom: 0;
 
