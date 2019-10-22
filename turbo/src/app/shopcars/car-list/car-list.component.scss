@@ -3,9 +3,11 @@
 .car {
     &-row {
         background-color: $color-gray;
-        margin-bottom: 10px;
+        // margin-bottom: 10px;
+        margin: 0 0 10px 0;
     }
     &-img {
+        padding: 0;
         img {
             width: 100%;
             // min-height: 212px;
@@ -69,7 +71,37 @@
                 display: none
             } 
         }
+    } 
+}
+
+.desktop-table {
+    display: none;
+
+    @media only screen and (min-width: 813px) {
+        display: block;
+    } 
+}
+
+.mobile{
+
+    &-table {
+        display: none;
+
+        @media only screen and (min-device-width: 320px) and (max-device-width: 812px) {
+            display: block;
+        }
+    }
+    
+    &-col {
+        padding: 0 20px;
     }
 
+    &-content {
+        padding: 5px 0;
+
+        i {
+            padding: 0 10px;
+        }
+    }
     
 }

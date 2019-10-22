@@ -10,8 +10,8 @@
         </div>
 
 
-        <div class="row table-responsive">
-            <table class="table car-specs">
+        <div class="row">
+            <table class="table car-specs desktop-table">
                 <thead>
                     <tr>
                         <th><i class="fas fa-road"></i>
@@ -33,6 +33,65 @@
                     </tr>
                 </tbody>
             </table>
+
+            <div class="row mobile-table">
+                <div class="col-xs-6 mobile-col">
+                    <div class="row mobile-content">
+                        <div class="col-xs-12">
+                            <i class="fas fa-road"></i>
+                            <span>Year</span>
+                        </div>
+                    </div>
+
+                    <div class="row mobile-content">
+                        <div class="col-xs-12">
+                            <i class="fas fa-gas-pump"></i>
+                            <span>Fuel Type</span>
+                        </div>
+                    </div>
+
+                    <div class="row mobile-content">
+                        <div class="col-xs-12">
+                            <i class="fas fa-car"></i>
+                            <span>Body Type</span>
+                        </div>
+                    </div>
+
+                    <div class="row mobile-content">
+                        <div class="col-xs-12">
+                            <i class="fas fa-car-battery"></i>
+                            <span>Transmission</span>
+                        </div>
+                    </div>
+
+
+                </div>
+                <div class="col-xs-6 mobile-col">
+                    <div class="row mobile-content">
+                        <div class="col-xs-12">
+                            <span>{{ cardetail.year }}</span>
+                        </div>
+                    </div>
+
+                    <div class="row mobile-content">
+                        <div class="col-xs-12">
+                            <span>{{ cardetail.fuel }}</span>
+                        </div>
+                    </div>
+
+                    <div class="row mobile-content">
+                        <div class="col-xs-12">
+                            <span>{{ cardetail.bodyType }}</span>
+                        </div>
+                    </div>
+
+                    <div class="row mobile-content">
+                        <div class="col-xs-12">
+                            <span>{{ cardetail.Transmission }}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
             <!-- <table class="table car-specs mobile">
                 <tbody>
