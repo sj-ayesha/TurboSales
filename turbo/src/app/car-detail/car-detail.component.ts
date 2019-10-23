@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 import { CarService, CarDetails } from '../_services/car.service';
 import { NgxGalleryOptions, NgxGalleryImage, NgxGalleryAnimation } from 'ngx-gallery';
+import { Item } from '../_entities/item.entity';
+import { BuyCarService } from '../_services/buy-car.service';
 
 
 @Component({
@@ -15,8 +17,11 @@ export class CarDetailComponent implements OnInit {
   carDetails: Array<CarDetails>;
   galleryOptions: NgxGalleryOptions[];
   galleryImages: NgxGalleryImage[];
+  private items: Item[] = [];
+  private total: number = 0;
+  private totalQuantity: number = 0;
 
-  constructor(private route: ActivatedRoute, private router: Router, private carService: CarService) { }
+  constructor(private route: ActivatedRoute, private router: Router, private carService: CarService, private buyCarService: BuyCarService) { }
 
   ngOnInit() {
     this.route.paramMap.subscribe((params: ParamMap) => {
@@ -68,6 +73,69 @@ export class CarDetailComponent implements OnInit {
         big: this.carDetails[0].img2
       }
     ];
+  }
+
+  incrementCart() {
+    const id = parseInt(this.route.snapshot.paramMap.get('id'));
+    this.carDetails = this.carService.getCarDetails();
+    this.carDetails = this.carDetails.filter(data => data.id === id);
+    console.log("adding", this.carDetails);
+
+    this.carService.setUrl(this.carDetails[0].id);
+    // this.router.navigate(['/cart', { id:this.carDetails[0].id }]);
+
+
+    if (id) {
+      var item: Item = {
+        product: this.buyCarService.find(id),
+        quantity: 1
+      };
+      if (localStorage.getItem('cart') == null) {
+        let cart: any = [];
+        cart.push(JSON.stringify(item));
+        localStorage.setItem('cart', JSON.stringify(cart));
+      } else {
+        let cart: any = JSON.parse(localStorage.getItem('cart'));
+        let index: number = -1;
+        for (var i = 0; i < cart.length; i++) {
+          let item: Item = JSON.parse(cart[i]);
+          if (item.product.id == id) {
+            index = i;
+            break;
+          }
+        }
+        if (index == -1) {
+          cart.push(JSON.stringify(item));
+          localStorage.setItem('cart', JSON.stringify(cart));
+        } else {
+          let item: Item = JSON.parse(cart[index]);
+          item.quantity += 1;
+          cart[index] = JSON.stringify(item);
+          localStorage.setItem("cart", JSON.stringify(cart));
+        }
+      }
+    }
+    this.loadCart();
+
+    window.location.reload();
+    // setTimeout( () =>  window.location.reload(), 2000 );
+  }
+
+  loadCart(): void {
+    this.total = 0;
+    this.totalQuantity = 0;
+    this.items = [];
+    let cart = JSON.parse(localStorage.getItem('cart'));
+    for (var i = 0; i < cart.length; i++) {
+      let item = JSON.parse(cart[i]);
+      this.items.push({
+        product: item.product,
+        quantity: item.quantity
+      });
+      this.total += item.product.price * item.quantity;
+      this.totalQuantity += 0 + item.quantity;
+    }
+    localStorage.setItem("quantity", JSON.stringify(this.totalQuantity));
   }
 
   goToCars() {

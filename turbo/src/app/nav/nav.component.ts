@@ -13,6 +13,7 @@ export class NavComponent implements OnInit {
 
   appTitle: string = 'Turbo';
   public quantity;
+  public cartLength = (localStorage.getItem('quantity'));
 
   constructor(
     private router: Router,
@@ -31,8 +32,7 @@ export class NavComponent implements OnInit {
         this.className += " active";
       });
     }
-    this.quantity = JSON.parse(localStorage.getItem('quantity'));
-    console.log(this.quantity)
+    document.getElementsByClassName("has-badge")[0].setAttribute("data-count",this.cartLength);
   }
 
   currentUser: any;

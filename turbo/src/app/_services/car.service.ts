@@ -25,6 +25,17 @@ export class CarService {
 
   constructor() { }
 
+  private url: number;
+
+  public setUrl(url: number): void {
+    console.log(url);
+    this.url = url;
+  }
+
+  public getUrl(): number {
+    return this.url;
+  }
+
   public getCarDetails(): Array<CarDetails> {
     return [{
       id: 1,

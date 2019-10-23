@@ -19,7 +19,7 @@
             <ngx-gallery [options]="galleryOptions" [images]="galleryImages"></ngx-gallery>
             <div class="btn--actions">
                 <a routerLink='/shopcars' class="btn btn-primary btn-lg">Continue Shopping</a>
-                <a class="btn btn-primary btn-lg" [routerLink]="['/cart', { id:carDetails[0].id }]">Buy Now</a>
+                <a class="btn btn-primary btn-lg" (click)='incrementCart()'>Buy Now</a>
             </div>
         </div>
         <div class="col-xs-12 col-md-4 car-overview side-bar">
