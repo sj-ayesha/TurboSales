@@ -8,6 +8,8 @@ import { CarService } from "../../_services/car.service";
   styleUrls: ['./car-list.component.scss']
 })
 export class CarListComponent implements OnInit, OnChanges {
+  
+  actualPage: number = 1; 
 
   @Input() currentFilter: any;
 

@@ -7,12 +7,18 @@
         </div>
         <div class="col-xs-12 col-md-4 counter-box">
             <i class="far fa-money-bill-alt"></i>
-            <span>$</span><h3 [countUp]="345">0</h3>
+            <div class="count">
+                <h3>$</h3>
+                <h3 [countUp]="345">0</h3>
+            </div>
             <p>Amount Sold</p>
         </div>
         <div class="col-xs-12 col-md-4 counter-box">
             <i class="fas fa-users"></i>
-            <h3 [countUp]="100">0</h3>
+            <div class="count">
+                <h3 [countUp]="100">0</h3>
+                <h3>%</h3>
+            </div>
             <p>Customer Satisfaction</p>
         </div>
     </div>

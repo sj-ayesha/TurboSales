@@ -1,4 +1,4 @@
-<div class="row car-row" *ngFor="let cardetail of cardetails">
+<div class="row car-row" *ngFor="let cardetail of cardetails | paginate: {itemsPerPage: 4, currentPage: actualPage} ">
     <div class="col-xs-12 col-md-4 car-img">
         <img src="{{ cardetail.img }}">
     </div>
@@ -185,3 +185,4 @@
         </div>
     </div>
 </div>
+<pagination-controls (pageChange)="actualPage = $event"></pagination-controls> 

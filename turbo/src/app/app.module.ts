@@ -8,7 +8,8 @@ import { NgxGalleryModule } from 'ngx-gallery';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { CountUpModule } from 'countup.js-angular2';
-
+import {NgsRevealModule} from 'ngx-scrollreveal';
+import { NgxPaginationModule } from 'ngx-pagination'; 
 
 // used to create fake backend
 import { fakeBackendProvider } from './_helpers';
@@ -71,7 +72,9 @@ import { CounterUpComponent } from './components/counter-up/counter-up.component
     NgxGalleryModule,
     ReactiveFormsModule,
     HttpClientModule,
-    CountUpModule
+    CountUpModule,
+    NgsRevealModule,
+    NgxPaginationModule 
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
