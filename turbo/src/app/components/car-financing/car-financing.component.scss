@@ -1,0 +1,33 @@
+@import  '../../../styles.scss';
+
+#apr {
+    border: none;
+    outline: none;
+    background-color: $color-gray;
+}
+
+.car-finance {
+    background-color: $color-blue;
+
+    &-container {
+        margin: 15px;
+    }
+
+    thead {
+        color: $color-white;
+
+        h4 {
+            padding: 0 20px;
+        }
+    }
+
+    tbody {
+        background-color: $color-gray;
+
+        tr {
+            th {
+                padding: 5px 20px;
+            }
+        }
+    }
+}

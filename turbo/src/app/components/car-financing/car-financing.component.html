@@ -1,0 +1,41 @@
+<div class="row">
+    <div class="car-finance-container">
+        <table class="table table-condensed car-finance">
+            <thead>
+                <h4>Car Financing Calculator</h4>
+            </thead>
+            <tbody>
+                <tr>
+                    <th>Loan Amount ($)</th>
+                    <td><input id="amount" (change)="calculate()"></td>
+                </tr>
+                <tr>
+                    <th>Interest Rate (%)</th>
+                    <td><input id="apr" (change)="calculate()" value="15" readonly="readonly"></td>
+                </tr>
+                <tr>
+                    <th>Loan length (in years)</th>
+                    <td><input id="years" (change)="calculate()"></td>
+                </tr>
+                <tr>
+                    <th>Approximate Payments:</th>
+                    <td><button (click)="calculate()">Calculate</button></td>
+                </tr>
+                <tr>
+                    <th>Monthly payment:</th>
+                    <td>$<span class="output" id="payment"></span></td>
+                </tr>
+                <tr>
+                    <th>Total payment:</th>
+                    <td>$<span class="output" id="total"></span></td>
+                </tr>
+
+                <tr>
+                    <th>Total interest:</th>
+                    <td>$<span class="output" id="totalinterest"></span></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</div>

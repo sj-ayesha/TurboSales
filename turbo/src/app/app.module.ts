@@ -37,6 +37,7 @@ import { CarListComponent } from './shopcars/car-list/car-list.component';
 import { LoginComponent } from './components/login/login.component';
 import { CartComponent } from './cart/cart.component';
 import { CounterUpComponent } from './components/counter-up/counter-up.component';
+import { CarFinancingComponent } from './components/car-financing/car-financing.component';
 
 
 @NgModule({
@@ -61,7 +62,8 @@ import { CounterUpComponent } from './components/counter-up/counter-up.component
     CarListComponent,
     LoginComponent,
     CartComponent,
-    CounterUpComponent
+    CounterUpComponent,
+    CarFinancingComponent
   ],
   imports: [
     BrowserModule,
