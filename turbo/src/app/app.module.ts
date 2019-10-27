@@ -10,7 +10,8 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { CountUpModule } from 'countup.js-angular2';
 import {NgsRevealModule} from 'ngx-scrollreveal';
 import { NgxPaginationModule } from 'ngx-pagination';
-import { SocialLoginModule, AuthServiceConfig, FacebookLoginProvider } from 'angularx-social-login'; 
+
+import { SocialLoginModule, AuthServiceConfig, FacebookLoginProvider, GoogleLoginProvider } from 'angularx-social-login';
 
 // used to create fake backend
 import { fakeBackendProvider } from './_helpers';
@@ -46,6 +47,10 @@ const config = new AuthServiceConfig([
   {
     id: FacebookLoginProvider.PROVIDER_ID,
     provider: new FacebookLoginProvider('1619964158145672')
+  },
+  {
+    id: GoogleLoginProvider.PROVIDER_ID,
+    provider: new GoogleLoginProvider("546819386700-kpkvsuoovke2dsj2olc1jlq7tier6sq3.apps.googleusercontent.com")
   }
 ]);
 

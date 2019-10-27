@@ -53,7 +53,9 @@ export class AuthenticationService {
         this.authService.signOut();
         localStorage.removeItem('currentSocialUser');
         this.currentUserSocialSubject.next(null);
-        document.getElementById('signUpIn').style.display = "block";
+        if (localStorage.getItem("currentUser") === null) {
+            document.getElementById('signUpIn').style.display = "block";
+        }
     }
 
     logout() {

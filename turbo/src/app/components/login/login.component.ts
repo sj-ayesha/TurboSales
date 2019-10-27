@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { first } from 'rxjs/operators';
-import { AuthService, FacebookLoginProvider, SocialUser } from 'angularx-social-login';
+import { AuthService, FacebookLoginProvider, SocialUser, GoogleLoginProvider } from 'angularx-social-login';
 
 import { AuthenticationService } from '../../_services';
 
@@ -74,6 +74,13 @@ export class LoginComponent implements OnInit {
     this.router.navigate(['/']);
     document.getElementById('signUpIn').style.display = "none";
     this.authService.signIn(FacebookLoginProvider.PROVIDER_ID);
+  }
+
+  signInWithGoogle(): void {
+    this.authenticationService.loginFB();
+    this.router.navigate(['/']);
+    document.getElementById('signUpIn').style.display = "none";
+    this.authService.signIn(GoogleLoginProvider.PROVIDER_ID);
   }
   
 }
