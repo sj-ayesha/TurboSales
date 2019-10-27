@@ -167,6 +167,7 @@ export class CarDetailComponent implements OnInit {
     else {
       this.showMsg = true;
       this.contactForm.reset();
+      // this.contactForm.markAsPristine();
       this.submitted = false;
     }
 
