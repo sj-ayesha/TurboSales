@@ -1,10 +1,188 @@
-<div class="container-fluid our-service">
+<div class="our-service">
     <div class="row title-row">
         <div class="col-xs-12 col-md-12">
-            <h2> Our Services</h2>
+            <h2> Services</h2>
         </div>
     </div>
-    <p class="intro-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
+    <div class="banner">
+        <img src="../../assets/img/service-banner_2.jpg">
+    </div>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="service-subtitle">
+                <h3>Awesome Services</h3>
+                <hr>
+            </div>
+        </div>
+
+        <div class="row service-container">
+            <div class="col-xs-12 col-md-4 service-box">
+                <img src="../../assets/img/batteries.jpg">
+                <div class="text-block">
+                    <p>Batteries</p>
+                </div>
+            </div>
+            <div class="col-xs-12 col-md-4 service-box">
+                <img src="../../assets/img/aircon.jpg">
+                <div class="text-block">
+                    <p>Air conditioning</p>
+                </div>
+            </div>
+            <div class="col-xs-12 col-md-4 service-box">
+                <img src="../../assets/img/engine.jpg">
+                <div class="text-block">
+                    <p>Engine</p>
+                </div>
+            </div>
+        </div>
+        <div class="row service-container">
+            <div class="col-xs-12 col-md-4 service-box">
+                <img src="../../assets/img/steering_1.jpg">
+                <div class="text-block">
+                    <p>Steering</p>
+                </div>
+            </div>
+            <div class="col-xs-12 col-md-4 service-box">
+                <img src="../../assets/img/suspension.jpg">
+                <div class="text-block">
+                    <p>Suspension</p>
+                </div>
+            </div>
+            <div class="col-xs-12 col-md-4 service-box">
+                <img src="../../assets/img/wheels.jpg">
+                <div class="text-block">
+                    <p>Wheels</p>
+                </div>
+            </div>
+        </div>
+
+        <app-appointment></app-appointment>
+
+        <div class="row">
+            <div class="col-xs-12 col-md-6 service-counter--text">
+                <div class="service-counter--text-heading">
+                    <h3>WHY CHOOSE US ?</h3>
+                    <hr>
+                </div>
+
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
+                    et dolore magna aliqua. Ut enim ad minim veniam voluptatem temporibus est neque.</p>
+            </div>
+            <div class="col-xs-12 col-md-6">
+                <div class="row">
+                    <div class="col-xs-12 col-md-6 service-counter">
+                        <div class="service-counter--box">
+                            <div class="service-counter--box-img">
+                                <img src="../../assets/img/car.png">
+                            </div>
+
+                            <div class="counter-text">
+                                <p>Vehicle services</p>
+                                <h4 [countUp]="345">0</h4>
+                            </div>
+                        </div>
+
+
+                    </div>
+                    <div class="col-xs-12 col-md-6 service-counter">
+                        <div class="service-counter--box">
+                            <div class="service-counter--box-img">
+                                <img src="../../assets/img/review.png">
+                            </div>
+
+                            <div class="counter-text">
+                                <p>Dealer Reviews</p>
+                                <h4 [countUp]="345">0</h4>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12 col-md-6 service-counter">
+                        <div class="service-counter--box">
+                            <div class="service-counter--box-img">
+                                <img src="../../assets/img/happiness.png">
+                            </div>
+
+                            <div class="counter-text">
+                                <p>Happy Customer</p>
+                                <h4 [countUp]="345">0</h4>
+                            </div>
+                        </div>
+
+
+                    </div>
+                    <div class="col-xs-12 col-md-6 service-counter">
+                        <div class="service-counter--box">
+                            <div class="service-counter--box-img">
+                                <img src="../../assets/img/trophy.png">
+                            </div>
+
+                            <div class="counter-text">
+                                <p>Awards</p>
+                                <h4 [countUp]="345">0</h4>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row service-brands">
+            <div class="col-xs-12 col-md-6 service-brands--col">
+                <div class="service-brands--banner">
+                    <img src="../../assets/img/after-sale_men.jpg">
+                </div>
+            </div>
+            <div class="col-xs-12 col-md-6 service-brands--col">
+                <div class="service-brands-wrapper">
+                    <div class="service-brands--heading">
+                        <h4>We work on all makes & models, including:</h4>
+                    </div>
+                    <div class="service-brands--images">
+                        <img src="../../assets/img/Brand/acura.png">
+                        <img src="../../assets/img/Brand/audi.png">
+                        <img src="../../assets/img/Brand/porsche.png">
+                        <img src="../../assets/img/Brand/ford.png">
+                        <img src="../../assets/img/Brand/honda.png">
+                        <img src="../../assets/img/Brand/jaguar.png">
+                        <img src="../../assets/img/Brand/jeep.png">
+                        <img src="../../assets/img/Brand/lamborghini.png">
+                        <img src="../../assets/img/Brand/land-rover.png">
+                        <img src="../../assets/img/Brand/mini.png">
+                        <img src="../../assets/img/Brand/mitsubishi.png">
+                        <img src="../../assets/img/Brand/volkswagen.png">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="row service-experts">
+            <app-experts></app-experts>
+        </div>
+
+        <div class="row service-appointment">
+            <div class="col-xs-12 col-md-12 service-appointment--background-img">
+                <div class="service-appointment--text">
+                    <h3>SCHEDULE YOUR APPOINTMENT</h3>
+                    <h3>TODAY CALL: 1-800-123-4567</h3>
+                    <p>Your Automotive Repair & Maintenance Service Specialist</p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <!-- <p class="intro-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
         been the
         industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
         scrambled it to make a type specimen book.</p>
@@ -70,7 +248,8 @@
                                     <div class="row">
                                         <div class="col-md-12 contact-form">
                                             <div>
-                                                <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+                                                <form id="contact-form-container" [formGroup]="contactForm"
+                                                    (ngSubmit)="onSubmit()">
                                                     <fieldset>
                                                         <legend class="text-center">Contact us</legend>
 
@@ -155,19 +334,15 @@
                                                                     →</button>
                                                             </div>
                                                         </div>
-
-                                                        <div id="success_message"
-                                                            style="width:100%; height:100%; display:none; ">
-                                                            <h3>Posted your message successfully!</h3>
-                                                        </div>
-                                                        <div id="error_message"
-                                                            style="width:100%; height:100%; display:none; ">
-                                                            <h3>Error</h3>
-                                                            Sorry there was an error sending your form.
-
-                                                        </div>
                                                     </fieldset>
                                                 </form>
+                                                <div *ngIf="showMsg">
+                                                    <div class="thank-you-pop"><img src="../../assets/img/tick-blue.png"
+                                                            alt="">
+                                                        <h1>Thank You!</h1>
+                                                        <p>Your message has been posted and we will contact you soon</p>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -280,7 +455,8 @@
                                         <div class="row">
                                             <div class="col-md-12 contact-form">
                                                 <div>
-                                                    <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+                                                    <form id="contact-form-container" [formGroup]="contactForm"
+                                                        (ngSubmit)="onSubmit()">
                                                         <fieldset>
                                                             <legend class="text-center">Contact us</legend>
 
@@ -292,8 +468,9 @@
                                                                         [ngClass]="{ 'is-invalid': submitted && f.firstName.errors }" />
                                                                     <div *ngIf="submitted && f.firstName.errors"
                                                                         class="invalid-feedback">
-                                                                        <div *ngIf="f.firstName.errors.required">
-                                                                            First Name is required
+                                                                        <div *ngIf="f.firstName.errors.required">First
+                                                                            Name
+                                                                            is required
                                                                         </div>
                                                                         <div *ngIf="f.firstName.errors.pattern">
                                                                             First Name not valid.
@@ -309,7 +486,8 @@
                                                                     <div *ngIf="submitted && f.lastName.errors"
                                                                         class="invalid-feedback">
                                                                         <div *ngIf="f.lastName.errors.required">Last
-                                                                            Name is required
+                                                                            Name is
+                                                                            required
                                                                         </div>
                                                                         <div *ngIf="f.lastName.errors.pattern">
                                                                             Last Name not valid.
@@ -323,8 +501,8 @@
                                                                         [ngClass]="{ 'is-invalid': submitted && f.emailAdd.errors }" />
                                                                     <div *ngIf="submitted && f.emailAdd.errors"
                                                                         class="invalid-feedback">
-                                                                        <div *ngIf="f.emailAdd.errors.required">
-                                                                            Email address is
+                                                                        <div *ngIf="f.emailAdd.errors.required">Email
+                                                                            address is
                                                                             required</div>
                                                                     </div>
                                                                 </div>
@@ -337,7 +515,8 @@
                                                                     <div *ngIf="submitted && f.phone.errors"
                                                                         class="invalid-feedback">
                                                                         <div *ngIf="f.phone.errors.required">Phone
-                                                                            Number is required
+                                                                            Number is
+                                                                            required
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -352,8 +531,9 @@
                                                                         [ngClass]="{ 'is-invalid': submitted && f.message.errors }"></textarea>
                                                                     <div *ngIf="submitted && f.message.errors"
                                                                         class="invalid-feedback">
-                                                                        <div *ngIf="f.message.errors.required">
-                                                                            Message is required</div>
+                                                                        <div *ngIf="f.message.errors.required">Message
+                                                                            is
+                                                                            required</div>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -367,19 +547,16 @@
                                                                         →</button>
                                                                 </div>
                                                             </div>
-
-                                                            <div id="success_message"
-                                                                style="width:100%; height:100%; display:none; ">
-                                                                <h3>Posted your message successfully!</h3>
-                                                            </div>
-                                                            <div id="error_message"
-                                                                style="width:100%; height:100%; display:none; ">
-                                                                <h3>Error</h3>
-                                                                Sorry there was an error sending your form.
-
-                                                            </div>
                                                         </fieldset>
                                                     </form>
+                                                    <div *ngIf="showMsg">
+                                                        <div class="thank-you-pop"><img
+                                                                src="../../assets/img/tick-blue.png" alt="">
+                                                            <h1>Thank You!</h1>
+                                                            <p>Your message has been posted and we will contact you soon
+                                                            </p>
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
@@ -789,5 +966,5 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
 </div>

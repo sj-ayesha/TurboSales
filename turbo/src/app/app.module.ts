@@ -38,6 +38,8 @@ import { LoginComponent } from './components/login/login.component';
 import { CartComponent } from './cart/cart.component';
 import { CounterUpComponent } from './components/counter-up/counter-up.component';
 import { CarFinancingComponent } from './components/car-financing/car-financing.component';
+import { AppointmentComponent } from './components/appointment/appointment.component';
+import { ExpertsComponent } from './components/experts/experts.component';
 
 
 @NgModule({
@@ -63,7 +65,9 @@ import { CarFinancingComponent } from './components/car-financing/car-financing.
     LoginComponent,
     CartComponent,
     CounterUpComponent,
-    CarFinancingComponent
+    CarFinancingComponent,
+    AppointmentComponent,
+    ExpertsComponent
   ],
   imports: [
     BrowserModule,

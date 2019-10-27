@@ -4,7 +4,8 @@ import { CarService, CarDetails } from '../_services/car.service';
 import { NgxGalleryOptions, NgxGalleryImage, NgxGalleryAnimation } from 'ngx-gallery';
 import { Item } from '../_entities/item.entity';
 import { BuyCarService } from '../_services/buy-car.service';
-
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { TouchSequence } from 'selenium-webdriver';
 
 @Component({
   selector: 'app-car-detail',
@@ -21,7 +22,14 @@ export class CarDetailComponent implements OnInit {
   private total: number = 0;
   private totalQuantity: number = 0;
 
-  constructor(private route: ActivatedRoute, private router: Router, private carService: CarService, private buyCarService: BuyCarService) { }
+  contactForm: FormGroup;
+  submitted = false;
+  error: string;
+  showMsg: boolean = false;
+
+  namePattern = "^[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z]*)*$";
+
+  constructor(private route: ActivatedRoute, private router: Router, private carService: CarService, private buyCarService: BuyCarService, private formBuilder: FormBuilder) { }
 
   ngOnInit() {
     this.route.paramMap.subscribe((params: ParamMap) => {
@@ -30,7 +38,6 @@ export class CarDetailComponent implements OnInit {
       this.carDetails = this.carDetails.filter(data => data.id === id);
     });
 
-    console.log(this.carDetails);
 
     this.galleryOptions = [
       {
@@ -73,6 +80,14 @@ export class CarDetailComponent implements OnInit {
         big: this.carDetails[0].img2
       }
     ];
+
+    this.contactForm = this.formBuilder.group({
+      firstName: ['', [Validators.required, Validators.pattern(this.namePattern)]],
+      lastName: ['', [Validators.required, Validators.pattern(this.namePattern)]],
+      emailAdd: ['', Validators.required],
+      phone: ['', Validators.required],
+      message: ['', Validators.required]
+    });
   }
 
   incrementCart() {
@@ -136,6 +151,26 @@ export class CarDetailComponent implements OnInit {
       this.totalQuantity += 0 + item.quantity;
     }
     localStorage.setItem("quantity", JSON.stringify(this.totalQuantity));
+  }
+
+  get f() { return this.contactForm.controls; }
+
+  onSubmit() {
+    this.submitted = true;
+ 
+    // stop the process here if form is invalid
+    if (this.contactForm.invalid) {
+      console.log('invalid')
+        this.showMsg = false;
+        return;
+    }
+    else {
+      this.showMsg = true;
+      this.contactForm.reset();
+      this.submitted = false;
+    }
+
+
   }
 
   goToCars() {

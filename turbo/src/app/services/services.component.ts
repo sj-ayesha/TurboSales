@@ -11,6 +11,7 @@ export class ServicesComponent implements OnInit {
   contactForm: FormGroup;
   submitted = false;
   error: string;
+  showMsg: boolean = false;
 
   namePattern = "^[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z]*)*$";
 
@@ -33,8 +34,15 @@ export class ServicesComponent implements OnInit {
  
     // stop the process here if form is invalid
     if (this.contactForm.invalid) {
+      this.showMsg = false;
       console.log('invalid')
         return;
+    }
+    else {
+      this.contactForm.reset();
+      document.getElementById('contact-form-container').style.display = "none";
+      this.showMsg = true;
+      this.submitted = false;
     }
   }
 }

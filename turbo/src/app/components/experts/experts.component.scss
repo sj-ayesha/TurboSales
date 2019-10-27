@@ -1,0 +1,48 @@
+@import '../../../styles.scss';
+
+.service-experts {
+    &--profile {
+        position: relative;
+        border: 1px solid $color-gray;
+        margin: 0 2px;
+
+        .text-block {
+            position: absolute;
+            color: $color-white;
+            padding: 10px;
+            bottom: 0;
+            left: 0;
+            font-weight: 700;
+            text-transform: uppercase;
+            background-color: $color-blue;
+            width: 100%;
+            text-align: center;
+
+            p {
+                margin: 0;
+            }
+        }
+    }
+
+    &--col {
+        padding: 0;
+        background-color: $color-gray;
+
+
+        @media only screen and (min-width: 812px) {
+            min-height: 491px;
+        }
+    }
+
+    &--text-wrapper {
+        padding: 25px;
+
+        @media only screen and (min-width: 812px) {
+            padding: 70px;
+        }
+    }
+}
+
+.slick-slider {
+    width: 100%;
+}

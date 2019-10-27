@@ -1,0 +1,23 @@
+<div class="service-experts-wrapper">
+    <div class="col-xs-12 col-md-8 service-experts--col">
+        <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig">
+            <div ngxSlickItem *ngFor="let image of images" class="slide">
+                <div class="service-experts--profile">
+                    <img src="{{ image.img }}" width="100%">
+                    <div class="text-block">
+                        <p>{{image.text}}</p>
+                    </div>
+                </div>
+            </div>
+        </ngx-slick-carousel>
+    </div>
+    <div class="col-xs-12 col-md-4 service-experts--col">
+        <div class="service-experts--text-wrapper">
+            <h4>Our Expert Team</h4>
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+                industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
+                scrambled it to make a type specimen book.</p>
+        </div>
+
+    </div>
+</div>
