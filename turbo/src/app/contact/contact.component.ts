@@ -11,6 +11,7 @@ export class ContactComponent implements OnInit {
   contactForm: FormGroup;
   submitted = false;
   error: string;
+  showMsg: boolean = false;
 
   namePattern = "^[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z]*)*$";
 
@@ -30,11 +31,17 @@ export class ContactComponent implements OnInit {
 
   onSubmit() {
     this.submitted = true;
- 
+
     // stop the process here if form is invalid
     if (this.contactForm.invalid) {
       console.log('invalid')
-        return;
+      this.showMsg = false;
+      return;
+    }
+    else {
+      this.showMsg = true;
+      this.contactForm.reset();
+      this.submitted = false;
     }
   }
 

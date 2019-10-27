@@ -1,3 +1,5 @@
+@import '../../../styles.scss';
+
 .hero {
     &-image {
         background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("../../../assets/img/warranty-cover.jpg");
@@ -34,6 +36,50 @@
             &:hover {
                 background-color: #555;
                 color: white;
+            }
+        }
+    }
+}
+
+.thank-you {
+    &-pop {
+        width:100%;
+        padding:20px;
+        text-align:center;
+
+        img {
+            width:76px;
+            height:auto;
+            margin:0 auto;
+            display:block;
+            margin-bottom:25px;
+        }
+
+        h1 {
+            font-size: 42px;
+            margin-bottom: 25px;
+            color: $color-dark-gray;
+        }
+
+        p {
+            font-size: 20px;
+            margin-bottom: 27px;
+            color: $color-dark-gray;
+        }
+
+        a {
+            display: inline-block;
+            margin: 0 auto;
+            padding: 9px 20px;
+            color: $color-white;
+            text-transform: uppercase;
+            font-size: 14px;
+            background-color: $color-blue;
+            border-radius: 17px;
+
+            i {
+                margin-right:5px;
+                color: $color-white;
             }
         }
     }

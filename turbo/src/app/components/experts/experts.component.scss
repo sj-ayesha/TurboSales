@@ -1,6 +1,11 @@
 @import '../../../styles.scss';
 
 .service-experts {
+    &-wrapper {
+        @media only screen and (min-width: 812px) {
+            display: flex;
+        }
+    }
     &--profile {
         position: relative;
         border: 1px solid $color-gray;
@@ -29,17 +34,17 @@
         background-color: $color-gray;
 
 
-        @media only screen and (min-width: 812px) {
-            min-height: 491px;
-        }
+        // @media only screen and (min-width: 812px) {
+        //     min-height: 491px;
+        // }
     }
 
     &--text-wrapper {
         padding: 25px;
 
-        @media only screen and (min-width: 812px) {
-            padding: 70px;
-        }
+        // @media only screen and (min-width: 812px) {
+        //     padding: 70px;
+        // }
     }
 }
 

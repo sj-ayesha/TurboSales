@@ -6,8 +6,8 @@
             <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
                 <div class="row">
                     <div class="col-sm-6 form-group">
-                        <input placeholder="First Name" type="text" formControlName="firstName" class="form-control"
-                            [ngClass]="{ 'is-invalid': submitted && f.firstName.errors }" />
+                        <input placeholder="First Name" type="text" formControlName="firstName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.firstName.errors }"
+                        />
                         <div *ngIf="submitted && f.firstName.errors" class="invalid-feedback">
                             <div *ngIf="f.firstName.errors.required">First Name is required</div>
                             <div *ngIf="f.firstName.errors.pattern">
@@ -18,8 +18,8 @@
                     </div>
 
                     <div class="col-sm-6 form-group">
-                        <input placeholder="Last Name" type="text" formControlName="lastName" class="form-control"
-                            [ngClass]="{ 'is-invalid': submitted && f.lastName.errors }" />
+                        <input placeholder="Last Name" type="text" formControlName="lastName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.lastName.errors }"
+                        />
                         <div *ngIf="submitted && f.lastName.errors" class="invalid-feedback">
                             <div *ngIf="f.lastName.errors.required">Last Name is required</div>
                             <div *ngIf="f.lastName.errors.pattern">
@@ -29,16 +29,16 @@
                     </div>
 
                     <div class="col-sm-6 form-group">
-                        <input type="email" placeholder="Email Address" class="form-control" formControlName="emailAdd"
-                            [ngClass]="{ 'is-invalid': submitted && f.emailAdd.errors }" />
+                        <input type="email" placeholder="Email Address" class="form-control" formControlName="emailAdd" [ngClass]="{ 'is-invalid': submitted && f.emailAdd.errors }"
+                        />
                         <div *ngIf="submitted && f.emailAdd.errors" class="invalid-feedback">
                             <div *ngIf="f.emailAdd.errors.required">Email address is required</div>
                         </div>
                     </div>
 
                     <div class="col-sm-6 form-group">
-                        <input type="tel" class="form-control" placeholder="Phone Number" formControlName="phone"
-                            [ngClass]="{ 'is-invalid': submitted && f.phone.errors }" />
+                        <input type="tel" class="form-control" placeholder="Phone Number" formControlName="phone" [ngClass]="{ 'is-invalid': submitted && f.phone.errors }"
+                        />
                         <div *ngIf="submitted && f.phone.errors" class="invalid-feedback">
                             <div *ngIf="f.phone.errors.required">Phone Number is required</div>
                         </div>
@@ -47,8 +47,7 @@
 
                 <div class="row">
                     <div class="col-sm-12 form-group">
-                        <textarea class="form-control" placeholder="Enter Message..." type="textarea" maxlength="6000"
-                            rows="7" formControlName="message"
+                        <textarea class="form-control" placeholder="Enter Message..." type="textarea" maxlength="6000" rows="7" formControlName="message"
                             [ngClass]="{ 'is-invalid': submitted && f.message.errors }"></textarea>
                         <div *ngIf="submitted && f.message.errors" class="invalid-feedback">
                             <div *ngIf="f.message.errors.required">Message is required</div>
@@ -60,8 +59,18 @@
 
                 <div class="row">
                     <div class="col-sm-12 form-group">
-                        <button type="submit" class="btn btn-lg btn-default pull-right">Send →</button>
+                        <button type="submit" (click)="showDialog = !showDialog" class="btn btn-lg btn-default pull-right">Send →</button>
                     </div>
+                </div>
+
+                <div *ngIf="showMsg">
+                    <app-popup [(visible)]="showDialog">
+                        <div class="thank-you-pop">
+                            <img src="../../assets/img/tick-blue.png" alt="">
+                            <h1>Thank You!</h1>
+                            <p>Your message has been posted and we will contact you soon</p>
+                        </div>
+                    </app-popup>
                 </div>
 
             </form>
