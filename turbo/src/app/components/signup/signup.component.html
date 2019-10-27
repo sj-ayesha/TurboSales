@@ -19,12 +19,10 @@
                         <h3>Sign Up</h3>
                         <p>Connect with</p>
                         <div class="social-login">
-                            <a href="#" class="social-login__link social-login__link--facebook"><i
+                            <a (click)="signInWithFB()" class="social-login__link social-login__link--facebook"><i
                                     class="fab fa-facebook-f"></i>
                             </a>
-                            <a href="#" class="social-login__link social-login__link--twitter"><i
-                                    class="fab fa-twitter"></i>
-                            </a>
+                            <a (click)="signInWithGoogle()" class="social-login__link social-login__link--google"><i class="fab fa-google"></i></a>
                         </div>
                         <div class="divider">
                             <span>or</span>

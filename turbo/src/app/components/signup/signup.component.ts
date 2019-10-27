@@ -3,6 +3,7 @@ import { trigger, state, style, animate, transition } from '@angular/animations'
 import { Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { first } from 'rxjs/operators';
+import { AuthService, FacebookLoginProvider, SocialUser, GoogleLoginProvider } from 'angularx-social-login';
 
 // import custom validator to validate that password and confirm password fields match
 import { MustMatch } from '../../_helpers/must-match.validator';
@@ -39,7 +40,7 @@ export class SignupComponent implements OnInit {
     private formBuilder: FormBuilder,
     private router: Router,
     private authenticationService: AuthenticationService,
-    private userService: UserService
+    private userService: UserService, private authService: AuthService
   ) {
     // redirect to home if already logged in
     if (this.authenticationService.currentUserValue) {
@@ -90,17 +91,6 @@ export class SignupComponent implements OnInit {
   }
 
   stylePage() {
-    // const signUpButton = document.getElementById('signUp');
-    // const signInButton = document.getElementById('signIn');
-    // const container = document.getElementById('container');
-
-    // signUpButton.addEventListener('click', () => {
-    //   container.classList.add("right-panel-active");
-    // });
-
-    // signInButton.addEventListener('click', () => {
-    //   container.classList.remove("right-panel-active");
-    // });
     const ghostButtons = document.querySelectorAll(".button__ghost");
     
     ghostButtons.forEach(function(button) {
@@ -126,6 +116,20 @@ export class SignupComponent implements OnInit {
       });
     });
     
+  }
+
+  signInWithFB(): void {
+    this.authenticationService.loginFB();
+    this.router.navigate(['/']);
+    document.getElementById('signUpIn').style.display = "none";
+    this.authService.signIn(FacebookLoginProvider.PROVIDER_ID);
+  }
+
+  signInWithGoogle(): void {
+    this.authenticationService.loginFB();
+    this.router.navigate(['/']);
+    document.getElementById('signUpIn').style.display = "none";
+    this.authService.signIn(GoogleLoginProvider.PROVIDER_ID);
   }
 }
 
