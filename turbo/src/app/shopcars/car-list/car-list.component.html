@@ -185,4 +185,9 @@
         </div>
     </div>
 </div>
-<pagination-controls (pageChange)="actualPage = $event"></pagination-controls> 
+<div *ngIf="noAvailaibilityMsg === true" class="row">
+    <div class="col-xs-12 col-md-12">
+        <h2>NO Cars</h2>
+    </div>
+</div>
+<pagination-controls *ngIf="noAvailaibilityMsg === false" (pageChange)="actualPage = $event"></pagination-controls> 

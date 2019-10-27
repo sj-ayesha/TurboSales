@@ -9,7 +9,8 @@ import { CarService } from "../../_services/car.service";
 })
 export class CarListComponent implements OnInit, OnChanges {
   
-  actualPage: number = 1; 
+  actualPage: number = 1;
+  noAvailaibilityMsg: boolean = false;
 
   @Input() currentFilter: any;
 
@@ -63,6 +64,9 @@ export class CarListComponent implements OnInit, OnChanges {
             this.scrollToTop();
             return carDetail;
           }
+          else {
+            this.noAvailaibilityMsg = true;
+          }
         }) || [];
 
       }
@@ -81,6 +85,9 @@ export class CarListComponent implements OnInit, OnChanges {
             this.scrollToTop();
             return cardetail;
           }
+          else {
+            this.noAvailaibilityMsg = true;
+          }
         });
       }
 
@@ -95,6 +102,9 @@ export class CarListComponent implements OnInit, OnChanges {
             this.scrollToTop();
             return cardetail;
           }
+          else {
+            this.noAvailaibilityMsg = true;
+          }
         });
       }
 
@@ -108,6 +118,9 @@ export class CarListComponent implements OnInit, OnChanges {
           if (arrBodyTypeNames.includes(cardetail.bodyType.toLowerCase())) {
             this.scrollToTop();
             return cardetail;
+          }
+          else {
+            this.noAvailaibilityMsg = true;
           }
         });
       }
