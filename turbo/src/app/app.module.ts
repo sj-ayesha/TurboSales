@@ -9,7 +9,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { CountUpModule } from 'countup.js-angular2';
 import {NgsRevealModule} from 'ngx-scrollreveal';
-import { NgxPaginationModule } from 'ngx-pagination'; 
+import { NgxPaginationModule } from 'ngx-pagination';
+import { SocialLoginModule, AuthServiceConfig, FacebookLoginProvider } from 'angularx-social-login'; 
 
 // used to create fake backend
 import { fakeBackendProvider } from './_helpers';
@@ -41,6 +42,16 @@ import { CarFinancingComponent } from './components/car-financing/car-financing.
 import { AppointmentComponent } from './components/appointment/appointment.component';
 import { ExpertsComponent } from './components/experts/experts.component';
 
+const config = new AuthServiceConfig([
+  {
+    id: FacebookLoginProvider.PROVIDER_ID,
+    provider: new FacebookLoginProvider('1619964158145672')
+  }
+]);
+
+export function provideConfig() {
+  return config;
+}
 
 @NgModule({
   declarations: [
@@ -80,11 +91,13 @@ import { ExpertsComponent } from './components/experts/experts.component';
     HttpClientModule,
     CountUpModule,
     NgsRevealModule,
-    NgxPaginationModule 
+    NgxPaginationModule,
+    SocialLoginModule
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
-    { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },        
+    { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },  
+    { provide: AuthServiceConfig, useFactory: provideConfig },      
     // provider used to create fake backend
     fakeBackendProvider
   ],

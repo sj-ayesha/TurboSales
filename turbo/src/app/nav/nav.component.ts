@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { AuthService, FacebookLoginProvider, SocialUser } from 'angularx-social-login';
 
 import { AuthenticationService } from '../_services';
 // import { CartComponent } from '../cart/cart.component';
@@ -14,12 +15,17 @@ export class NavComponent implements OnInit {
   appTitle: string = 'Turbo';
   public quantity;
   public cartLength = (localStorage.getItem('quantity'));
+  user: SocialUser;
+  loggedIn: boolean;
+  currentUser: any;
+  currentSocialUser: any;
 
   constructor(
     private router: Router,
-    private authenticationService: AuthenticationService
+    private authenticationService: AuthenticationService, private authService: AuthService
 ) {
     this.authenticationService.currentUser.subscribe(x => this.currentUser = x);
+    this.authenticationService.currentSocialUser.subscribe(x => this.currentSocialUser = x);
 }
 
   ngOnInit() {
@@ -35,12 +41,13 @@ export class NavComponent implements OnInit {
     document.getElementsByClassName("has-badge")[0].setAttribute("data-count",this.cartLength);
   }
 
-  currentUser: any;
-
-
   logout() {
       this.authenticationService.logout();
       this.router.navigate(['/signup']);
+  }
+
+  signOut(){
+    this.authenticationService.logoutFB();
   }
 
 }

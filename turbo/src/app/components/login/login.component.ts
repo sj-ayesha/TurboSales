@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { first } from 'rxjs/operators';
+import { AuthService, FacebookLoginProvider, SocialUser } from 'angularx-social-login';
 
 import { AuthenticationService } from '../../_services';
 
@@ -16,12 +17,14 @@ export class LoginComponent implements OnInit {
   submitted = false;
   returnUrl: string;
   error: string;
+  user: SocialUser;
+  loggedIn: boolean;
 
   constructor(
     private formBuilder: FormBuilder,
     private route: ActivatedRoute,
     private router: Router,
-    private authenticationService: AuthenticationService
+    private authenticationService: AuthenticationService, private authService: AuthService
   ) {
     // redirect to home if already logged in
     if (this.authenticationService.currentUserValue) {
@@ -65,4 +68,12 @@ export class LoginComponent implements OnInit {
           this.loading = false;
         });
   }
+
+  signInWithFB(): void {
+    this.authenticationService.loginFB();
+    this.router.navigate(['/']);
+    document.getElementById('signUpIn').style.display = "none";
+    this.authService.signIn(FacebookLoginProvider.PROVIDER_ID);
+  }
+  
 }
