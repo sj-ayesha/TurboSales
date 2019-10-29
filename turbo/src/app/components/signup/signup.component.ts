@@ -119,14 +119,14 @@ export class SignupComponent implements OnInit {
   }
 
   signInWithFB(): void {
-    this.authenticationService.loginFB();
+    this.authenticationService.loginSocial();
     this.router.navigate(['/']);
     document.getElementById('signUpIn').style.display = "none";
     this.authService.signIn(FacebookLoginProvider.PROVIDER_ID);
   }
 
   signInWithGoogle(): void {
-    this.authenticationService.loginFB();
+    this.authenticationService.loginSocial();
     this.router.navigate(['/']);
     document.getElementById('signUpIn').style.display = "none";
     this.authService.signIn(GoogleLoginProvider.PROVIDER_ID);

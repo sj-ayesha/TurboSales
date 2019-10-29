@@ -70,15 +70,13 @@ export class LoginComponent implements OnInit {
   }
 
   signInWithFB(): void {
-    this.authenticationService.loginFB();
-    this.router.navigate(['/']);
+    this.authenticationService.loginSocial();
     document.getElementById('signUpIn').style.display = "none";
     this.authService.signIn(FacebookLoginProvider.PROVIDER_ID);
   }
 
   signInWithGoogle(): void {
-    this.authenticationService.loginFB();
-    this.router.navigate(['/']);
+    this.authenticationService.loginSocial();
     document.getElementById('signUpIn').style.display = "none";
     this.authService.signIn(GoogleLoginProvider.PROVIDER_ID);
   }

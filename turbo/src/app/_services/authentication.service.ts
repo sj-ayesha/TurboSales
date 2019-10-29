@@ -37,19 +37,25 @@ export class AuthenticationService {
             }));
     }
 
-    loginFB() {
+    loginSocial() {
         this.authService.authState.subscribe((user) => {
             this.user = user;
             this.loggedIn = (user != null);
-            localStorage.setItem('currentSocialUser', JSON.stringify(user));
-            this.currentUserSocialSubject.next(user);
-            console.log(this.user);
-            return user;
+            if (user != null){
+                localStorage.setItem('currentSocialUser', JSON.stringify(user));
+                this.currentUserSocialSubject.next(user);
+                this.router.navigateByUrl('/');
+                return user;
+            }
+            else {
+                this.router.navigateByUrl('/login');
+            }
+
             // console.log(this.user);
           });
     }
 
-    logoutFB(){
+    logoutSocial(){
         this.authService.signOut();
         localStorage.removeItem('currentSocialUser');
         this.currentUserSocialSubject.next(null);

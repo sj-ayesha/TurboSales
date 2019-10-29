@@ -47,7 +47,7 @@ export class NavComponent implements OnInit {
   }
 
   signOut(){
-    this.authenticationService.logoutFB();
+    this.authenticationService.logoutSocial();
   }
 
 }

@@ -30,18 +30,39 @@ export class ContactComponent implements OnInit {
   get f() { return this.contactForm.controls; }
 
   onSubmit() {
-    this.submitted = true;
+
+    this.addValidators(this.contactForm);
+    console.log(this.contactForm);
 
     // stop the process here if form is invalid
     if (this.contactForm.invalid) {
       console.log('invalid')
       this.showMsg = false;
+      this.submitted = false;
       return;
     }
     else {
       this.showMsg = true;
+      this.submitted = true;
+      // this.contactForm.markAsPristine();
+      // this.contactForm.markAsUntouched();
+      // this.contactForm.updateValueAndValidity();
       this.contactForm.reset();
-      this.submitted = false;
+      this.removeValidators(this.contactForm);
+    }
+  }
+
+  public removeValidators(form: FormGroup) {
+    for (const key in form.controls) {
+      form.get(key).clearValidators();
+      form.get(key).updateValueAndValidity();
+    }
+  }
+
+  public addValidators(form: FormGroup) {
+    for (const key in form.controls) {
+      form.get(key).setValidators(this.contactForm[key]);
+      form.get(key).updateValueAndValidity();
     }
   }
 

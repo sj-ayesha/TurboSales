@@ -100,7 +100,7 @@
 </div>
 <div *ngIf="noAvailaibilityMsg === true" class="row">
     <div class="col-xs-12 col-md-12">
-        <h2>NO Cars</h2>
+        <h2>No Cars are available</h2>
     </div>
 </div>
 <pagination-controls *ngIf="noAvailaibilityMsg === false" (pageChange)="actualPage = $event"></pagination-controls> 

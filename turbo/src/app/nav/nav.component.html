@@ -71,17 +71,17 @@
                         </li>
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
-                        <li id="signUpIn">
+                        <li id="signUpIn" *ngIf="!currentUser && !currentSocialUser">
                             <a class="nav-link" routerLink="/signup">
                                 <span class="glyphicon glyphicon-user"></span> Sign Up / Login</a>
                         </li>
                         <li>
                             <a class="nav-link" *ngIf="currentUser" (click)="logout()">
-                                <span class="glyphicon glyphicon-user"></span> LogOut</a>
+                                <span class="glyphicon glyphicon-user"></span> Log Out</a>
                         </li>
                         <li>
                             <a class="nav-link" *ngIf="currentSocialUser" (click)="signOut()">
-                                <span class="glyphicon glyphicon-user"></span> LogOutFB</a>
+                                <span class="glyphicon glyphicon-user"></span> Log Out</a>
                         </li>
                         <li>
                             <a [routerLink]="['/cart']">

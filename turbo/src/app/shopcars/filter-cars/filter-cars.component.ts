@@ -10,6 +10,7 @@ import { Subscription } from 'rxjs';
 export class FilterCarsComponent implements OnInit {
 
   private routeSubscription: Subscription;
+  noAvailaibilityMsg: boolean = false;
 
   constructor(private activatedRoute: ActivatedRoute) { }
 
