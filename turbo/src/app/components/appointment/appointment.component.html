@@ -33,6 +33,9 @@
                         />
                         <div *ngIf="submitted && f.emailAdd.errors" class="invalid-feedback">
                             <div *ngIf="f.emailAdd.errors.required">Email address is required</div>
+                            <div *ngIf="f.emailAdd.errors.pattern">
+                                Email Address is not valid. Must have '@' and '.'
+                            </div>
                         </div>
                     </div>
 
@@ -41,6 +44,9 @@
                         />
                         <div *ngIf="submitted && f.phone.errors" class="invalid-feedback">
                             <div *ngIf="f.phone.errors.required">Phone Number is required</div>
+                            <div *ngIf="f.phone.errors.pattern">
+                                Phone Number is not valid
+                            </div>
                         </div>
                     </div>
                 </div>

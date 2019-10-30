@@ -14,6 +14,8 @@ export class ContactComponent implements OnInit {
   showMsg: boolean = false;
 
   namePattern = "^[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z]*)*$";
+  emailPattern = "[^@]+@[^\.]+\..+";
+  phonePattern = "(([+][(]?[0-9]{1,3}[)]?)|([(]?[0-9]{4}[)]?))\s*[)]?[-\s\.]?[(]?[0-9]{1,3}[)]?([-\s\.]?[0-9]{3})([-\s\.]?[0-9]{3,4})";
 
   constructor(private formBuilder: FormBuilder) { }
 
@@ -21,8 +23,8 @@ export class ContactComponent implements OnInit {
     this.contactForm = this.formBuilder.group({
       firstName: ['', [Validators.required, Validators.pattern(this.namePattern)]],
       lastName: ['', [Validators.required, Validators.pattern(this.namePattern)]],
-      emailAdd: ['', Validators.required],
-      phone: ['', Validators.required],
+      emailAdd: ['', [Validators.required, Validators.pattern(this.emailPattern)]],
+      phone: ['', [Validators.required, Validators.pattern(this.phonePattern)]],
       message: ['', Validators.required]
     });
   }
@@ -30,27 +32,43 @@ export class ContactComponent implements OnInit {
   get f() { return this.contactForm.controls; }
 
   onSubmit() {
-
-    this.addValidators(this.contactForm);
-    console.log(this.contactForm);
+    this.submitted = true;
 
     // stop the process here if form is invalid
     if (this.contactForm.invalid) {
       console.log('invalid')
       this.showMsg = false;
-      this.submitted = false;
       return;
     }
     else {
       this.showMsg = true;
-      this.submitted = true;
-      // this.contactForm.markAsPristine();
-      // this.contactForm.markAsUntouched();
-      // this.contactForm.updateValueAndValidity();
       this.contactForm.reset();
-      this.removeValidators(this.contactForm);
+      this.submitted = false;
     }
   }
+
+  // onSubmit() {
+
+  //   // this.addValidators(this.contactForm);
+  //   console.log(this.contactForm);
+
+  //   // stop the process here if form is invalid
+  //   if (this.contactForm.invalid) {
+  //     console.log('invalid')
+  //     // this.showMsg = false;
+  //     this.submitted = false;
+  //     return;
+  //   }
+  //   else {
+  //     // this.showMsg = true;
+  //     this.submitted = true;
+  //     // this.contactForm.markAsPristine();
+  //     // this.contactForm.markAsUntouched();
+  //     // this.contactForm.updateValueAndValidity();
+  //     this.contactForm.reset();
+  //     // this.removeValidators(this.contactForm);
+  //   }
+  // }
 
   public removeValidators(form: FormGroup) {
     for (const key in form.controls) {
