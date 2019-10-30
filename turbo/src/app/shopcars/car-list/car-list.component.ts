@@ -69,7 +69,6 @@ export class CarListComponent implements OnInit, OnChanges {
             this.noAvailaibilityMsg = true;
           }
         }) || [];
-
       }
 
       // For Year

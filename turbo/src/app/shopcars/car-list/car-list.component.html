@@ -103,4 +103,4 @@
         <h2>No Cars are available</h2>
     </div>
 </div>
-<pagination-controls *ngIf="noAvailaibilityMsg === false" (pageChange)="actualPage = $event"></pagination-controls> 
+<pagination-controls (click)="scrollToTop()" *ngIf="noAvailaibilityMsg === false" (pageChange)="actualPage = $event"></pagination-controls> 
