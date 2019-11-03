@@ -58,6 +58,9 @@
                                 [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
                             <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
                                 <div *ngIf="f.password.errors.required">Password is required</div>
+                                <div *ngIf="f.password.errors.pattern">
+                                    Minimum 6 characters, at least one uppercase letter, one lowercase letter, one number and one special character
+                                </div>
                             </div>
 
                             <input placeholder="Confirm Password" type="password" formControlName="confirmPassword"

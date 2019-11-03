@@ -19,8 +19,19 @@
             <ngx-gallery [options]="galleryOptions" [images]="galleryImages"></ngx-gallery>
             <div class="btn--actions">
                 <a routerLink='/shopcars' class="btn btn-primary btn-lg">Continue Shopping</a>
-                <a class="btn btn-primary btn-lg" (click)='incrementCart()'>Buy Now</a>
+                <a class="btn btn-primary btn-lg" (click)='showDialog = !showDialog; incrementCart()'>Buy Now</a>
             </div>
+
+            <div *ngIf="showCartMessage">
+                <app-popup [(visible)]="showDialog">
+                    <div class="thank-you-pop">
+                        <img src="../../assets/img/tick-blue.png" alt="">
+                        <h1>{{carDetails[0].year}} {{carDetails[0].title}} {{carDetails[0].series}}</h1>
+                        <p>Has been added to your cart</p>
+                    </div>
+                </app-popup>
+            </div>
+
 
             <div class="row car-description">
                 <div class="col-xs-12 col-md-12 car-spec-tab">
@@ -202,11 +213,17 @@
                 <div class="request-info">
                     <div class="container  request-info-form">
                         <h3>Request Information</h3>
-                        <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+                        <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="gobottom">
                             <div class="form-group">
-                                <input placeholder="Enter First Name" type="text" formControlName="firstName"
+                                <input placeholder="Car Name" type="text" formControlName="carname" class="form-control"
+                                    value="{{carDetails[0].year}} {{carDetails[0].title}} {{carDetails[0].series}}"
+                                    disabled />
+                            </div>
+                            <div class="form-group">
+                                <input placeholder="Enter First Name" type="text" formControlName="firstName" id="fname"
                                     class="form-control"
                                     [ngClass]="{ 'is-invalid': submitted && f.firstName.errors }" />
+                                <label for="fname">First Name</label>
                                 <div *ngIf="submitted && f.firstName.errors" class="invalid-feedback">
                                     <div *ngIf="f.firstName.errors.required">First Name is required</div>
                                     <div *ngIf="f.firstName.errors.pattern">
@@ -215,8 +232,9 @@
                                 </div>
                             </div>
                             <div class="form-group">
-                                <input placeholder="Enter Last Name" type="text" formControlName="lastName"
+                                <input placeholder="Enter Last Name" type="text" formControlName="lastName" id="lname"
                                     class="form-control" [ngClass]="{ 'is-invalid': submitted && f.lastName.errors }" />
+                                <label for="lname">Last Name</label>
                                 <div *ngIf="submitted && f.lastName.errors" class="invalid-feedback">
                                     <div *ngIf="f.lastName.errors.required">Last Name is required</div>
                                     <div *ngIf="f.lastName.errors.pattern">
@@ -226,8 +244,9 @@
                             </div>
                             <div class="form-group">
                                 <input type="email" placeholder="Enter Email Address" class="form-control"
-                                    formControlName="emailAdd"
+                                    formControlName="emailAdd" id="emailAdd"
                                     [ngClass]="{ 'is-invalid': submitted && f.emailAdd.errors }" />
+                                <label for="emailAdd">Email Address</label>
                                 <div *ngIf="submitted && f.emailAdd.errors" class="invalid-feedback">
                                     <div *ngIf="f.emailAdd.errors.required">Email address is required</div>
                                     <div *ngIf="f.emailAdd.errors.pattern">
@@ -236,8 +255,9 @@
                                 </div>
                             </div>
                             <div class="form-group">
-                                <input type="tel" class="form-control" placeholder="Enter Phone Number"
+                                <input type="tel" class="form-control" placeholder="Enter Phone Number" id="phoneNum"
                                     formControlName="phone" [ngClass]="{ 'is-invalid': submitted && f.phone.errors }" />
+                                <label for="phoneNum">Phone Number</label>
                                 <div *ngIf="submitted && f.phone.errors" class="invalid-feedback">
                                     <div *ngIf="f.phone.errors.required">Phone Number is required</div>
                                     <div *ngIf="f.phone.errors.pattern">
@@ -247,8 +267,9 @@
                             </div>
                             <div class="form-group">
                                 <textarea class="form-control" placeholder="Enter Message..." type="textarea"
-                                    maxlength="6000" formControlName="message" id="textAreaMsg"
+                                    id="message" maxlength="6000" formControlName="message" id="textAreaMsg"
                                     [ngClass]="{ 'is-invalid': submitted && f.message.errors }">Hi, I'm interested. Please contact me as soon as you can.</textarea>
+                                <label for="message">Your Message</label>
                                 <div *ngIf="submitted && f.message.errors" class="invalid-feedback">
                                     <div *ngIf="f.message.errors.required">Message is required</div>
                                 </div>

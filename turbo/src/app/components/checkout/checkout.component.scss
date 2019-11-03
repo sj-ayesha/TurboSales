@@ -1,6 +1,12 @@
-@import '../../styles.scss';
+@import  '../../../styles.scss';
+.icon-container {
+    i {
+        font-size: 40px;
+        padding: 0 5px;
+    }
+}
 
-.my-cart {
+.checkout {
     .title-row {
         margin: 0;
         padding: 10px 50px;
@@ -10,8 +16,38 @@
         margin: 0;
     }
 
-    .container-fluid {
-        padding: 40px;
+    h3 {
+        padding: 0 15px;
+    }
+
+    &-options {
+        padding: 0 15px;
+
+        .btn {
+            color: $color-white;
+            background-color: $color-blue;
+            // margin: 0 10px;
+        
+            &:hover {
+              background-color: $color-white;
+              color: $color-blue;
+            }
+        }
+
+        label {
+            padding: 10px 0;
+        }
+
+        input {
+            margin: 4px 4px 0;
+        }
+    }
+
+    &-summary {
+        p {
+            display: flex;
+            justify-content: space-between;
+        }
     }
 }
 
@@ -96,21 +132,4 @@
           border-bottom: 0;
         }
       }
-}
-
-.btn-checkout {
-  display: flex;
-  justify-content:flex-end;
-  padding: 15px 0;
-
-  .btn {
-    color: $color-white;
-    background-color: $color-blue;
-    margin: 0 10px;
-
-    &:hover {
-      background-color: $color-white;
-      color: $color-blue;
-    }
-  }
 }

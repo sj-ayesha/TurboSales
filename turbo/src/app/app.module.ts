@@ -42,6 +42,7 @@ import { CounterUpComponent } from './components/counter-up/counter-up.component
 import { CarFinancingComponent } from './components/car-financing/car-financing.component';
 import { AppointmentComponent } from './components/appointment/appointment.component';
 import { ExpertsComponent } from './components/experts/experts.component';
+import { CheckoutComponent } from './components/checkout/checkout.component';
 
 const config = new AuthServiceConfig([
   {
@@ -83,7 +84,8 @@ export function provideConfig() {
     CounterUpComponent,
     CarFinancingComponent,
     AppointmentComponent,
-    ExpertsComponent
+    ExpertsComponent,
+    CheckoutComponent
   ],
   imports: [
     BrowserModule,

@@ -34,6 +34,7 @@ export class SignupComponent implements OnInit {
   error: string;
 
   namePattern = "^[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z]*)*$";
+  passwordPattern = "^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{6,}$"
 
 
   constructor(
@@ -56,7 +57,7 @@ export class SignupComponent implements OnInit {
       firstName: ['', [Validators.required, Validators.pattern(this.namePattern)]],
       lastName: ['', [Validators.required, Validators.pattern(this.namePattern)]],
       username: ['', Validators.required],
-      password: ['', Validators.required],
+      password: ['', [Validators.required, Validators.pattern(this.passwordPattern)]],
       confirmPassword: ['', Validators.required]
     }, {
       validator: MustMatch('password', 'confirmPassword')
@@ -83,6 +84,7 @@ export class SignupComponent implements OnInit {
           //   this.router.navigate(['/'], { queryParams: { registered: true } });
           // }
           this.router.navigate(['/'], { queryParams: { registered: true } });
+          this.scrollToTop();
         },
         error => {
           this.error = error;
@@ -130,6 +132,14 @@ export class SignupComponent implements OnInit {
     this.router.navigate(['/']);
     document.getElementById('signUpIn').style.display = "none";
     this.authService.signIn(GoogleLoginProvider.PROVIDER_ID);
+  }
+
+  scrollToTop() {
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: 'smooth'
+    });
   }
 }
 

@@ -430,7 +430,7 @@ h2 {
 p {
   color: $color-gray;
   font-size: 1.5rem;
-  margin-bottom: 2.5rem;
+  margin-bottom: 1rem;
 
   @include respond(phone) {
     margin-bottom: 1.5rem;
@@ -450,7 +450,7 @@ p {
   border-radius: 5rem;
   width: 22rem;
   text-align: center;
-  margin: 0 auto 2.5rem;
+  margin: 2.5rem auto;
 
   &__ghost {
     border: 0.2rem solid $color-white;
@@ -515,7 +515,7 @@ p {
 .form-wrapper {
   background-color: $color-white;
   display: flex;
-  min-height: 80vh;
+  min-height: 100vh;
   width: 88rem;
   box-shadow: 0 0.2rem 0.6rem hsla(0, 0, 0, 0.1);
   border-radius: 1rem;
@@ -639,7 +639,7 @@ p {
   }
 
   .social-login {
-    margin-bottom: 3rem;
+    margin-bottom: 1rem;
     display: flex;
     &__link {
       text-decoration: none;
@@ -677,7 +677,7 @@ p {
 
   .divider {
     width: 25rem;
-    margin-bottom: 3rem;
+    margin-bottom: 1rem;
     text-align: center;
 
     @include respond(phone) {
@@ -715,7 +715,8 @@ p {
       padding: 1.5rem 2rem;
       border: none;
       background-color: $color-gray-light;
-      margin-bottom: 2rem;
+      // margin-bottom: 10px;
+      margin-top: 10px;
       font-size: 1.6rem;
       border-radius: 0.5rem;
     }

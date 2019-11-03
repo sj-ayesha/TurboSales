@@ -26,6 +26,7 @@ export class CarDetailComponent implements OnInit {
   submitted = false;
   error: string;
   showMsg: boolean = false;
+  showCartMessage: boolean = false;
 
   namePattern = "^[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z]*)*$";
   emailPattern = "[^@]+@[^\.]+\..+";
@@ -133,8 +134,10 @@ export class CarDetailComponent implements OnInit {
       }
     }
     this.loadCart();
+    
+    this.showCartMessage = true;
 
-    window.location.reload();
+    // window.location.reload();
     // setTimeout( () =>  window.location.reload(), 2000 );
   }
 
