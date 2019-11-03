@@ -172,7 +172,7 @@ p {
         padding: 6px 35px;
 
         &:hover {
-            background-color: $color-black;
+            background-color: $color-white;
         }
     }
 }
@@ -193,6 +193,16 @@ p {
 
     .current {
         background: $color-light-blue !important;
+    }
+}
+
+.btn-primary {
+    color: $color-white;
+    background-color: $color-blue;
+
+    &:hover {
+        color: $color-blue;
+        background-color: $color-white;
     }
 }
 

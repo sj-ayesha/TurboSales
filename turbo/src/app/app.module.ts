@@ -11,6 +11,8 @@ import { CountUpModule } from 'countup.js-angular2';
 import {NgsRevealModule} from 'ngx-scrollreveal';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { Ng2OrderModule } from 'ng2-order-pipe';
+import { OrderModule } from 'ngx-order-pipe';
 
 import { SocialLoginModule, AuthServiceConfig, FacebookLoginProvider, GoogleLoginProvider } from 'angularx-social-login';
 
@@ -101,7 +103,9 @@ export function provideConfig() {
     NgsRevealModule,
     NgxPaginationModule,
     SocialLoginModule,
-    Ng2SearchPipeModule
+    Ng2SearchPipeModule,
+    Ng2OrderModule,
+    OrderModule
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },

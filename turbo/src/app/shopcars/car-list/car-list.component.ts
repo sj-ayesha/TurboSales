@@ -1,6 +1,7 @@
 import { Component, OnInit, Input, OnChanges, SimpleChanges } from '@angular/core';
 import { Router } from '@angular/router';
 import { CarService } from "../../_services/car.service";
+import { OrderPipe } from 'ngx-order-pipe';
 
 @Component({
   selector: 'app-car-list',
@@ -11,6 +12,10 @@ export class CarListComponent implements OnInit, OnChanges {
   
   actualPage: number = 1;
   noAvailaibilityMsg: boolean = false;
+  order: string = 'title';
+  reverse: boolean = false;
+  sortedCollection: any[];
+  displayMode: number = 1;
 
   @Input() currentFilter: any;
 
@@ -31,12 +36,13 @@ export class CarListComponent implements OnInit, OnChanges {
     miles: number;
   }[];
 
-  constructor(private router: Router, private carService: CarService) {
+  constructor(private router: Router, private carService: CarService, private orderPipe: OrderPipe) {
     this.initialiseCarDetails();
+    this.sortedCollection = orderPipe.transform(this.cardetails, 'title');
   }
 
   ngOnInit() {
-    this.details = this.carService.getCarDetails()
+    this.details = this.carService.getCarDetails();
   }
 
   onSelect(id: number) {
@@ -138,6 +144,69 @@ export class CarListComponent implements OnInit, OnChanges {
       left: 0,
       behavior: 'smooth'
     });
+  }
+
+  styleFilter(){
+    let descIcon = document.getElementById('sortDescIcon');
+    let ascIcon = document.getElementById('sortAscIcon');
+
+    if(descIcon && descIcon.style.display == 'none') {
+        descIcon.style.display = 'inline-block';
+    } else {
+        descIcon.style.display = 'none';
+    }
+    
+    if(ascIcon && ascIcon.style.display == 'none') {
+        ascIcon.style.display = 'inline-block';
+    } else {
+        ascIcon.style.display = 'none';
+    }
+  }
+
+  styleFilterYear() {
+    let descIcon = document.getElementById('sortDescIconYear');
+    let ascIcon = document.getElementById('sortAscIconYear');
+
+    if(descIcon && descIcon.style.display == 'none') {
+        descIcon.style.display = 'inline-block';
+    } else {
+        descIcon.style.display = 'none';
+    }
+    
+    if(ascIcon && ascIcon.style.display == 'none') {
+        ascIcon.style.display = 'inline-block';
+    } else {
+        ascIcon.style.display = 'none';
+    }
+  }
+
+  styleFilterPrice() {
+    let descIcon = document.getElementById('sortDescIconPrice');
+    let ascIcon = document.getElementById('sortAscIconPrice');
+
+    if(descIcon && descIcon.style.display == 'none') {
+        descIcon.style.display = 'inline-block';
+    } else {
+        descIcon.style.display = 'none';
+    }
+    
+    if(ascIcon && ascIcon.style.display == 'none') {
+        ascIcon.style.display = 'inline-block';
+    } else {
+        ascIcon.style.display = 'none';
+    }
+  }
+
+  setOrder(value: string) {
+    if (this.order === value) {
+      this.reverse = !this.reverse;
+    }
+
+    this.order = value;
+  }
+
+  onDisplayModeChange(mode: number): void {
+    this.displayMode = mode;
   }
 
 
