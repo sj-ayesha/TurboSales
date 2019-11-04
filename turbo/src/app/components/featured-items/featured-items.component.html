@@ -5,6 +5,7 @@
             <hr>
         </div>
     </div>
+    
     <div class="row featured-container--cars">
         <div class="col-xs-12 col-md-3 featured-box" *ngFor="let car of carDetails">
             <a (click)="onSelect(car.id)">
@@ -14,7 +15,6 @@
                         <p>${{car.price}}</p>
                     </div>
                 </div>
-
                 <h4 class="car-title" id="car-title">{{car.year}} {{car.title}} {{car.series}}</h4>
                 <div class="miles">
                     <i class="fa fa-dashboard"></i>

@@ -3,12 +3,11 @@ import { HttpRequest, HttpResponse, HttpHandler, HttpEvent, HttpInterceptor, HTT
 import { Observable, of, throwError } from 'rxjs';
 import { delay, mergeMap, materialize, dematerialize } from 'rxjs/operators';
 
-// let users = [{ id: 1, firstName: 'Jason', lastName: 'Watmore', username: 'test', password: 'test' }];
-
 // array in local storage for registered users
 let users = JSON.parse(localStorage.getItem('users')) || [];
 
 @Injectable()
+
 export class FakeBackendInterceptor implements HttpInterceptor {
     intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
         const { url, method, headers, body } = request;
@@ -31,9 +30,8 @@ export class FakeBackendInterceptor implements HttpInterceptor {
                     return next.handle(request);
             }    
         }
-
+        
         // route functions
-
         function authenticate() {
             const { username, password } = body;
             const user = users.find(x => x.username === username && x.password === password);
@@ -62,7 +60,6 @@ export class FakeBackendInterceptor implements HttpInterceptor {
         }
 
         // helper functions
-
         function ok(body?) {
             return of(new HttpResponse({ status: 200, body }))
         }

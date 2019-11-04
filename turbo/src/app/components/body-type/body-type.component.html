@@ -12,28 +12,9 @@
             <a routerLink="/shopcars" [queryParams]="{bodyType: bodyType.bodyType}"> 
                 <img src="{{ bodyType.img }}" alt="sedan">
                 <p [ngStyle]="{'color':bodyType.checkValue === true ? '#fff' : ''}">{{ bodyType.text }}</p>
-                <!-- <input class="body-type-checkbox" type="checkbox" id="{{ bodyType.id }}" (change)=onChecked($event,bodyType) #checkboxes>
 
-                <label for="{{ bodyType.id }}"
-                    [ngStyle]="{'background-color':bodyType.checkValue === true ? '#15518d' : ''}">
-                    <img src="{{ bodyType.img }}" alt="sedan">
-                    <p [ngStyle]="{'color':bodyType.checkValue === true ? '#fff' : ''}">{{ bodyType.text }}</p>
-                </label> -->
             </a>
 
         </div>
     </div>
-
-    <!-- <div class="row btn-action">
-        <div class="btn-start-search">
-            <a href="#" class="btn btn-primary btn-lg">
-                Start Search
-            </a>
-        </div>
-        <div class="btn-clear">
-            <a class="btn btn-primary btn-lg" (click)="clearSelection()">
-                Clear Search
-            </a>
-        </div>
-    </div> -->
 </div>

@@ -34,39 +34,19 @@ export class FeaturedItemsComponent implements OnInit {
 
   // alignItem() {
   //   let maxHeightTitle: number = 0;
-  //   let itemTitle = document.querySelector(".car-title");
-  //   let itemContainer = document.querySelector(".featured-box") as HTMLElement;
+  //   let itemContainer = <HTMLElement>document.querySelector(".featured-box");
+  //   let itemTitle = <HTMLElement>document.querySelector('.car-title');
 
-  //     if (itemTitle.el.nativeElement.offsetHeight() >= maxHeightTitle) {
-  //       maxHeightTitle = itemTitle.height();
+
+  //   itemContainer.forEach(()=>{
+  //     let title = itemContainer.find(itemTitle);
+
+  //     if (title.height() >= maxHeightTitle) {
+  //       maxHeightTitle = title.height();
   //     }
+  //   });
 
-  //   let newItemHeight = {
-  //     'height': maxHeightTitle
-  //   }
-
-  //     return newItemHeight;
-
-
-  // }
-
-  // alignItem() {
-  //   let maxHeightTitle: number = 0;
-  //   let itemContainer = document.querySelector(".featured-box");
-
-  //   let itemTitle = {
-  //     'height': 'auto'
-  //   }
-
-  //   // itemContainer.each(()=>{
-  //   //   let title = itemContainer.find(itemTitle);
-
-  //   //   if (title.height() >= maxHeightTitle) {
-  //   //     maxHeightTitle = title.height();
-  //   //   }
-  //   // });
-
-  //   // itemTitle.style.height(maxHeightTitle);
+  //   itemTitle.style.height = maxHeightTitle + 'px';
 
   // }
 

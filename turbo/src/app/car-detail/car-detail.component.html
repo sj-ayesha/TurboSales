@@ -32,7 +32,6 @@
                 </app-popup>
             </div>
 
-
             <div class="row car-description">
                 <div class="col-xs-12 col-md-12 car-spec-tab">
                     <div class="card">
@@ -185,6 +184,7 @@
                 </div>
             </div>
         </div>
+
         <div class="col-xs-12 col-md-4 car-overview side-bar">
             <div class="row">
                 <table class="table table-condensed table-detail">
@@ -210,12 +210,13 @@
                         </tr>
                     </tbody>
                 </table>
+
                 <div class="request-info">
                     <div class="container  request-info-form">
                         <h3>Request Information</h3>
                         <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="gobottom">
                             <div class="form-group">
-                                <input placeholder="Car Name" type="text" formControlName="carname" class="form-control"
+                                <input placeholder="Car Name" type="text" class="form-control"
                                     value="{{carDetails[0].year}} {{carDetails[0].title}} {{carDetails[0].series}}"
                                     disabled />
                             </div>
@@ -289,9 +290,10 @@
                         </form>
                     </div>
                 </div>
-                <app-car-financing></app-car-financing>
-            </div>
 
+                <app-car-financing></app-car-financing>
+                
+            </div>
         </div>
     </div>
 </div>

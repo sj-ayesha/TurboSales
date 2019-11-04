@@ -1,6 +1,5 @@
 @import '../../../styles.scss';
 
-
 .filter-section {
     background-color: $color-gray;
 
@@ -43,7 +42,7 @@
             left: 0;
             bottom: -1px;
             position: absolute;
-            background-color: #15518d;
+            background-color: $color-blue;
         }
     }
 

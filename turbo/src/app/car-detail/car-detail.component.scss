@@ -44,9 +44,6 @@
         h4 {
             margin-top: 0;
         }
-        &--multiple {
-
-        }
 
         &-box {
             width: 500px;
@@ -140,22 +137,18 @@
     }
 
     &-description {
-
         @media only screen and (min-width: 812px) {
             margin: 0;
         }
-
     }
 
     &-ad {
         img {
             width: 100%;
         }
-
     }
 
-    &-feature {
-        
+    &-feature {      
         &-col {
             h5 {
                 font-weight: 700;
@@ -181,7 +174,6 @@
 }
 
 .request-info {
-    // width: 100%;
     background-color: $color-blue;
 
     @media only screen and (min-device-width: 320px) and (max-device-width: 812px) {
@@ -205,8 +197,6 @@
     }
 
     form {
-        width: 320px;
-        float: left;
         margin: 20px;
         > div {
           position: relative;
@@ -215,7 +205,6 @@
         input, textarea {
           width: 100%;
           border: 2px solid white; 
-        //   background: none;
           position: relative;
           top: 0;
           left: 0;
@@ -223,7 +212,6 @@
           padding: 8px 12px;
           outline: 0;
           &:valid {
-            // Hides the label
             background: white; 
           }
           &:focus {
@@ -239,7 +227,7 @@
           }
         }
         label {
-          transition: // not padding
+          transition: 
             background 0.2s,
             color 0.2s,
             top 0.2s,
@@ -264,20 +252,20 @@
     form.gobottom {
         input, textarea {
             padding: 12px 12px 12px 12px; 
-          }
-          label {
+        }
+        label {
             top: 0;
             bottom: 0;
             left: 0;
             width: 100%;
-          }
-          input:focus, textarea:focus {
+        }
+        input:focus, textarea:focus {
             padding: 4px 6px 20px 6px; 
-          }
-          input:focus + label, textarea:focus + label {
+        }
+        input:focus + label, textarea:focus + label {
             top: 100%;
             margin-top: -16px;
-          }
+        }
     }
 }
 
@@ -292,10 +280,6 @@
     tbody {
         background-color: $color-gray;
         tr {
-
-            // &:first-child {
-            //     border-top: 5px solid $color-blue;
-            // }
             th, td {
                 padding: 20px;
             }

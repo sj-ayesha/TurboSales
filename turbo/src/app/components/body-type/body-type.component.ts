@@ -42,14 +42,12 @@ export class BodyTypeComponent implements OnInit {
     img: '../../../assets/img/bodyType/truck.png',
     text: 'Trucks', 
     bodyType: 'Trucks'
-  }
-
-]
+  }]
 
   constructor() { }
 
   @ViewChildren("checkboxes") checkboxes: QueryList<ElementRef>;
-  
+
 
   ngOnInit() {
   }
@@ -71,6 +69,4 @@ export class BodyTypeComponent implements OnInit {
       bodyType['checkValue'] = false;
     });
   }
-
-  
 }

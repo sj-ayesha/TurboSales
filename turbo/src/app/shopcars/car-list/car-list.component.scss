@@ -3,14 +3,12 @@
 .car {
     &-row {
         background-color: $color-gray;
-        // margin-bottom: 10px;
         margin: 0 0 10px 0;
     }
     &-img {
         padding: 0;
         img {
             width: 100%;
-            // min-height: 212px;
         }
 
     }
@@ -242,7 +240,6 @@
 }
 
 .number-cars {
-    // margin-top: -20px;
     text-align: center;
 }
 

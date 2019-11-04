@@ -79,10 +79,6 @@ export class SignupComponent implements OnInit {
       .pipe(first())
       .subscribe(
         data => {
-          // if (this.authenticationService.currentUserValue) {
-          //   // this.router.navigate(['/']);
-          //   this.router.navigate(['/'], { queryParams: { registered: true } });
-          // }
           this.router.navigate(['/'], { queryParams: { registered: true } });
           this.scrollToTop();
         },

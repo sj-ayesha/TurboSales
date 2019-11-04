@@ -84,16 +84,13 @@
         position: relative;
         margin: 10px 0;
 
-        // @media only screen and (min-device-width: 320px) and (max-device-width: 812px) {
-        //     margin: 10px 0;
-        // }
         img {
             width: 100%;
         }
 
         .text-block {
             position: absolute;
-            color: #fff;
+            color: $color-white;
             padding: 10px;
             bottom: 0;
             left: 15px;
@@ -112,17 +109,13 @@
         text-transform: uppercase;
 
         hr {
-            border-top: 3px solid #15518d;
+            border-top: 3px solid $color-blue;
             margin-top: -5px;
             width: 50px;
         }
     }
 
     &-counter {
-        // display: flex;
-        // justify-content: space-evenly;
-        // background-color: $color-gray;
-
         &--box {
             display: flex;
             background-color: $color-gray;
@@ -152,7 +145,7 @@
             }
 
             hr {
-                border-top: 3px solid #15518d;
+                border-top: 3px solid $color-blue;
                 margin-top: -5px;
                 width: 50px;
             }
@@ -209,7 +202,7 @@
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            color: white;
+            color: $color-white;
 
             
             @media only screen and (min-device-width: 320px) and (max-device-width: 811px) {
@@ -230,7 +223,6 @@
     img {
         width: 100%;
 
-
         @media only screen and (min-width: 812px) {
             width: 475px;
         }
@@ -242,7 +234,7 @@
             background-color: $color-blue;
 
             &:hover {
-                background-color: black;
+                background-color: $color-black;
             }
         }
 
@@ -253,45 +245,13 @@
             background-color: $color-blue;
 
             &:hover {
-                background-color: black;
+                background-color: $color-black;
             }
         }
     }
 }
 
 .warranty-description {
-    .subtitle {
-
-        // &:before {
-        //     content: '';
-        //     width: 100%;
-        //     height: 1px;
-        //     background-color: #e7e6e6;
-        //     position: absolute;
-        //     top: 25%;
-        //     left: 0;
-            
-            
-        //     @media only screen and (min-width: 812px) {
-        //         top: 50px;
-        //     }
-        // }
-
-        // &:after {
-        //     content: '';
-        //     width: 80px;
-        //     height: 2px;
-        //     left: 0;
-        //     top: 25%;
-        //     position: absolute;
-        //     background-color: #15518d;
-
-        //     @media only screen and (min-width: 812px) {
-        //         top: 50px;
-        //     }
-        // }
-    }
-
     ul {
         line-height: 35px;
     }
@@ -310,30 +270,6 @@
             width: 100%;
         }
 
-        h4 {
-            // &.subtitle {
-            //     &:before {
-            //         content: '';
-            //         width: 100%;
-            //         height: 1px;
-            //         background-color: #e7e6e6;
-            //         position: absolute;
-            //         bottom: 240px;
-            //         left: 0;                
-            //     }
-        
-            //     &:after {
-            //         content: '';
-            //         width: 80px;
-            //         height: 2px;
-            //         left: 0;
-            //         bottom: 240px;
-            //         position: absolute;
-            //         background-color: #15518d;
-            //     }
-            // }
-        }
-
         p {
             text-align: justify;
             margin-top: 20px;
@@ -347,8 +283,7 @@
                 &:hover {
                     background-color: black;
                 }
-            }
-    
+            }   
         }
     }
     &--text {
@@ -370,7 +305,7 @@
                 left: 0;
                 top: 50px;
                 position: absolute;
-                background-color: #15518d;
+                background-color: $color-blue;
             }
         }
     }

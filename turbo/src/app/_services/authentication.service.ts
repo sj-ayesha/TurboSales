@@ -6,7 +6,9 @@ import { map } from 'rxjs/operators';
 import { AuthService, FacebookLoginProvider, SocialUser } from 'angularx-social-login';
 
 @Injectable({ providedIn: 'root' })
+
 export class AuthenticationService {
+    
     private currentUserSubject: BehaviorSubject<any>;
     private currentUserSocialSubject: BehaviorSubject<any>;
     public currentUser: Observable<any>;

@@ -1,14 +1,13 @@
 import { Injectable } from '@angular/core';
-// import { Product } from '../_entities/product.entity';
 import { CarDetails, CarService } from '../_services/car.service';
 
 
 @Injectable({
   providedIn: 'root'
 })
+
 export class BuyCarService {
 
-  // private products: Product[];
   private carDetails: CarDetails[];
 
   constructor(private carService: CarService) {

@@ -10,7 +10,6 @@ import { Subscription } from 'rxjs';
 export class FilterCarsComponent implements OnInit {
 
   private routeSubscription: Subscription;
-  // noAvailaibilityMsgnoAvailaibilityMsg: boolean = false;
 
   constructor(private activatedRoute: ActivatedRoute) { }
 
@@ -82,12 +81,5 @@ export class FilterCarsComponent implements OnInit {
     this.filterEmitter.emit(arrOfObj);
     console.log(arrOfObj);
   }
-
-  // onFilterBrand() {
-  //   const arrOptions = this.brandOptions.filter((brandOption) => brandOption.checked);
-  //   this.filterEmitter.emit(arrOptions);
-  // }
-
-
 
 }

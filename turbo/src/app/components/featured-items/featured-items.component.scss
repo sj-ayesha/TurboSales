@@ -3,7 +3,6 @@
 .featured {
     &-container {
         &--cars {
-            // max-width: 1820px;
             margin: 0 auto;
         }
     }
@@ -41,6 +40,13 @@
                 border: none;
             }
         }
+        
+        .car-title {
+            @media only screen and (min-width: 1300px) {
+                min-height: 80px;
+            }
+        }
+
         img {   
             width: 100%;
         }

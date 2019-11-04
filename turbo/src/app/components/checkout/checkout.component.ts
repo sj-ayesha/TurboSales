@@ -35,5 +35,4 @@ export class CheckoutComponent implements OnInit {
 		}
 		localStorage.setItem('quantity', JSON.stringify(this.totalQuantity));
 	}
-
 }

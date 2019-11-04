@@ -34,17 +34,24 @@ export class AppointmentComponent implements OnInit {
   onSubmit() {
     this.submitted = true;
 
-    // stop the process here if form is invalid
     if (this.contactForm.invalid) {
-      console.log('invalid')
-      this.showMsg = false;
       return;
+      console.log(this.submitted);
     }
     else {
       this.showMsg = true;
-      this.contactForm.reset();
-      this.submitted = false;
     }
+
+    setTimeout(() => {
+      this.showMsg = false;
+      this.submitted = false;
+      this.contactForm.reset();
+    }, 2000);
+  }
+
+  close() {
+    this.submitted = false;
+    console.log(this.submitted);
   }
 
 

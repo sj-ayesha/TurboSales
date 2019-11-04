@@ -53,9 +53,9 @@
             </button>
         </div>
     </div>
-
 </div>
 
+<!--Grid View-->
 <div class="row" *ngIf="displayMode === 1">
     <div class="car-item col-xs-12 col-md-4" *ngFor="let cardetail of cardetails | filter:filter | orderBy: order:reverse:'case-insensitive' | paginate: {itemsPerPage: numberOfItems, currentPage: actualPage} ">
         <div class="thumbnail">
@@ -96,6 +96,7 @@
     </div>
 </div>
 
+<!--List View-->
 <div class="car-list-view__container" *ngIf="displayMode === 2">
     <div class="row car-row"
         *ngFor="let cardetail of cardetails | filter:filter | orderBy: order:reverse:'case-insensitive' | paginate: {itemsPerPage: numberOfItems, currentPage: actualPage} ">

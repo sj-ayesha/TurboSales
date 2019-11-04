@@ -32,5 +32,4 @@ export class PopupComponent implements OnInit {
     this.visible = false;
     this.visibleChange.emit(this.visible);
   }
-
 }

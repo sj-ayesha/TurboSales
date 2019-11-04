@@ -5,6 +5,7 @@ import { Observable } from 'rxjs';
 import { AuthenticationService } from '../_services';
 
 @Injectable()
+
 export class JwtInterceptor implements HttpInterceptor {
     constructor(private authenticationService: AuthenticationService) {}
 
@@ -18,7 +19,7 @@ export class JwtInterceptor implements HttpInterceptor {
                 }
             });
         }
-
+        
         return next.handle(request);
     }
 }

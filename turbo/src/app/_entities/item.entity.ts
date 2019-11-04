@@ -4,5 +4,4 @@ export class Item {
 
     product: CarDetails;
     quantity: number;
-
 }

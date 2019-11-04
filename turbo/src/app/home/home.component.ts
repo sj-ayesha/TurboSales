@@ -12,12 +12,9 @@ export class HomeComponent implements OnInit {
   constructor(private route: ActivatedRoute) { }
 
   ngOnInit() {
-
     // show success message on registration
     if (this.route.snapshot.queryParams['registered']) {
       this.success = 'Registration successful';
     }
- 
   }
-
 }

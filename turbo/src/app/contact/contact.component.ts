@@ -31,21 +31,21 @@ export class ContactComponent implements OnInit {
 
   get f() { return this.contactForm.controls; }
 
-  onSubmit() {
-    this.submitted = true;
+  // onSubmit() {
+  //   this.submitted = true;
 
-    // stop the process here if form is invalid
-    if (this.contactForm.invalid) {
-      console.log('invalid')
-      this.showMsg = false;
-      return;
-    }
-    else {
-      this.showMsg = true;
-      this.contactForm.reset();
-      this.submitted = false;
-    }
-  }
+  //   // stop the process here if form is invalid
+  //   if (this.contactForm.invalid) {
+  //     console.log('invalid')
+  //     this.showMsg = false;
+  //     return;
+  //   }
+  //   else {
+  //     this.showMsg = true;
+  //     this.contactForm.reset();
+  //     this.submitted = false;
+  //   }
+  // }
 
   // onSubmit() {
 
@@ -69,6 +69,29 @@ export class ContactComponent implements OnInit {
   //     // this.removeValidators(this.contactForm);
   //   }
   // }
+  onSubmit() {
+    this.submitted = true;
+
+    // stop here if form is invalid
+    if (this.contactForm.invalid) {
+      return;
+      console.log(this.submitted);
+    }
+    else {
+      this.showMsg = true;
+    }
+
+    setTimeout(() => {
+      this.showMsg = false;
+      this.submitted = false;
+      this.contactForm.reset();
+    }, 2000);
+  }
+
+  close() {
+    this.submitted = false;
+    console.log(this.submitted);
+  }
 
   public removeValidators(form: FormGroup) {
     for (const key in form.controls) {

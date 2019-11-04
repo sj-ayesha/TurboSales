@@ -1,7 +1,7 @@
 @import '../../styles.scss';
 
 .header-top {
-    background-color: #0d4176;
+    background-color: $color-dark-blue;
     color: $color-white;
 
     &-left {
@@ -315,14 +315,13 @@ header {
 
     .navbar-nav {
         li {
-            a{
+            a {
                 color: $color-white;
 
                 @media only screen and (min-width: 768px) {
                     height: 60px;
                     &:hover {
                         border-top: 5px solid $color-lighter-blue;
-                        // font-weight: 700;
                         padding-top: 10px;
                         background-color: $color-dark-blue;
                     }

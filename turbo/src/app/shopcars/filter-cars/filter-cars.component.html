@@ -1,5 +1,4 @@
 <div class="col-md-2 filter-section filter-desktop">
-    <!-- <h4>5 Vehicle(s) found</h4> -->
     <p>Refine your search</p>
 
     <div class="row filter-list">
@@ -24,7 +23,7 @@
         <div class="col-md-12">
             <ul *ngFor="let brandOption of brandOptions">
                 <li><input type="checkbox" value="{{brandOption.value}}" [(ngModel)]="brandOption.checked"
-                        (change)="onFilter()" #checkboxes><span>{{brandOption.name}}</span></li>
+                    (change)="onFilter()" #checkboxes><span>{{brandOption.name}}</span></li>
             </ul>
         </div>
     </div>
@@ -36,7 +35,7 @@
         <div class="col-md-12">
             <ul *ngFor="let priceOption of priceOptions">
                 <li><input type="checkbox" value="{{priceOption.value}}" [(ngModel)]="priceOption.checked"
-                        (change)="onFilter()" #checkboxes><span>{{priceOption.name}}</span></li>
+                    (change)="onFilter()" #checkboxes><span>{{priceOption.name}}</span></li>
             </ul>
         </div>
     </div>
@@ -48,7 +47,7 @@
         <div class="col-md-12">
             <ul *ngFor="let bodyTypeOption of bodyTypeOptions">
                 <li><input type="checkbox" value="{{bodyTypeOption.value}}" [(ngModel)]="bodyTypeOption.checked"
-                        (change)="onFilter()" #checkboxes><span>{{bodyTypeOption.name}}</span></li>
+                    (change)="onFilter()" #checkboxes><span>{{bodyTypeOption.name}}</span></li>
             </ul>
         </div>
     </div>
@@ -67,7 +66,6 @@
             <div class="panel-heading accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion"
                 data-target="#year">
                 <h4 class="panel-title">Year</h4>
-
             </div>
             <div id="year" class="panel-collapse collapse">
                 <div class="panel-body">
@@ -86,13 +84,12 @@
             <div class="panel-heading accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion"
                 data-target="#make">
                 <h4 class="panel-title">Make</h4>
-
             </div>
             <div id="make" class="panel-collapse collapse">
                 <div class="panel-body">
                     <ul *ngFor="let brandOption of brandOptions">
                         <li><input type="checkbox" value="{{brandOption.value}}" [(ngModel)]="brandOption.checked"
-                                (change)="onFilter()" #checkboxes><span>{{brandOption.name}}</span></li>
+                            (change)="onFilter()" #checkboxes><span>{{brandOption.name}}</span></li>
                     </ul>
                 </div>
             </div>
@@ -102,13 +99,12 @@
             <div class="panel-heading accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion"
                 data-target="#price">
                 <h4 class="panel-title">Price</h4>
-
             </div>
             <div id="price" class="panel-collapse collapse">
                 <div class="panel-body">
                     <ul *ngFor="let priceOption of priceOptions">
                         <li><input type="checkbox" value="{{priceOption.value}}" [(ngModel)]="priceOption.checked"
-                                (change)="onFilter()" #checkboxes><span>{{priceOption.name}}</span></li>
+                            (change)="onFilter()" #checkboxes><span>{{priceOption.name}}</span></li>
                     </ul>
                 </div>
             </div>
@@ -118,13 +114,12 @@
             <div class="panel-heading accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion"
                 data-target="#bodytype">
                 <h4 class="panel-title">Body Type</h4>
-
             </div>
             <div id="bodytype" class="panel-collapse collapse">
                 <div class="panel-body">
                     <ul *ngFor="let bodyTypeOption of bodyTypeOptions">
                         <li><input type="checkbox" value="{{bodyTypeOption.value}}" [(ngModel)]="bodyTypeOption.checked"
-                                (change)="onFilter()" #checkboxes><span>{{bodyTypeOption.name}}</span></li>
+                            (change)="onFilter()" #checkboxes><span>{{bodyTypeOption.name}}</span></li>
                     </ul>
                 </div>
             </div>

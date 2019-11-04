@@ -90,17 +90,9 @@
 }
 
 form {
-    // width: 320px;
-    // float: left;
-    // margin: 20px;
-    // > div {
-    //   position: relative;
-    //   overflow: hidden;
-    // }
     input, textarea {
       width: 100%;
       border: 2px solid white; 
-    //   background: none;
       position: relative;
       top: 0;
       left: 0;
@@ -108,7 +100,6 @@ form {
       padding: 8px 12px;
       outline: 0;
       &:valid {
-        // Hides the label
         background: white; 
       }
       &:focus {
@@ -124,7 +115,7 @@ form {
       }
     }
     label {
-      transition: // not padding
+      transition: 
         background 0.2s,
         color 0.2s,
         top 0.2s,

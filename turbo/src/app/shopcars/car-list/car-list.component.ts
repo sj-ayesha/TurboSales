@@ -51,7 +51,6 @@ export class CarListComponent implements OnInit, OnChanges {
 
 
   ngOnChanges(changes: SimpleChanges) {
-    //console.warn(changes)
     if (changes.currentFilter) {
       const priceRange = changes.currentFilter.currentValue.priceRange;
       const brand = changes.currentFilter.currentValue.brand;
@@ -68,12 +67,8 @@ export class CarListComponent implements OnInit, OnChanges {
         this.cardetails = this.cardetails.filter((carDetail) => {
           if (priceRange.length && carDetail.price >= minPrice && carDetail.price <= maxPrice) {
             this.scrollToTop();
-            // this.noAvailaibilityMsg = false;
             return carDetail;
           }
-          // else {
-          //   this.noAvailaibilityMsg = true;
-          // }
         }) || [];
       }
 
@@ -81,7 +76,6 @@ export class CarListComponent implements OnInit, OnChanges {
       if (year.length) {
 
         const arrayYears = year.map((yearObj) => {
-          // tslint:disable-next-line: radix
           return (yearObj.value);
 
         });
@@ -89,12 +83,8 @@ export class CarListComponent implements OnInit, OnChanges {
         this.cardetails = this.cardetails.filter((cardetail) => {
           if (arrayYears.includes(cardetail.year)) {
             this.scrollToTop();
-            // this.noAvailaibilityMsg = false;
             return cardetail;
           }
-          // else {
-          //   this.noAvailaibilityMsg = true;
-          // }
         });
       }
 
@@ -107,12 +97,8 @@ export class CarListComponent implements OnInit, OnChanges {
         this.cardetails = this.cardetails.filter((cardetail) => {
           if (arrBrandNames.includes(cardetail.title.toLowerCase())) {
             this.scrollToTop();
-            // this.noAvailaibilityMsg = false;
             return cardetail;
           }
-          // else {
-          //   this.noAvailaibilityMsg = true;
-          // }
         });
       }
 
@@ -125,12 +111,8 @@ export class CarListComponent implements OnInit, OnChanges {
         this.cardetails = this.cardetails.filter((cardetail) => {
           if (arrBodyTypeNames.includes(cardetail.bodyType.toLowerCase())) {
             this.scrollToTop();
-            // this.noAvailaibilityMsg = false;
             return cardetail;
           }
-          // else {
-          //   this.noAvailaibilityMsg = true;
-          // }
         });
       }
 
@@ -205,14 +187,12 @@ export class CarListComponent implements OnInit, OnChanges {
     if (this.order === value) {
       this.reverse = !this.reverse;
     }
-
     this.order = value;
   }
 
   onDisplayModeChange(mode: number): void {
     this.displayMode = mode;
   }
-
 
   initialiseCarDetails() {
     this.cardetails = this.carService.getCarDetails();

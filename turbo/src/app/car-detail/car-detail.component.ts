@@ -100,7 +100,6 @@ export class CarDetailComponent implements OnInit {
     console.log("adding", this.carDetails);
 
     this.carService.setUrl(this.carDetails[0].id);
-    // this.router.navigate(['/cart', { id:this.carDetails[0].id }]);
 
 
     if (id) {
@@ -134,11 +133,8 @@ export class CarDetailComponent implements OnInit {
       }
     }
     this.loadCart();
-    
-    this.showCartMessage = true;
 
-    // window.location.reload();
-    // setTimeout( () =>  window.location.reload(), 2000 );
+    this.showCartMessage = true;
   }
 
   loadCart(): void {
@@ -162,21 +158,26 @@ export class CarDetailComponent implements OnInit {
 
   onSubmit() {
     this.submitted = true;
- 
-    // stop the process here if form is invalid
+
+    // stop here if form is invalid
     if (this.contactForm.invalid) {
-      console.log('invalid')
-        this.showMsg = false;
-        return;
+      return;
+      console.log(this.submitted);
     }
     else {
       this.showMsg = true;
-      this.contactForm.reset();
-      // this.contactForm.markAsPristine();
-      this.submitted = false;
     }
 
+    setTimeout(() => {   
+      this.showMsg = false;
+      this.submitted = false;
+      this.contactForm.reset();
+    }, 2000);
+  }
 
+  close() {
+    this.submitted = false;
+    console.log(this.submitted);
   }
 
   goToCars() {

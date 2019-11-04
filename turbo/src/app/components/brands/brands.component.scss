@@ -1,7 +1,6 @@
 @import '../../../styles.scss';
 
 .brand {
-
     &-container {
         padding: 0;
     }
@@ -31,7 +30,6 @@
     &-row {
         text-align: center;
         margin: 0;
-        //background-color: $color-gray;
 
         @media only screen and (min-device-width: 320px) and (max-device-width: 812px) {
             img {
@@ -46,7 +44,6 @@
             color: $color-blue;
         }
     }
-
 
     &-box {
         @media only screen and (min-width: 812px) {

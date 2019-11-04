@@ -10,6 +10,7 @@ export class ShopcarsComponent implements OnInit {
   filterApplied = {};
 
   constructor() { }
+  
   ngOnInit() {
   }
 
@@ -21,13 +22,5 @@ export class ShopcarsComponent implements OnInit {
       bodyType: arr[3]
     };
   }
-
-  //   selectedColourChange(selectedColour: string) : void {
-  //   this.filterApplied.color = selectedColour;
-  // }
-
-  //   selectedColourChange(selectedColour: string) : void {
-  //   this.filterApplied.color = selectedColour;
-  // }
 
 }

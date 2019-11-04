@@ -6,6 +6,7 @@ import { catchError } from 'rxjs/operators';
 import { AuthenticationService } from '../_services';
 
 @Injectable()
+
 export class ErrorInterceptor implements HttpInterceptor {
     constructor(private authenticationService: AuthenticationService) { }
 
