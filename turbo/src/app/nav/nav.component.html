@@ -72,19 +72,19 @@
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
                         <li id="signUpIn" *ngIf="!currentUser && !currentSocialUser">
-                            <a class="nav-link" routerLink="/signup">
+                            <a class="nav-link" routerLink="/signup" (click)="toggleMenu()">
                                 <span class="glyphicon glyphicon-user"></span> Sign Up / Login</a>
                         </li>
                         <li>
-                            <a class="nav-link" *ngIf="currentUser" (click)="logout()">
+                            <a class="nav-link" *ngIf="currentUser" (click)="logout(); toggleMenu()">
                                 <span class="glyphicon glyphicon-user"></span> Log Out</a>
                         </li>
                         <li>
-                            <a class="nav-link" *ngIf="currentSocialUser" (click)="signOut()">
+                            <a class="nav-link" *ngIf="currentSocialUser" (click)="signOut(); toggleMenu()">
                                 <span class="glyphicon glyphicon-user"></span> Log Out</a>
                         </li>
                         <li>
-                            <a [routerLink]="['/cart']">
+                            <a [routerLink]="['/cart']" (click)="toggleMenu()">
                                 <span class="fa-stack fa-2x has-badge" data-count="quantity">
                                     <i class="glyphicon glyphicon-shopping-cart"></i>
                                 </span>
