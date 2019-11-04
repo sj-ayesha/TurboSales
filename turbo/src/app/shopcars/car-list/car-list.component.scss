@@ -193,8 +193,12 @@
 
 
 .filter-head {
-    display: flex;
-    align-items: center;
+    margin: 15px -15px;
+
+    @media only screen and (min-width: 813px) {
+        display: flex;
+        align-items: center;
+    } 
 }
 
 .list-group-item {
@@ -235,4 +239,8 @@
         display: flex;
         justify-content: center;
     }
+}
+
+.number-cars {
+    margin-top: -20px;
 }
