@@ -128,14 +128,14 @@ form {
       outline: 0;
       &:valid {
         // Hides the label
-        background: white; 
+        background: $color-white; 
       }
       &:focus {
         border-color: $color-dark-blue;
       }
       &:focus + label {
         background: $color-dark-blue;
-        color: white;
+        color: $color-white;
         font-size: 70%;
         padding: 1px 6px;
         z-index: 2;

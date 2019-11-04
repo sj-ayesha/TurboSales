@@ -7,36 +7,27 @@
 
     <div class="row container-fluid">
         <div class="col-xs-12 col-md-8">
-            <form>
+            <form class="gobottom">
                 <div class="row">
                     <div class="col-xs-12 col-md-6">
-                        <h3>Billing Address</h3>
-                        <div class="col-xs-12 col-md-6 form-group">
-                            <input placeholder="First Name" type="text" formControlName="firstName" class="form-control"
+                        <h4>Billing Address</h4>
+                        <div class="col-xs-12 col-md-5 form-group">
+                            <input placeholder="First Name" type="text" formControlName="firstName"
+                                class="form-control form-input"
                                 [ngClass]="{ 'is-invalid': submitted && f.firstName.errors }" />
+                            <label class="form-label" for="fname">First Name</label>
                             <div *ngIf="submitted && f.firstName.errors" class="invalid-feedback">
                                 <div *ngIf="f.firstName.errors.required">First Name is required</div>
                                 <div *ngIf="f.firstName.errors.pattern">
                                     First Name not valid.
                                 </div>
                             </div>
-                            <!-- <h3>Billing Address</h3>
-                                    <label for="fname"><i class="fa fa-user"></i> Full Name</label>
-                                    <input type="text" id="fname" name="firstname" placeholder="John M. Doe">
-                                    <label for="email"><i class="fa fa-envelope"></i> Email</label>
-                                    <input type="text" id="email" name="email" placeholder="john@example.com">
-                                    <label for="adr"><i class="fa fa-address-card-o"></i> Address</label>
-                                    <input type="text" id="adr" name="address" placeholder="542 W. 15th Street">
-                                    <label for="city"><i class="fa fa-institution"></i> City</label>
-                                    <input type="text" id="city" name="city" placeholder="New York">
-                                    <label for="state">State</label>
-                                    <input type="text" id="state" name="state" placeholder="NY">
-                                    <label for="zip">Zip</label>
-                                    <input type="text" id="zip" name="zip" placeholder="10001"> -->
                         </div>
-                        <div class="col-xs-12 col-md-6 form-group">
-                            <input placeholder="Last Name" type="text" formControlName="lastName" class="form-control"
+                        <div class="col-xs-12 col-md-5 col-md-offset-1 form-group">
+                            <input placeholder="Last Name" type="text" formControlName="lastName"
+                                class="form-control form-input"
                                 [ngClass]="{ 'is-invalid': submitted && f.lastName.errors }" />
+                            <label class="form-label" for="lname">Last Name</label>
                             <div *ngIf="submitted && f.lastName.errors" class="invalid-feedback">
                                 <div *ngIf="f.lastName.errors.required">Last Name is required</div>
                                 <div *ngIf="f.lastName.errors.pattern">
@@ -45,10 +36,11 @@
                             </div>
                         </div>
 
-                        <div class="col-xs-12 col-md-6 form-group">
-                            <input type="email" placeholder="Email Address" class="form-control"
+                        <div class="col-xs-12 col-md-5 form-group">
+                            <input type="email" placeholder="Email Address" class="form-control form-input"
                                 formControlName="emailAdd"
                                 [ngClass]="{ 'is-invalid': submitted && f.emailAdd.errors }" />
+                            <label class="form-label" for="emailAdd">Email Address</label>
                             <div *ngIf="submitted && f.emailAdd.errors" class="invalid-feedback">
                                 <div *ngIf="f.emailAdd.errors.required">Email address is required</div>
                                 <div *ngIf="f.emailAdd.errors.pattern">
@@ -57,9 +49,10 @@
                             </div>
                         </div>
 
-                        <div class="col-xs-12 col-md-6 form-group">
-                            <input placeholder="City" type="text" formControlName="city" class="form-control"
+                        <div class="col-xs-12 col-md-5 col-md-offset-1 form-group">
+                            <input placeholder="City" type="text" formControlName="city" class="form-control form-input"
                                 [ngClass]="{ 'is-invalid': submitted && f.city.errors }" />
+                            <label class="form-label" for="city">City</label>
                             <div *ngIf="submitted && f.city.errors" class="invalid-feedback">
                                 <div *ngIf="f.city.errors.required">City is required</div>
                                 <div *ngIf="f.city.errors.pattern">
@@ -68,20 +61,11 @@
                             </div>
                         </div>
 
-                        <div class="col-xs-12 col-md-6 form-group">
-                            <input placeholder="City" type="text" formControlName="city" class="form-control"
-                                [ngClass]="{ 'is-invalid': submitted && f.city.errors }" />
-                            <div *ngIf="submitted && f.city.errors" class="invalid-feedback">
-                                <div *ngIf="f.city.errors.required">City is required</div>
-                                <div *ngIf="f.city.errors.pattern">
-                                    City not valid.
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-xs-12 col-md-6 form-group">
-                            <input placeholder="State" type="text" formControlName="state" class="form-control"
+                        <div class="col-xs-12 col-md-5 form-group">
+                            <input placeholder="State" type="text" formControlName="state"
+                                class="form-control form-input"
                                 [ngClass]="{ 'is-invalid': submitted && f.state.errors }" />
+                            <label class="form-label" for="state">State</label>
                             <div *ngIf="submitted && f.state.errors" class="invalid-feedback">
                                 <div *ngIf="f.state.errors.required">State is required</div>
                                 <div *ngIf="f.state.errors.pattern">
@@ -90,9 +74,11 @@
                             </div>
                         </div>
 
-                        <div class="col-xs-12 col-md-6 form-group">
-                            <input placeholder="Zip Code" type="text" formControlName="zipcode" class="form-control"
+                        <div class="col-xs-12 col-md-5 col-md-offset-1 form-group">
+                            <input placeholder="Zip Code" type="text" formControlName="zipcode"
+                                class="form-control form-input"
                                 [ngClass]="{ 'is-invalid': submitted && f.zipcode.errors }" />
+                            <label class="form-label" for="zipcode">Zip Code</label>
                             <div *ngIf="submitted && f.zipcode.errors" class="invalid-feedback">
                                 <div *ngIf="f.zipcode.errors.required">Zipcode is required</div>
                                 <div *ngIf="f.zipcode.errors.pattern">
@@ -103,15 +89,17 @@
                     </div>
 
                     <div class="col-xs-12 col-md-6">
-                        <h3>Payment</h3>
+                        <h4>Payment</h4>
                         <div class="icon-container col-xs-12 col-md-12 form-group">
                             <i class="fab fa-cc-visa" style="color:navy;"></i>
                             <i class="fab fa-cc-amex" style="color:blue;"></i>
                             <i class="fab fa-cc-mastercard" style="color:red;"></i>
                         </div>
-                        <div class="col-xs-12 col-md-6 form-group">
+                        <div class="col-xs-12 col-md-5 form-group">
                             <input placeholder="Name on Card" type="text" formControlName="cardname"
-                                class="form-control" [ngClass]="{ 'is-invalid': submitted && f.cardname.errors }" />
+                                class="form-control form-input"
+                                [ngClass]="{ 'is-invalid': submitted && f.cardname.errors }" />
+                            <label class="form-label" for="cardname">Name on Card</label>
                             <div *ngIf="submitted && f.cardname.errors" class="invalid-feedback">
                                 <div *ngIf="f.cardname.errors.required">Card Name is required</div>
                                 <div *ngIf="f.cardname.errors.pattern">
@@ -120,9 +108,11 @@
                             </div>
                         </div>
 
-                        <div class="col-xs-12 col-md-6 form-group">
+                        <div class="col-xs-12 col-md-5 col-md-offset-1 form-group">
                             <input placeholder="Credit Card Number" type="text" formControlName="cardnumber"
-                                class="form-control" [ngClass]="{ 'is-invalid': submitted && f.cardnumber.errors }" />
+                                class="form-control form-input"
+                                [ngClass]="{ 'is-invalid': submitted && f.cardnumber.errors }" />
+                                <label class="form-label" for="ccnum">Credit Card Number</label>
                             <div *ngIf="submitted && f.cardnumber.errors" class="invalid-feedback">
                                 <div *ngIf="f.cardnumber.errors.required">Card Number is required</div>
                                 <div *ngIf="f.cardnumber.errors.pattern">
@@ -131,9 +121,11 @@
                             </div>
                         </div>
 
-                        <div class="col-xs-12 col-md-6 form-group">
+                        <div class="col-xs-12 col-md-5 form-group">
                             <input placeholder="Expiry Month" type="text" formControlName="expmonth"
-                                class="form-control" [ngClass]="{ 'is-invalid': submitted && f.expmonth.errors }" />
+                                class="form-control form-input"
+                                [ngClass]="{ 'is-invalid': submitted && f.expmonth.errors }" />
+                                <label class="form-label" for="expmonth">Expiry Month</label>
                             <div *ngIf="submitted && f.expmonth.errors" class="invalid-feedback">
                                 <div *ngIf="f.expmonth.errors.required">Expiry is required</div>
                                 <div *ngIf="f.expmonth.errors.pattern">
@@ -142,9 +134,11 @@
                             </div>
                         </div>
 
-                        <div class="col-xs-12 col-md-6 form-group">
-                            <input placeholder="Expiry Year" type="text" formControlName="expyear" class="form-control"
+                        <div class="col-xs-12 col-md-5 col-md-offset-1 form-group">
+                            <input placeholder="Expiry Year" type="text" formControlName="expyear"
+                                class="form-control form-input"
                                 [ngClass]="{ 'is-invalid': submitted && f.expyear.errors }" />
+                                <label class="form-label" for="expyear">Expiry Year</label>
                             <div *ngIf="submitted && f.expyear.errors" class="invalid-feedback">
                                 <div *ngIf="f.expyear.errors.required">Expiry Year is required</div>
                                 <div *ngIf="f.expyear.errors.pattern">
@@ -153,9 +147,10 @@
                             </div>
                         </div>
 
-                        <div class="col-xs-12 col-md-6 form-group">
-                            <input placeholder="CVV" type="text" formControlName="cvv" class="form-control"
+                        <div class="col-xs-12 col-md-5 form-group">
+                            <input placeholder="CVV" type="text" formControlName="cvv" class="form-control form-input"
                                 [ngClass]="{ 'is-invalid': submitted && f.cvv.errors }" />
+                                <label class="form-label" for="cvv">CVV</label>
                             <div *ngIf="submitted && f.cvv.errors" class="invalid-feedback">
                                 <div *ngIf="f.cvv.errors.required">CVV is required</div>
                                 <div *ngIf="f.cvv.errors.pattern">
@@ -164,7 +159,6 @@
                             </div>
                         </div>
                     </div>
-
                 </div>
                 <div class="row checkout-options">
                     <div class="col-xs-12 col-md-12">

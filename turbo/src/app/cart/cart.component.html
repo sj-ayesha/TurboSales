@@ -7,39 +7,52 @@
 
     <div class="row container-fluid">
         <div class="col-xs-12 col-md-12">
-            <div class="table-mobile">
-                <table>
-                    <thead>
-                        <tr>
-                            <th scope="col">Title</th>
-                            <th scope="col">Image</th>
-                            <th scope="col">Price</th>
-                            <th scope="col">Quantity</th>
-                            <th scope="col">Option</th>
-                            <th scope="col">Sub Total</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr *ngFor="let item of items">
-                            <td data-label="Title">{{item.product.title}}</td>
-                            <td data-label="Image"><img src="{{item.product.img}}" width="150"></td>
-                            <td data-label="Price">${{item.product.price}}</td>
-                            <td data-label="Quantity">{{item.quantity}}</td>
-                            <td data-label="Option"><button (click)="remove(item.product.id)"
-                                    class="btn btn-danger btn-sm"><i class="fa fa-trash-o"></i></button></td>
-                            <td data-label="Sub Total">${{item.product.price * item.quantity}}</td>
-                        </tr>
-                        <tr>
-                            <th colspan="5" align="right">Total</th>
-                            <td>${{total}}</td>
-                        </tr>
-                    </tbody>
-                </table>
-                <div class="col-xs-12 col-md-12 btn-checkout">
-                    <a class="btn btn-primary btn-lg" routerLink="/shopcars">Continue Shopping</a>
-                    <a class="btn btn-primary btn-lg" routerLink="/checkout">Check Out</a>
+            <div class="empty-cart-container" *ngIf="items.length > 0; else elseTemplate">
+                <div class="table-mobile">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th scope="col">Title</th>
+                                <th scope="col">Image</th>
+                                <th scope="col">Price</th>
+                                <th scope="col">Quantity</th>
+                                <th scope="col">Option</th>
+                                <th scope="col">Sub Total</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let item of items">
+                                <td data-label="Title">{{item.product.title}}</td>
+                                <td data-label="Image"><img src="{{item.product.img}}" width="150"></td>
+                                <td data-label="Price">${{item.product.price}}</td>
+                                <td data-label="Quantity">{{item.quantity}}</td>
+                                <td data-label="Option"><button (click)="remove(item.product.id)"
+                                        class="btn btn-danger btn-sm"><i class="fa fa-trash-o"></i></button></td>
+                                <td data-label="Sub Total">${{item.product.price * item.quantity}}</td>
+                            </tr>
+                            <tr>
+                                <th colspan="5" align="right">Total</th>
+                                <td>${{total}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="col-xs-12 col-md-12 btn-checkout">
+                        <a class="btn btn-primary btn-lg" routerLink="/shopcars">Continue Shopping</a>
+                        <a class="btn btn-primary btn-lg" routerLink="/checkout">Check Out</a>
+                    </div>
                 </div>
             </div>
+
+            <ng-template #elseTemplate>
+                <div class="empty-cart-container">
+                    <div class="empty-cart__img">
+                        <img src="../../assets/img/empty-cart.png" alt="">
+                    </div>
+                    <div class="empty-cart__text">
+                        <h4>Your shopping Cart is <b>EMPTY</b></h4>
+                    </div>
+                </div>
+            </ng-template>
         </div>
     </div>
 </div>

@@ -110,3 +110,15 @@
     }
   }
 }
+
+.empty-cart-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .empty-cart {
+    &__img {
+      padding: 0 30px;
+    }
+  }
+}

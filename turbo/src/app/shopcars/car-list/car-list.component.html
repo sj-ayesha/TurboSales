@@ -5,7 +5,7 @@
             <label for="search" class="glyphicon glyphicon-search" rel="tooltip" title="Search"></label>
         </div>
     </div>
-    <div class="col-xs-4 col-md-1 form-group">
+    <div class="col-xs-4 col-md-1 col-lg-2 form-group">
         <div class="sort-title" [class.active]="order === 'title'">
             <button type="button" class="btn btn-default" (click)="setOrder('title'); styleFilter()">
                 <span id="sortDescIcon" class="pull-left" style="display: inline-block;"><i
@@ -17,7 +17,7 @@
         </div>
     </div>
 
-    <div class="col-xs-4 col-md-1 form-group">
+    <div class="col-xs-4 col-md-1 col-lg-2 form-group">
         <div class="sort-title" [class.active]="order === 'year'">
             <button type="button" class="btn btn-default" (click)="setOrder('year'); styleFilterYear()">
                 <span id="sortDescIconYear" class="pull-left" style="display: inline-block;"><i
@@ -29,7 +29,7 @@
         </div>
     </div>
 
-    <div class="col-xs-4 col-md-1 form-group">
+    <div class="col-xs-4 col-md-1 col-lg-2 form-group">
         <div class="sort-title" [class.active]="order === 'price'">
             <button type="button" class="btn btn-default" (click)="setOrder('price'); styleFilterPrice()">
                 <span id="sortDescIconPrice" class="pull-left" style="display: inline-block;"><i
@@ -41,7 +41,7 @@
         </div>
     </div>
 
-    <div class="col-xs-4 col-md-1 form-group">
+    <div class="col-xs-4 col-md-1 col-lg-2 form-group">
         <div class="btn-group pull-right">
             <button class="btn btn-white" type="button" (click)="onDisplayModeChange(1)"
                 [ngClass]="{'btn-primary active': displayMode === 1}">

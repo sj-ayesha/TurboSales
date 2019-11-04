@@ -14,9 +14,19 @@
 
     .row {
         margin: 0;
+
+        &.container-fluid {
+          margin: 20px 0;
+          display: flex;
+          flex-direction: column-reverse;
+
+          @media only screen and (min-width: 812px) {
+            display: initial;
+          }
+        }
     }
 
-    h3 {
+    h4 {
         padding: 0 15px;
     }
 
@@ -132,4 +142,77 @@
           border-bottom: 0;
         }
       }
+}
+
+.form-group {
+  padding: 0;
+  // margin-left: 15px;
+  // margin-right: 15px;
+}
+
+form {
+  .form-input, .form-textarea {
+    width: 100%;
+    position: relative;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    padding: 8px 12px;
+    outline: 0;
+    &:valid {
+      // Hides the label
+      background: $color-white; 
+    }
+    &:focus {
+      border-color: $color-dark-blue;
+    }
+    &:focus + label {
+      background: $color-dark-blue;
+      color: $color-white;
+      font-size: 70%;
+      padding: 1px 6px;
+      z-index: 2;
+      text-transform: uppercase;
+    }
+  }
+  .form-label {
+    transition: // not padding
+      background 0.2s,
+      color 0.2s,
+      top 0.2s,
+      bottom 0.2s,
+      right 0.2s,
+      left 0.2s;
+    position: absolute;
+    color: white;
+    padding: 7px 15px;
+    margin-bottom: 0;
+  }
+  textarea {
+    display: block;
+    resize: vertical;
+  }
+
+  &.gobottom {
+    .form-input, .form-textarea {
+      padding: 12px 12px 12px 12px; 
+    }
+    .form-label {
+      top: 0;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+    }
+    .form-input:focus, textarea:focus {
+      padding: 4px 6px 20px 6px; 
+    }
+    .form-input:focus + label, textarea:focus + label {
+      top: 100%;
+      margin-top: -16px;
+    }
+  }
+}
+
+.form-control {
+  height: 50px;
 }

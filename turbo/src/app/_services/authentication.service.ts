@@ -60,7 +60,6 @@ export class AuthenticationService {
     logoutSocial(){
         this.authService.signOut();
         localStorage.removeItem('currentSocialUser');
-        localStorage.removeItem('cart');
         this.currentUserSocialSubject.next(null);
         if (localStorage.getItem("currentUser") === null) {
             document.getElementById('signUpIn').style.display = "block";
@@ -70,7 +69,6 @@ export class AuthenticationService {
     logout() {
         // remove user from local storage and set current user to null
         localStorage.removeItem('currentUser');
-        localStorage.removeItem('cart');
         this.currentUserSubject.next(null);
         document.getElementById('signUpIn').style.display = "block";
     }
