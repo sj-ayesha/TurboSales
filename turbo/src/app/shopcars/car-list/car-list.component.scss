@@ -242,5 +242,22 @@
 }
 
 .number-cars {
-    margin-top: -20px;
+    // margin-top: -20px;
+    text-align: center;
+}
+
+.pagination-footer {
+
+    @media only screen and (min-width: 813px) {
+        display: flex;
+        justify-content: flex-end;
+    } 
+
+}
+
+.pull-right {
+    @media only screen and (max-width: 813px) {
+        display: flex;
+        width: 100%;
+    } 
 }

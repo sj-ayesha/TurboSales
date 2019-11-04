@@ -50,4 +50,11 @@ export class NavComponent implements OnInit {
     this.authenticationService.logoutSocial();
   }
 
+  toggleMenu() {
+    let menuBox = document.getElementById('myNavbar');
+
+    menuBox.classList.remove('in');
+
+  }
+
 }
