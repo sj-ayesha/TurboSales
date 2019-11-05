@@ -16,17 +16,70 @@ export class CartComponent implements OnInit {
 
 	public shoppingCartItems$: Observable<CarDetails[]> = of([]);
 	public shoppingCartItems: CarDetails[] = [];
+	private items: Item[] = [];
+	private total: number = 0;
+	private totalQuantity: number = 0;
+	
+	public newArr = [];
+
 	constructor(private cartService: CartService, private route: ActivatedRoute) {
 		this.shoppingCartItems$ = this.cartService.getItems();
 
 		this.shoppingCartItems$.subscribe(_ => this.shoppingCartItems = _);
 
+		localStorage.setItem('shoppingCart', JSON.stringify(this.shoppingCartItems));
+
+		
+		
+		let arr = this.shoppingCartItems;
+
+		
+		let lookupObject = {};
+		let i;
+
+		for(i in arr) {
+			
+			lookupObject[arr[i]["id"]] = arr[i];
+		}
+
+		
+		for( i in lookupObject) {
+			this.newArr.push(lookupObject[i]);
+		}
+
+		let quantity = 0;
+		let sizeOfNewArray = 0;
+
+		//loop in array of objects
+			// newArr id
+			//loop in arr and compare id
+		//increment quantity
+		//at the end of array, push new quantity in object and set quantity back to zero
+		//compare second id
+
+		this.newArr.forEach(element => {
+			element.quantity = 0;
+			arr.forEach(el => {
+
+				if (element.id === el.id) {
+					quantity += 1;
+				}
+
+				//newArr[i].quantity = quantity;
+			})
+			//newArr[i].quantity = quantity;
+			element.quantity = quantity;
+			quantity = 0;
+		})
+
+		
+		console.log(this.newArr)
+		
+
 	}
 
 	ngOnInit() {
-		const id = parseInt(this.route.snapshot.paramMap.get('id'));
 
-		
 	}
 
 	public removeItem(item: CarDetails) {

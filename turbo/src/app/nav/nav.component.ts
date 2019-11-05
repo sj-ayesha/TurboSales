@@ -49,7 +49,7 @@ export class NavComponent implements OnInit {
         this.className += " active";
       });
     }
-    document.getElementsByClassName("has-badge")[0].setAttribute("data-count",this.cartLength);
+    // document.getElementsByClassName("has-badge")[0].setAttribute("data-count",this.cartLength);
   }
 
   logout() {

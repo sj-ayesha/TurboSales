@@ -1,7 +1,10 @@
 import {Injectable} from '@angular/core';
 import {CarDetails} from '../_services/car.service';
+import { ActivatedRoute } from '@angular/router';
 import {BehaviorSubject, Observable, Subject, Subscriber} from 'rxjs';
+import { Item } from '../_entities/item.entity';
 import {of} from 'rxjs/observable/of';
+import { BuyCarService } from '../_services/buy-car.service';
 
 @Injectable({
   providedIn: 'root'
@@ -10,7 +13,7 @@ export class CartService {
   private itemsInCartSubject: BehaviorSubject<CarDetails[]> = new BehaviorSubject([]);
   private itemsInCart: CarDetails[] = [];
 
-  constructor() {
+  constructor(private route: ActivatedRoute, private buyCarService: BuyCarService) {
     this.itemsInCartSubject.subscribe(_ => this.itemsInCart = _);
   }
 

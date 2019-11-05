@@ -78,7 +78,6 @@ export class FilterCarsComponent implements OnInit {
 
     let arrOfObj = [arrOptions, arrOptionsBrand, arrOptionsYear, arrOptionsBodyType];
     this.filterEmitter.emit(arrOfObj);
-    console.log(arrOfObj);
   }
 
 }

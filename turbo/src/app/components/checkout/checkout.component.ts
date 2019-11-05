@@ -1,6 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { Item } from '../../_entities/item.entity';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { CarDetails, CarService } from '../../_services/car.service';
+import { CartService } from '../../_services/cart.service';
+import { Observable } from 'rxjs';
+import { ActivatedRoute } from '@angular/router';
+import {of} from 'rxjs/observable/of';
 
 @Component({
   selector: 'app-checkout',
@@ -16,6 +21,10 @@ export class CheckoutComponent implements OnInit {
 	submitted = false;
 	error: string;
 	showMsg: boolean = false;
+	public shoppingCartItems$: Observable<CarDetails[]> = of([]);
+	public shoppingCartItems: CarDetails[] = [];
+
+
 	namePattern = "^[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z]*)*$";
 	emailPattern = "[^@]+@[^\.]+\..+";
 	zipcode = "^\d{5}(?:[-\s]\d{4})?$";
@@ -23,10 +32,16 @@ export class CheckoutComponent implements OnInit {
 	expiryDate = "^\d{2}\/\d{2}$";
 	cvv = "/^[0-9]{3,4}$/";
 
-  constructor(private formBuilder: FormBuilder) { }
+
+  constructor(private formBuilder: FormBuilder, private cartService: CartService, private route: ActivatedRoute) {
+		this.shoppingCartItems$ = this.cartService.getItems();
+
+		this.shoppingCartItems$.subscribe(_ => this.shoppingCartItems = _);
+
+		localStorage.setItem('shoppingCart', JSON.stringify(this.shoppingCartItems));
+   }
 
   ngOnInit() {
-	this.loadCart();
 	this.billingForm = this.formBuilder.group({
 		firstName: ['', [Validators.required, Validators.pattern(this.namePattern)]],
 		lastName: ['', [Validators.required, Validators.pattern(this.namePattern)]],
