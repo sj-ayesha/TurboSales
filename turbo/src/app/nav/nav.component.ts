@@ -1,7 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService, FacebookLoginProvider, SocialUser } from 'angularx-social-login';
+import {Location, LocationStrategy, PathLocationStrategy} from '@angular/common';
 import { AuthenticationService } from '../_services';
+import {Observable} from 'rxjs';
+import { CartService } from '../_services/cart.service';
+import { CarDetails, CarService } from '../_services/car.service';
 
 @Component({
   selector: 'app-nav',
@@ -17,13 +21,22 @@ export class NavComponent implements OnInit {
   loggedIn: boolean;
   currentUser: any;
   currentSocialUser: any;
+  
+  public shoppingCartItems$: Observable<CarDetails[]>;
+
 
   constructor(
     private router: Router,
-    private authenticationService: AuthenticationService, private authService: AuthService)
+    private authenticationService: AuthenticationService, private authService: AuthService, public location: Location
+    , private cartService: CartService)
     {
       this.authenticationService.currentUser.subscribe(x => this.currentUser = x);
       this.authenticationService.currentSocialUser.subscribe(x => this.currentSocialUser = x);
+      this.shoppingCartItems$ = this
+      .cartService
+      .getItems();
+
+    this.shoppingCartItems$.subscribe(_ => _);
     } 
 
   ngOnInit() {
@@ -51,5 +64,6 @@ export class NavComponent implements OnInit {
   toggleMenu() {
     let menuBox = document.getElementById('myNavbar');
     menuBox.classList.remove('in');
-  }
+  }    
+  
 }

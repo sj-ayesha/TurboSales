@@ -7,7 +7,7 @@
 
     <div class="row container-fluid">
         <div class="col-xs-12 col-md-12">
-            <div class="empty-cart-container" *ngIf="items.length > 0; else elseTemplate">
+            <div class="empty-cart-container" *ngIf="shoppingCartItems.length > 0; else elseTemplate">
                 <div class="table-mobile">
                     <table>
                         <thead>
@@ -21,19 +21,19 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr *ngFor="let item of items">
-                                <td data-label="Title">{{item.product.title}}</td>
-                                <td data-label="Image"><img src="{{item.product.img}}" width="150"></td>
-                                <td data-label="Price">${{item.product.price}}</td>
-                                <td data-label="Quantity">{{item.quantity}}</td>
-                                <td data-label="Option"><button (click)="remove(item.product.id)"
+                            <tr *ngFor="let item of shoppingCartItems">
+                                <td data-label="Title">{{item.title}}</td>
+                                <td data-label="Image"><img src="{{item.img}}" width="150"></td>
+                                <td data-label="Price">${{item.price}}</td>
+                                <td data-label="Quantity"></td>
+                                <td data-label="Option"><button (click)="removeItem(item)"
                                         class="btn btn-danger btn-sm"><i class="fa fa-trash-o"></i></button></td>
-                                <td data-label="Sub Total">${{item.product.price * item.quantity}}</td>
+                                <td data-label="Sub Total">${{item.price * item.quantity}}</td>
                             </tr>
-                            <tr>
+                            <!-- <tr>
                                 <th colspan="5" align="right">Total</th>
                                 <td>${{total}}</td>
-                            </tr>
+                            </tr> -->
                         </tbody>
                     </table>
                     <div class="col-xs-12 col-md-12 btn-checkout">

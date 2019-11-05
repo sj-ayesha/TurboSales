@@ -85,8 +85,8 @@
                         </li>
                         <li>
                             <a [routerLink]="['/cart']" (click)="toggleMenu()">
-                                <span class="fa-stack fa-2x has-badge" data-count="quantity">
-                                    <i class="glyphicon glyphicon-shopping-cart"></i>
+                                <span class="fa-stack fa-2x">
+                                    <i class="glyphicon glyphicon-shopping-cart">{{(shoppingCartItems$ | async).length}}</i>
                                 </span>
                             </a>
                         </li>

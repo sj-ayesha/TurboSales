@@ -1,5 +1,9 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import {Location, LocationStrategy, PathLocationStrategy} from '@angular/common';
+import {Observable} from 'rxjs';
+import { CartService } from './_services/cart.service';
+import { CarDetails, CarService } from './_services/car.service';
 import * as AOS from 'aos';
 
 import { AuthenticationService } from './_services';
