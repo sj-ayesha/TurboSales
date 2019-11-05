@@ -34,7 +34,7 @@ export class SignupComponent implements OnInit {
   error: string;
 
   namePattern = "^[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z]*)*$";
-  passwordPattern = "^(((?=.*[a-z])(?=.*[A-Z]))|((?=.*[a-z])(?=.*[0-9]))|((?=.*[A-Z])(?=.*[0-9])))(?=.{6,})"
+  passwordPattern = "^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{6,}$"
 
 
   constructor(
@@ -79,7 +79,17 @@ export class SignupComponent implements OnInit {
       .pipe(first())
       .subscribe(
         data => {
-          this.router.navigate(['/'], { queryParams: { registered: true } });
+          this.authenticationService.login(this.f.username.value, this.f.password.value)
+          .pipe(first())
+          .subscribe(
+            data => {
+              this.router.navigate(['/'], { queryParams: { registered: true } })
+              document.getElementById('signUpIn').style.display = "none";
+            },
+        error => {
+          this.error = error;
+          this.loading = false;
+        });
           this.scrollToTop();
         },
         error => {

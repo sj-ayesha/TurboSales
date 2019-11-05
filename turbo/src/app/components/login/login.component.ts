@@ -80,5 +80,5 @@ export class LoginComponent implements OnInit {
     document.getElementById('signUpIn').style.display = "none";
     this.authService.signIn(GoogleLoginProvider.PROVIDER_ID);
   }
-  
+
 }

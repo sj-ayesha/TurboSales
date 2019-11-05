@@ -116,9 +116,22 @@
   align-items: center;
   justify-content: center;
 
+  @media only screen and (min-device-width: 320px) and (max-device-width: 812px) {
+    flex-direction: column;
+    text-align: center;
+  }
+
   .empty-cart {
     &__img {
-      padding: 0 30px;
+      padding: 30px;
+      
+      @media only screen and (min-device-width: 320px) and (max-device-width: 812px) {
+        width: 150px;
+      }
+
+      img {
+        width: 100%;
+      }
     }
   }
 }

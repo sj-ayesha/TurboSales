@@ -152,6 +152,7 @@ export class CarDetailComponent implements OnInit {
       this.totalQuantity += 0 + item.quantity;
     }
     localStorage.setItem("quantity", JSON.stringify(this.totalQuantity));
+    window.location.reload();
   }
 
   get f() { return this.contactForm.controls; }

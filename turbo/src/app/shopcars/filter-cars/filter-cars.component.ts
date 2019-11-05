@@ -25,7 +25,6 @@ export class FilterCarsComponent implements OnInit {
 
   public brandOptions = [
     { name: 'Honda', value: 'Honda', checked: false },
-    { name: 'Acura', value: 'Acura', checked: false },
     { name: 'Mercedes', value: 'Mercedes', checked: false },
     { name: 'Kia', value: 'Kia', checked: false },
     { name: 'Lamborghini', value: 'Lamborghini', checked: false },
