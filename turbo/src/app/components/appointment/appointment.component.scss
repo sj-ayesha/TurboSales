@@ -152,7 +152,7 @@ form.gobottom {
         padding: 4px 6px 20px 6px; 
     }
     input:focus + label, textarea:focus + label {
-        top: 100%;
+        bottom: 100%;
         margin-top: -16px;
     }
 }

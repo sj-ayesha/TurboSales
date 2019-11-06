@@ -57,7 +57,7 @@
                             <div *ngIf="submitted && f.phone.errors" class="invalid-feedback">
                                 <div *ngIf="f.phone.errors.required">Phone Number is required</div>
                                 <div *ngIf="f.phone.errors.pattern">
-                                    Phone Number is not valid
+                                    Phone Number is digit only with minimum 8 to maximum 12 characters
                                 </div>
                             </div>
                         </div>

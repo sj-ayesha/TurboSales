@@ -25,7 +25,11 @@
         margin: 10px;
 
         @media only screen and (min-width: 812px) {
-            margin: 20px 40px;
+            margin: 0 40px;
+        }
+
+        p {
+            margin-bottom: 30px;
         }
     }
 
@@ -179,8 +183,12 @@ form.gobottom {
         padding: 4px 6px 20px 6px; 
     }
     input:focus + label, textarea:focus + label {
-        top: 100%;
+        bottom: 100%;
         margin-top: -16px;
+    }
+
+    .form-control {
+        border-radius: 0;
     }
 }
 

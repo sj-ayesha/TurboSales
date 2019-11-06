@@ -29,9 +29,9 @@ export class CarDetailComponent implements OnInit {
   showMsg: boolean = false;
   showCartMessage: boolean = false;
 
-  namePattern = "^[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z]*)*$";
-  emailPattern = "[^@]+@[^\.]+\..+";
-  phonePattern = "(([+][(]?[0-9]{1,3}[)]?)|([(]?[0-9]{4}[)]?))\s*[)]?[-\s\.]?[(]?[0-9]{1,3}[)]?([-\s\.]?[0-9]{3})([-\s\.]?[0-9]{3,4})";
+  namePattern = "^[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z]*)*$";//Alphabets except special char & num
+  emailPattern = "[^@]+@[^\.]+\..+";//must have @ .
+  phonePattern = "^[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-\s\./0-9]{8,12}$";//digit contains - + 8 to 12
 
   constructor(private route: ActivatedRoute, private router: Router, private carService: CarService, private buyCarService: BuyCarService, private formBuilder: FormBuilder, private cartService: CartService) { }
 
