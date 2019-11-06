@@ -4,6 +4,7 @@ import { ActivatedRoute } from '@angular/router';
 import {BehaviorSubject, Observable, Subject, Subscriber} from 'rxjs';
 import { Item } from '../_entities/item.entity';
 import {of} from 'rxjs/observable/of';
+import 'rxjs/add/operator/map';
 import { BuyCarService } from '../_services/buy-car.service';
 
 @Injectable({
@@ -29,5 +30,13 @@ export class CartService {
     const currentItems = [...this.itemsInCart];
     const itemsWithoutRemoved = currentItems.filter(_ => _.id !== item.id);
     this.itemsInCartSubject.next(itemsWithoutRemoved);
+  }
+
+  public getTotalAmount(): Observable<number> {
+    return this.itemsInCartSubject.map((items: CarDetails[]) => {
+      return items.reduce((prev, curr: CarDetails) => {
+        return prev + curr.price;
+      }, 0);
+    });
   }
 }

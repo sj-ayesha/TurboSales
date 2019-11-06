@@ -85,7 +85,8 @@ export class CartComponent implements OnInit {
 		this.cartService.removeFromCart(item)
 	}
 
-	public getTotal() {
+	public getTotal(): Observable<number> {
+		return this.cartService.getTotalAmount();
 	}
 
 	// private items: Item[] = [];
