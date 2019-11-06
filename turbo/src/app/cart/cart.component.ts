@@ -28,17 +28,13 @@ export class CartComponent implements OnInit {
 		this.shoppingCartItems$.subscribe(_ => this.shoppingCartItems = _);
 
 		localStorage.setItem('shoppingCart', JSON.stringify(this.shoppingCartItems));
-
-		
-		
+	
 		let arr = this.shoppingCartItems;
-
 		
 		let lookupObject = {};
 		let i;
 
-		for(i in arr) {
-			
+		for(i in arr) {		
 			lookupObject[arr[i]["id"]] = arr[i];
 		}
 
@@ -48,7 +44,7 @@ export class CartComponent implements OnInit {
 		}
 
 		let quantity = 0;
-		let sizeOfNewArray = 0;
+		console.log('tests', this.newArr)
 
 		//loop in array of objects
 			// newArr id
@@ -64,18 +60,21 @@ export class CartComponent implements OnInit {
 				if (element.id === el.id) {
 					quantity += 1;
 				}
-
 				//newArr[i].quantity = quantity;
 			})
 			//newArr[i].quantity = quantity;
 			element.quantity = quantity;
 			quantity = 0;
 		})
-
 		
-		console.log(this.newArr)
-		
+		console.log(this.newArr);
 
+		// let cart = JSON.parse(localStorage.getItem('shoppingCart'));
+		// for (let n = 0; n < cart.length; n++) {
+		// 	this.total += parseInt(cart.price) * quantity;
+		// }
+
+		// console.log('total', this.total);
 	}
 
 	ngOnInit() {
@@ -84,6 +83,9 @@ export class CartComponent implements OnInit {
 
 	public removeItem(item: CarDetails) {
 		this.cartService.removeFromCart(item)
+	}
+
+	public getTotal() {
 	}
 
 	// private items: Item[] = [];

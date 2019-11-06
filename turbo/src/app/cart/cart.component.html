@@ -26,9 +26,8 @@
                                 <td data-label="Image"><img src="{{item.img}}" width="150"></td>
                                 <td data-label="Price">${{item.price}}</td>
                                 <td data-label="Quantity">{{item.quantity}}</td>
-                                <td data-label="Option"><button (click)="removeItem(item)"
-                                        class="btn btn-danger btn-sm"><i class="fa fa-trash-o"></i></button></td>
-                                <!-- <td data-label="Sub Total">${{item.price * item.quantity}}</td> -->
+                                <td data-label="Option"><button (click)="removeItem(item)" class="btn btn-danger btn-sm"><i class="fa fa-trash-o"></i></button></td>
+                                <td data-label="Sub Total">${{item.price * item.quantity}}</td> 
                             </tr>
                             <!-- <tr>
                                 <th colspan="5" align="right">Total</th>
