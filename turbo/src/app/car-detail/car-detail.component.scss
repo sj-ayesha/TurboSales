@@ -330,6 +330,12 @@
     border-bottom: 2px solid #DDD;
     display: flex;
     justify-content: center;
+
+    span {
+        img {
+            width: 25px;
+        }
+    }
 }
 
 .nav-tabs > li.active > a, .nav-tabs > li.active > a:focus, .nav-tabs > li.active > a:hover { 
@@ -341,6 +347,10 @@
     color: $color-white;
     background: $color-blue; 
     padding: 25px 0;
+
+    i {
+        padding: 0 10px;
+    }
 }
 
 .nav-tabs > li.active > a, .nav-tabs > li > a:hover { 
@@ -404,6 +414,35 @@
         width:100%;
         padding:20px;
         text-align:center;
+
+        .successful-added {
+            display: flex;
+            align-items: center;
+
+            .car-image {
+                width: 355px;
+
+                img {
+                    width: 100%;
+                }
+            }
+
+            .car-detail-added {
+                padding: 0 30px;
+            }
+        }
+
+        .btn--actions {
+            .btn-primary {
+                background-color: $color-white;
+                color: $color-blue;
+
+                &:hover {
+                    background-color: $color-blue;
+                    color: $color-white;
+                }
+            }
+        }
 
         img {
             width:76px;

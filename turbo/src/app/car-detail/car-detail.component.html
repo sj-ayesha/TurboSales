@@ -19,15 +19,27 @@
             <ngx-gallery [options]="galleryOptions" [images]="galleryImages"></ngx-gallery>
             <div class="btn--actions">
                 <a routerLink='/shopcars' class="btn btn-primary btn-lg">Continue Shopping</a>
-                <a class="btn btn-primary btn-lg" (click)='showDialog = !showDialog; addToCart(carDetails[0])'>Buy Now</a>
+                <a class="btn btn-primary btn-lg" (click)='showDialog = !showDialog; addToCart(carDetails[0])'>Add to
+                    cart</a>
             </div>
 
             <div *ngIf="showCartMessage">
                 <app-popup [(visible)]="showDialog">
                     <div class="thank-you-pop">
-                        <img src="../../assets/img/tick-blue.png" alt="">
-                        <h1>{{carDetails[0].year}} {{carDetails[0].title}} {{carDetails[0].series}}</h1>
-                        <p>Has been added to your cart</p>
+                        <!-- <img src="../../assets/img/tick-blue.png" alt=""> -->
+                        <div class="successful-added">
+                            <div class="car-image">
+                                <img src="{{carDetails[0].img}}">
+                            </div>
+                            <div class="car-detail-added">
+                                <h1>{{carDetails[0].year}} {{carDetails[0].title}} {{carDetails[0].series}}</h1>
+                                <p>Has been added to your cart</p>
+                            </div>
+                        </div>
+                        <div class="btn--actions">
+                            <a routerLink='/shopcars' class="btn btn-primary btn-lg">Continue Shopping</a>
+                        </div>
+
                     </div>
                 </app-popup>
             </div>
@@ -39,9 +51,10 @@
                             <li role="presentation" class="active"><a href="#info" aria-controls="info" role="tab"
                                     data-toggle="tab"><i class="fas fa-info"></i>  <span>Overview</span></a></li>
                             <li role="presentation"><a href="#specs" aria-controls="specs" role="tab"
-                                    data-toggle="tab"><i class="fas fa-asterisk"></i><span>Specification</span></a></li>
+                                    data-toggle="tab"><i class="far fa-clipboard"></i><span>Specification</span></a>
+                            </li>
                             <li role="presentation"><a href="#feature" aria-controls="settings" role="tab"
-                                    data-toggle="tab"><i class="fas fa-cogs"></i>  <span>Features</span></a></li>
+                                    data-toggle="tab"><i class="fas fa-tasks"></i>  <span>Features</span></a></li>
                         </ul>
 
                         <!-- Tab panes -->
@@ -276,7 +289,7 @@
                                 </div>
                             </div>
                             <button type="submit" (click)="showDialog = !showDialog"
-                                class="btn btn-default">Submit</button>
+                                class="btn btn-lg btn-default pull-right">Send →</button>
 
                             <div *ngIf="showMsg">
                                 <app-popup [(visible)]="showDialog">
@@ -292,7 +305,7 @@
                 </div>
 
                 <app-car-financing></app-car-financing>
-                
+
             </div>
         </div>
     </div>

@@ -8,11 +8,15 @@ export interface CarDetails {
   title: string;
   series: string;
   stockNum: string;
+  transmissionImg: string;
   Transmission: string;
+  fuelImg: string;
   fuel: string;
   engine: string;
+  yearImg: string;
   year: string;
   price: number;
+  bodyTypeImg: string;
   bodyType: string;
   miles: number;
 }
@@ -46,11 +50,15 @@ export class CarService {
       title: 'MERCEDES',
       series: 'Benz E-Class',
       stockNum: 'MER001',
+      transmissionImg: '../../assets/img/Icon/automatic-transmission.png',
       Transmission: 'Automatic',
+      fuelImg: '../../assets/img/Icon/fuel.png',
       fuel: 'Diesel',
       engine: 'Turbocharged four-cylinder engine',
+      yearImg: '../../assets/img/Icon/calendar.png',
       year: '2019',
       price: 21500,
+      bodyTypeImg: '../../assets/img/Icon/sedan-car.png',
       bodyType: 'Sedans',
       miles: 1800
     },
@@ -62,11 +70,15 @@ export class CarService {
       title: 'Mitsubishi',
       series: 'Lancer Sedan',
       stockNum: 'MIT001',
+      transmissionImg: '../../assets/img/Icon/automatic-transmission.png',
       Transmission: 'Automatic',
+      fuelImg: '../../assets/img/Icon/fuel.png',
       fuel: 'Diesel',
       engine: 'Turbochargedengine',
+      yearImg: '../../assets/img/Icon/calendar.png',
       year: '2015',
       price: 10500,
+      bodyTypeImg: '../../assets/img/Icon/coupe-car.png',
       bodyType: 'Coupes',
       miles: 2000
     },
@@ -78,11 +90,15 @@ export class CarService {
       title: 'Ford',
       series: 'Mustang Hybrid',
       stockNum: 'FOR001',
+      transmissionImg: '../../assets/img/Icon/automatic-transmission.png',
       Transmission: 'Automatic',
+      fuelImg: '../../assets/img/Icon/fuel.png',
       fuel: 'Diesel',
       engine: 'Turbochargedengine',
+      yearImg: '../../assets/img/Icon/calendar.png',
       year: '2019',
       price: 10500,
+      bodyTypeImg: '../../assets/img/Icon/coupe-car.png',
       bodyType: 'Coupes',
       miles: 1500
     },
@@ -94,11 +110,15 @@ export class CarService {
       title: 'Kia',
       series: 'Rio Hatchback',
       stockNum: 'KIA001',
+      transmissionImg: '../../assets/img/Icon/automatic-transmission.png',
       Transmission: 'Automatic',
+      fuelImg: '../../assets/img/Icon/fuel.png',
       fuel: 'Diesel',
       engine: 'Turbochargedengine',
+      yearImg: '../../assets/img/Icon/calendar.png',
       year: '2018',
       price: 10500,
+      bodyTypeImg: '../../assets/img/Icon/car-suv.png',
       bodyType: 'SUVs',
       miles: 1000
     },
@@ -110,11 +130,15 @@ export class CarService {
       title: 'Audi',
       series: 'A7',
       stockNum: 'AUD001',
+      transmissionImg: '../../assets/img/Icon/automatic-transmission.png',
       Transmission: 'Automatic',
+      fuelImg: '../../assets/img/Icon/fuel.png',
       fuel: 'Diesel',
       engine: 'Turbochargedengine',
+      yearImg: '../../assets/img/Icon/calendar.png',
       year: '2019',
       price: 10500,
+      bodyTypeImg: '../../assets/img/Icon/coupe-car.png',
       bodyType: 'Coupes',
       miles: 1500
     },
@@ -126,11 +150,15 @@ export class CarService {
       title: 'Volkswagen',
       series: 'Caddy',
       stockNum: 'VOL001',
+      transmissionImg: '../../assets/img/Icon/manual-transmission.png',
       Transmission: 'Manual',
+      fuelImg: '../../assets/img/Icon/fuel.png',
       fuel: 'Diesel',
       engine: 'Turbo',
+      yearImg: '../../assets/img/Icon/calendar.png',
       year: '2016',
       price: 5500,
+      bodyTypeImg: '../../assets/img/Icon/van.png',
       bodyType: 'Vans',
       miles: 1700
     },
@@ -142,11 +170,15 @@ export class CarService {
       title: 'Mercedes',
       series: 'Benz',
       stockNum: 'MER002',
+      transmissionImg: '../../assets/img/Icon/manual-transmission.png',
       Transmission: 'Manual',
+      fuelImg: '../../assets/img/Icon/fuel.png',
       fuel: 'Diesel',
       engine: 'Turbo',
+      yearImg: '../../assets/img/Icon/calendar.png',
       year: '2019',
       price: 555500,
+      bodyTypeImg: '../../assets/img/Icon/truck.png',
       bodyType: 'Trucks',
       miles: 1700
     },
@@ -158,11 +190,15 @@ export class CarService {
       title: 'Jeep',
       series: 'Wrangler',
       stockNum: 'JEE001',
+      transmissionImg: '../../assets/img/Icon/manual-transmission.png',
       Transmission: 'Manual',
+      fuelImg: '../../assets/img/Icon/fuel.png',
       fuel: 'Petrol',
       engine: 'Turbo',
+      yearImg: '../../assets/img/Icon/calendar.png',
       year: '2019',
       price: 700000,
+      bodyTypeImg: '../../assets/img/Icon/convertible.png',
       bodyType: 'Convertibles',
       miles: 1600
     }];
