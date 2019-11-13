@@ -248,11 +248,15 @@
 
         .text-block {
             position: absolute;
-            background-color: $color-blue;
+            background-color: #15518dd4;
             color: $color-white;
             padding: 10px;
             top: 0;
             left: 0;
+            
+            p {
+                margin: 0;
+            }
         }
     }
 

@@ -95,4 +95,8 @@ export class CheckoutComponent implements OnInit {
 		}
 		localStorage.setItem('quantity', JSON.stringify(this.totalQuantity));
 	}
+
+	public getTotal(): Observable<number> {
+		return this.cartService.getTotalAmount();
+	}
 }

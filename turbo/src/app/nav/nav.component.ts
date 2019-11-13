@@ -53,6 +53,7 @@ export class NavComponent implements OnInit {
   }
 
   logout() {
+      this.cartService.clearCart();
       this.authenticationService.logout();
       this.router.navigate(['/signup']);
   }
@@ -64,6 +65,6 @@ export class NavComponent implements OnInit {
   toggleMenu() {
     let menuBox = document.getElementById('myNavbar');
     menuBox.classList.remove('in');
-  }    
+  }
   
 }

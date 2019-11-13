@@ -187,3 +187,14 @@ p {
         display: initial !important;
     }
 }
+
+.btn--delete{
+    background-color: $color-blue;
+
+    i {
+        color: $color-white;
+    }
+    &:hover {
+        background-color: #d9534f;
+    }
+}

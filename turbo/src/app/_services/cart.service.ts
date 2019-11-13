@@ -13,6 +13,7 @@ import { BuyCarService } from '../_services/buy-car.service';
 export class CartService {
   private itemsInCartSubject: BehaviorSubject<CarDetails[]> = new BehaviorSubject([]);
   private itemsInCart: CarDetails[] = [];
+  showCartRemoveMessage: boolean = false;
 
   constructor(private route: ActivatedRoute, private buyCarService: BuyCarService) {
     this.itemsInCartSubject.subscribe(_ => this.itemsInCart = _);
@@ -26,6 +27,9 @@ export class CartService {
     return this.itemsInCartSubject;
   }
 
+  public clearCart() {
+    this.itemsInCartSubject.next(this.itemsInCart);
+  }
   public removeFromCart(item: CarDetails) {
     const currentItems = [...this.itemsInCart];
     const itemsWithoutRemoved = currentItems.filter(_ => _.id !== item.id);

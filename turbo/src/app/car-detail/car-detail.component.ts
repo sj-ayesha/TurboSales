@@ -94,68 +94,6 @@ export class CarDetailComponent implements OnInit {
     });
   }
 
-  // incrementCart() {
-  //   const id = parseInt(this.route.snapshot.paramMap.get('id'));
-  //   this.carDetails = this.carService.getCarDetails();
-  //   this.carDetails = this.carDetails.filter(data => data.id === id);
-  //   console.log("adding", this.carDetails);
-
-  //   this.carService.setUrl(this.carDetails[0].id);
-
-
-  //   if (id) {
-  //     var item: Item = {
-  //       product: this.buyCarService.find(id),
-  //       quantity: 1
-  //     };
-  //     if (localStorage.getItem('cart') == null) {
-  //       let cart: any = [];
-  //       cart.push(JSON.stringify(item));
-  //       localStorage.setItem('cart', JSON.stringify(cart));
-  //     } else {
-  //       let cart: any = JSON.parse(localStorage.getItem('cart'));
-  //       let index: number = -1;
-  //       for (var i = 0; i < cart.length; i++) {
-  //         let item: Item = JSON.parse(cart[i]);
-  //         if (item.product.id == id) {
-  //           index = i;
-  //           break;
-  //         }
-  //       }
-  //       if (index == -1) {
-  //         cart.push(JSON.stringify(item));
-  //         localStorage.setItem('cart', JSON.stringify(cart));
-  //       } else {
-  //         let item: Item = JSON.parse(cart[index]);
-  //         item.quantity += 1;
-  //         cart[index] = JSON.stringify(item);
-  //         localStorage.setItem("cart", JSON.stringify(cart));
-  //       }
-  //     }
-  //   }
-  //   this.loadCart();
-
-  //   this.showCartMessage = true;
-  // }
-
-  // loadCart(): void {
-  //   this.total = 0;
-  //   this.totalQuantity = 0;
-  //   this.items = [];
-  //   let cart = JSON.parse(localStorage.getItem('cart'));
-  //   for (var i = 0; i < cart.length; i++) {
-  //     let item = JSON.parse(cart[i]);
-  //     this.items.push({
-  //       product: item.product,
-  //       quantity: item.quantity
-  //     });
-  //     this.total += item.product.price * item.quantity;
-  //     this.totalQuantity += 0 + item.quantity;
-  //   }
-  //   localStorage.setItem("quantity", JSON.stringify(this.totalQuantity));
-  //   window.location.reload();
-  // }
-
   get f() { return this.contactForm.controls; }
 
   onSubmit() {

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { CarDetails, CarService } from '../_services/car.service';
 import { CartService } from '../_services/cart.service';
 import { Item } from '../_entities/item.entity';
@@ -19,10 +19,11 @@ export class CartComponent implements OnInit {
 	private items: Item[] = [];
 	private total: number = 0;
 	private totalQuantity: number = 0;
+
 	
 	public newArr = [];
 
-	constructor(private cartService: CartService, private route: ActivatedRoute) {
+	constructor(private cartService: CartService, private route: ActivatedRoute, private router: Router) {
 		this.shoppingCartItems$ = this.cartService.getItems();
 
 		this.shoppingCartItems$.subscribe(_ => this.shoppingCartItems = _);
@@ -82,12 +83,18 @@ export class CartComponent implements OnInit {
 	}
 
 	public removeItem(item: CarDetails) {
-		this.cartService.removeFromCart(item)
+		this.cartService.removeFromCart(item);
+		console.log('item removed')
 	}
 
 	public getTotal(): Observable<number> {
 		return this.cartService.getTotalAmount();
 	}
+
+    public onClick(id: number) {
+      this.router.navigate(['/shopcars', id]);
+    } 
+
 
 	// private items: Item[] = [];
 	// private total: number = 0;

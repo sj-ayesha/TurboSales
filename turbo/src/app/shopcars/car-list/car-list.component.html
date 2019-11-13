@@ -57,7 +57,8 @@
 
 <!--Grid View-->
 <div class="row" *ngIf="displayMode === 1">
-    <div class="car-item col-xs-12 col-md-4" *ngFor="let cardetail of cardetails | filter:filter | orderBy: order:reverse:'case-insensitive' | paginate: {itemsPerPage: numberOfItems, currentPage: actualPage} ">
+    <div class="car-item col-xs-12 col-md-4"
+        *ngFor="let cardetail of cardetails | filter:filter | orderBy: order:reverse:'case-insensitive' | paginate: {itemsPerPage: numberOfItems, currentPage: actualPage} ">
         <div class="thumbnail">
             <div class="thumbnail-img-text">
                 <img class="group list-group-image" src="{{ cardetail.img }}" alt="" />
@@ -208,14 +209,11 @@
 </div>
 
 <div class="row pagination-footer">
-        <div class="form-group number-cars">
-                <span>No.of cars</span>
-                <input class="number" type="number" id="numberOfItems" [(ngModel)]="value" min="1" max="15"
-                        placeholder="{{numberOfItems}}" (change)="onAdd()">
-        </div>
-        <pagination-controls (click)="scrollToTop()" (pageChange)="actualPage = $event">
-            </pagination-controls>
-</div>
-<div class="col-xs-4 col-md-1 form-group number-cars">
-    
+    <div class="form-group number-cars">
+        <span>No.of cars</span>
+        <input class="number" type="number" id="numberOfItems" [(ngModel)]="value" min="1" max="15"
+                    placeholder="{{numberOfItems}}" (change)="onAdd()">
     </div>
+    <pagination-controls (click)="scrollToTop()" (pageChange)="actualPage = $event">
+    </pagination-controls>
+</div>

@@ -22,11 +22,11 @@
                         </thead>
                         <tbody>
                             <tr *ngFor="let item of newArr">
-                                <td data-label="Title">{{item.title}}</td>
-                                <td data-label="Image"><img src="{{item.img}}" width="150"></td>
+                                <td data-label="Title" (click)="onClick(item.id)">{{item.title}}</td>
+                                <td data-label="Image"><img src="{{item.img}}" (click)="onClick(item.id)" width="150"></td>
                                 <td data-label="Price">${{item.price}}</td>
                                 <td data-label="Quantity">{{item.quantity}}</td>
-                                <td data-label="Option"><button (click)="removeItem(item)" class="btn btn-danger btn-sm"><i class="fa fa-trash-o"></i></button></td>
+                                <td data-label="Option"><button (click)="removeItem(item);" class="btn btn-sm btn--delete"><i class="fa fa-trash-o"></i></button></td>
                                 <td data-label="Sub Total">${{item.price * item.quantity}}</td> 
                             </tr>
                             <tr>
@@ -55,5 +55,3 @@
         </div>
     </div>
 </div>
-
-<button (click)="clear()">Clear</button>

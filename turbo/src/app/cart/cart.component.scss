@@ -92,6 +92,16 @@
           border-bottom: 0;
         }
       }
+
+      table td[data-label="Title"] {
+        cursor: pointer;
+      }
+      
+      table td {
+        img {
+          cursor: pointer;
+        }
+      }
 }
 
 .btn-checkout {
